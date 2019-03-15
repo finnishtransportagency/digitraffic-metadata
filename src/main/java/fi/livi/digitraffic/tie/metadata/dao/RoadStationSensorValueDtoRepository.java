@@ -147,28 +147,12 @@ public interface RoadStationSensorValueDtoRepository extends JpaRepository<Senso
             @Param("afterDate")
             final Date afterDate);
 
+
     @Query(value =
-           "select max(sv.measured) as updated_time\n" +
-           "from road_station rs\n" +
-           "inner join sensor_value sv on sv.road_station_id = rs.id\n" +
-           "inner join road_station_sensor s on sv.road_station_sensor_id = s.id\n" +
-           "where rs.type = :stationTypeId\n" +
-           "  and rs.publishable = true\n" +
-           "  and s.publishable = true\n" +
-           "  and sv.measured > (\n" +
-           "    select max(sensv.measured) - (:timeLimitInMinutes * interval '1 minute')\n" +
-           "    from sensor_value sensv\n" +
-           "    where sensv.road_station_id = sv.road_station_id\n" +
-           "  )\n" +
-           "  and exists (\n" +
-           "     select null\n" +
-           "     from allowed_road_station_sensor allowed\n" +
-           "     where allowed.natural_id = s.natural_id\n" +
-           "       and allowed.road_station_type = s.road_station_type\n" +
-           "  )",
-           nativeQuery = true)
-    Instant getLatestMeasurementTime(@Param("stationTypeId")
-                                           final int stationTypeId,
-                                           @Param("timeLimitInMinutes")
-                                           final int timeLimitInMinutes);
+                 "SELECT max(sv.measured) AS updated_time\n" +
+                     "FROM ROAD_STATION_SENSOR s\n" +
+                     "INNER JOIN SENSOR_VALUE sv ON sv.road_station_sensor_id = s.id\n" +
+                     "WHERE s.road_station_type = :roadStationType",
+                nativeQuery = true)
+    Instant getLatestMeasurementTime(@Param("roadStationType") final String roadStationType);
 }
