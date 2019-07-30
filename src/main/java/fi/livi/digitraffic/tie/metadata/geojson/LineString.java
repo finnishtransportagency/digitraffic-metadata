@@ -9,9 +9,9 @@ import fi.livi.digitraffic.tie.helper.ToStringHelper;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "GeoJson LineString Geometry Object", value = "LineStringGeometry")
+@ApiModel(description = "GeoJson LineString Geometry Object", value = "LineStringGeometry", parent = Geometry.class)
 @JsonPropertyOrder({ "type", "coordinates"})
-    public class LineString extends Geometry<List<Double>> {
+public class LineString extends Geometry<List<Double>> {
 
     @JsonCreator
     public LineString(List<List<Double>> coordinates) {

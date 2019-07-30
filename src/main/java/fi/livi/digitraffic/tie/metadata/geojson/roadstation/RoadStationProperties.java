@@ -56,7 +56,12 @@ public abstract class RoadStationProperties {
     @ApiModelProperty(value = "Province code")
     private String provinceCode;
 
-    @ApiModelProperty(value = "Map of names [fi, sv, en]")
+    @ApiModelProperty(value = "Map of names [fi, sv, en]",
+                      example = "\"names\": {\n" +
+                                "          \"fi\": \"Tie 7 Porvoo\",\n" +
+                                "          \"sv\": \"Väg 7 Borgå\",\n" +
+                                "          \"en\": \"Road 7 Porvoo\"\n" +
+                                "        },")
     private Map<String, String> names = new HashMap<>();
 
     private RoadAddress roadAddress = new RoadAddress();

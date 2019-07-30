@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
     @JsonSubTypes.Type(value = LineString.class, name = "LineString"),
     @JsonSubTypes.Type(value = MultiLineString.class, name = "MultiLineString")
 })
-@ApiModel(description = "GeoJson Point Geometry Object", value = "Geometry")
+@ApiModel(description = "GeoJson Geometry Object", value = "Geometry", discriminator = "type", subTypes = {Point.class, LineString.class, MultiLineString.class})
 @JsonPropertyOrder({ "type", "coordinates"})
 public abstract class Geometry<T> implements Serializable {
 

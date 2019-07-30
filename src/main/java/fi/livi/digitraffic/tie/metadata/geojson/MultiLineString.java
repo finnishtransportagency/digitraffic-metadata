@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(description = "GeoJson MultiLineString Geometry Object", value = "Geometry")
+@ApiModel(description = "GeoJson MultiLineString Geometry Object", value = "MultiLineStringGeometry", parent = Geometry.class)
 @JsonPropertyOrder({ "type", "coordinates" })
 public class MultiLineString extends Geometry<List<List<Double>>> {
 
