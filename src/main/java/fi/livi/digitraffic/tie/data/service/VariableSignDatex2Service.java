@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,7 @@ import fi.livi.digitraffic.tie.data.model.trafficsigns.DeviceData;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.VmsDataDatex2Response;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.VmsTableDatex2Response;
 
+@ConditionalOnWebApplication
 @Service
 public class VariableSignDatex2Service {
     private final DeviceDataRepository deviceDataRepository;

@@ -13,7 +13,11 @@ import fi.livi.digitraffic.tie.data.model.trafficsigns.Device;
 import fi.livi.digitraffic.tie.data.model.trafficsigns.DeviceData;
 import fi.livi.digitraffic.tie.helper.DateHelper;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.D2LogicalModel;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.DistanceFromLinearElementStart;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.LinearElementByCode;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.LinearElementNatureEnum;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.Point;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.PointAlongLinearElement;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.PointByCoordinates;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.PointCoordinates;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.TextPage;
@@ -128,8 +132,19 @@ public class VmsDatex2Converter {
             final fi.livi.digitraffic.tie.metadata.geojson.Point point = coordinateConverter.convertFromETRS89ToWGS84(
                 new fi.livi.digitraffic.tie.metadata.geojson.Point(device.getEtrsTm35FinX(), device.getEtrsTm35FinY()));
 
+            final RoadAddressHelper.RoadAddress ra = RoadAddressHelper.parseRoadAddress(device.getRoadAddress());
+
             record.withVmsLocation(new Point()
-                // TODO: roadaddress -> road number + distance
+                .withPointAlongLinearElement(new PointAlongLinearElement()
+                    .withLinearElement(new LinearElementByCode()
+                        .withRoadNumber(ra.roadNumber)
+                        .withLinearElementIdentifier(ra.roadSection)
+                        .withLinearElementNature(LinearElementNatureEnum.ROAD_SECTION)
+                    )
+                    .withDistanceAlongLinearElement(new DistanceFromLinearElementStart()
+                        .withDistanceAlong(ra.distance)
+                    )
+                )
                 .withPointByCoordinates(new PointByCoordinates().withPointCoordinates(
                     new PointCoordinates()
                         .withLatitude(point.getLatitude().floatValue())
