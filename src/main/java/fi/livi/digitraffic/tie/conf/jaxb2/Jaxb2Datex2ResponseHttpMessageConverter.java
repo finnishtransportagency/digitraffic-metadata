@@ -14,13 +14,21 @@ import fi.livi.digitraffic.tie.lotju.xsd.datex2.RoadworksDatex2Response;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.TmsDataDatex2Response;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.TmsStationDatex2Response;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.TrafficDisordersDatex2Response;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.VmsDataDatex2Response;
+import fi.livi.digitraffic.tie.lotju.xsd.datex2.VmsTableDatex2Response;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.WeightRestrictionsDatex2Response;
 
 public class Jaxb2Datex2ResponseHttpMessageConverter extends Jaxb2RootElementHttpMessageConverter {
     private static final Logger log = LoggerFactory.getLogger(Jaxb2Datex2ResponseHttpMessageConverter.class);
 
-    private static final Set<Class<?>> SUPPORTED = Sets.newHashSet(TrafficDisordersDatex2Response.class, TmsStationDatex2Response.class,
-        TmsDataDatex2Response.class, RoadworksDatex2Response.class, WeightRestrictionsDatex2Response.class);
+    private static final Set<Class<?>> SUPPORTED = Sets.newHashSet(
+        TrafficDisordersDatex2Response.class,
+        TmsStationDatex2Response.class,
+        TmsDataDatex2Response.class,
+        RoadworksDatex2Response.class,
+        WeightRestrictionsDatex2Response.class,
+        VmsTableDatex2Response.class,
+        VmsDataDatex2Response.class);
 
     private final String schemaDomainUrlAndPath;
 

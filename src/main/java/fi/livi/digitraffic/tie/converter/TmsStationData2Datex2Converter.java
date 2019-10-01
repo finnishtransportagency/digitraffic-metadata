@@ -1,5 +1,8 @@
 package fi.livi.digitraffic.tie.converter;
 
+import static fi.livi.digitraffic.tie.metadata.converter.TmsStationMetadata2Datex2Converter.MEASUREMENT_SITE_TABLE_IDENTIFICATION;
+import static fi.livi.digitraffic.tie.metadata.converter.TmsStationMetadata2Datex2Converter.MEASUREMENT_SITE_TABLE_VERSION;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
@@ -10,20 +13,13 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Component;
 
 import fi.livi.digitraffic.tie.data.dto.SensorValueDto;
 import fi.livi.digitraffic.tie.helper.DateHelper;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.BasicData;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.ConfidentialityValueEnum;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.CountryEnum;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.D2LogicalModel;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.Exchange;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.HeaderInformation;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.InformationStatusEnum;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.InternationalIdentifier;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasuredDataPublication;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasuredValue;
 import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasurementSiteRecordVersionedReference;
@@ -41,32 +37,22 @@ import fi.livi.digitraffic.tie.metadata.model.TmsStation;
 @ConditionalOnWebApplication
 @Component
 public class TmsStationData2Datex2Converter {
-
     private static final Logger log = LoggerFactory.getLogger(TmsStationData2Datex2Converter.class);
 
-    private final InformationStatusEnum informationStatus;
+    private final Datex2Util datex2Util;
 
-    public TmsStationData2Datex2Converter(@Value("${dt.domain.url}") final String camUrl) {
-        this.informationStatus = camUrl.toLowerCase().contains("test") ? InformationStatusEnum.TEST : InformationStatusEnum.REAL;
+    public TmsStationData2Datex2Converter(final Datex2Util datex2Util) {
+        this.datex2Util = datex2Util;
     }
 
     public D2LogicalModel convert(final Map<TmsStation, List<SensorValueDto>> stations, final ZonedDateTime updated) {
-
         final HashMap<String, Long> skippedSensorValues = new HashMap<>();
 
-        final MeasuredDataPublication publication =
-            new MeasuredDataPublication()
-                .withPublicationTime(DateHelper.toXMLGregorianCalendar(updated))
-                .withPublicationCreator(new InternationalIdentifier()
-                                            .withCountry(CountryEnum.FI)
-                                            .withNationalIdentifier("FI"))
-                .withLang("Finnish")
-                .withHeaderInformation(new HeaderInformation()
-                                           .withConfidentiality(ConfidentialityValueEnum.NO_RESTRICTION)
-                                           .withInformationStatus(informationStatus))
+        final MeasuredDataPublication publication = datex2Util.publication(new MeasuredDataPublication(), updated)
+                .withHeaderInformation(datex2Util.headerInformation())
                 .withMeasurementSiteTableReference(new MeasurementSiteTableVersionedReference()
-                                                       .withId(TmsStationMetadata2Datex2Converter.MEASUREMENT_SITE_TABLE_IDENTIFICATION)
-                                                       .withVersion(TmsStationMetadata2Datex2Converter.MEASUREMENT_SITE_TABLE_VERSION));
+                                                       .withId(MEASUREMENT_SITE_TABLE_IDENTIFICATION)
+                                                       .withVersion(MEASUREMENT_SITE_TABLE_VERSION));
 
         stations.forEach((station, sensorValues) ->
                              sensorValues.forEach(value -> publication.withSiteMeasurements(getSiteMeasurement(station, value, skippedSensorValues))));
@@ -74,9 +60,7 @@ public class TmsStationData2Datex2Converter {
         skippedSensorValues.forEach((k, v) -> log.warn("Skipping unsupported sensor while building datex2 message. sensorName={}, " +
                                                        "skipped sensor value: sensorValue={}", k, v));
 
-        return new D2LogicalModel()
-            .withPayloadPublication(publication)
-            .withExchange(new Exchange().withSupplierIdentification(new InternationalIdentifier().withCountry(CountryEnum.FI).withNationalIdentifier("FI")));
+        return datex2Util.logicalModel(publication);
     }
 
     private static SiteMeasurements getSiteMeasurement(final TmsStation station, final SensorValueDto sensorValue, final HashMap<String, Long> skipped) {
