@@ -95,7 +95,7 @@ public class VmsDatex2Converter {
             );
 
         // if speed limit, then set speed and type
-        if(device.getType().equals("NOPEUSRAJOITUS")) {
+        if(device != null && device.getType().equals("NOPEUSRAJOITUS")) {
             vp.getPictogramDescription().add(VmsDatexPictogramEnum.MAXIMUM_SPEED_LIMITED_TO_THE_FIGURE_INDICATED);
             vp.setSpeedAttribute(Float.valueOf(data.getDisplayValue()));
         } else { // VAIHTUVAVAROITUSMERKKI
