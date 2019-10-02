@@ -35,13 +35,13 @@ public class VariableSignDatex2Service {
         final List<DeviceData> data = deviceDataRepository.findLatestData();
         final Map<String, Device> deviceMap = devices.stream().collect(Collectors.toMap(Device::getId, d -> d));
 
-        return new VmsDataDatex2Response().withD2LogicalModel(vmsDatex2Converter.convertVmsData(data, deviceMap, null));
+        return new VmsDataDatex2Response().withD2LogicalModel(vmsDatex2Converter.convertVmsData(data, deviceMap));
     }
 
     @Transactional(readOnly = true)
     public VmsTableDatex2Response findVariableSignMetadata() {
         final List<Device> devices = deviceRepository.findAll();
 
-        return new VmsTableDatex2Response().withD2LogicalModel(vmsDatex2Converter.convertVmsTable(devices, null));
+        return new VmsTableDatex2Response().withD2LogicalModel(vmsDatex2Converter.convertVmsTable(devices));
     }
 }

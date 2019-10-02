@@ -1,8 +1,10 @@
 package fi.livi.digitraffic.tie.converter;
 
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
@@ -57,8 +59,10 @@ public class VmsDatex2Converter {
         this.coordinateConverter = coordinateConverter;
     }
 
-    public D2LogicalModel convertVmsTable(final List<Device> devices, final ZonedDateTime updated) {
-        final VmsTablePublication publication = datex2Util.publication(new VmsTablePublication(), updated)
+    public D2LogicalModel convertVmsTable(final List<Device> devices) {
+        final Optional<ZonedDateTime> max = devices.stream().map(Device::getUpdatedDate).max(Comparator.naturalOrder());
+
+        final VmsTablePublication publication = datex2Util.publication(new VmsTablePublication(), max.orElse(null))
             .withHeaderInformation(datex2Util.headerInformation())
             .withVmsUnitTable(new VmsUnitTable()
                 .withId(UNIT_TABLE_IDENTIFIER)
@@ -69,8 +73,10 @@ public class VmsDatex2Converter {
         return datex2Util.logicalModel(publication);
     }
 
-    public D2LogicalModel convertVmsData(final List<DeviceData> data, final Map<String, Device> deviceMap, final ZonedDateTime updated) {
-        final VmsPublication publication = datex2Util.publication(new VmsPublication(), updated)
+    public D2LogicalModel convertVmsData(final List<DeviceData> data, final Map<String, Device> deviceMap) {
+        final Optional<ZonedDateTime> max = data.stream().map(DeviceData::getCreatedDate).max(Comparator.naturalOrder());
+
+        final VmsPublication publication = datex2Util.publication(new VmsPublication(), max.orElse(null))
             .withHeaderInformation(datex2Util.headerInformation())
             .withVmsUnit(data.stream().map(d -> getVmsUnit(deviceMap, d)).collect(Collectors.toList()))
             ;

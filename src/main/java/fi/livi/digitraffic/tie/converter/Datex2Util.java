@@ -23,6 +23,9 @@ import fi.livi.digitraffic.tie.lotju.xsd.datex2.PayloadPublication;
 public final class Datex2Util {
     private final InformationStatusEnum informationStatus;
 
+    private static final String LANG_FI = "fi";
+    private static final String NATIONAL_IDENTIIER = "FTA";
+
     public Datex2Util(@Value("${dt.domain.url}") final String camUrl) {
         this.informationStatus = camUrl.toLowerCase().contains("test") ? InformationStatusEnum.TEST : InformationStatusEnum.REAL;
     }
@@ -32,8 +35,8 @@ public final class Datex2Util {
             .withPublicationTime(DateHelper.toXMLGregorianCalendar(updated))
             .withPublicationCreator(new InternationalIdentifier()
                 .withCountry(CountryEnum.FI)
-                .withNationalIdentifier("FI"))
-            .withLang("Finnish");
+                .withNationalIdentifier(NATIONAL_IDENTIIER))
+            .withLang(LANG_FI);
     }
 
     public D2LogicalModel logicalModel(final PayloadPublication publication) {
@@ -51,7 +54,7 @@ public final class Datex2Util {
     public MultilingualString multiLingualString(final String value) {
         return new MultilingualString().withValues(new MultilingualString.Values().withValue(
             new MultilingualStringValue()
-                .withLang("FI")
+                .withLang(LANG_FI)
                 .withValue(value)));
     }
 
