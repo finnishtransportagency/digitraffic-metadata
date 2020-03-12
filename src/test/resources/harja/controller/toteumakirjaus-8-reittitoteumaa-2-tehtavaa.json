@@ -1,0 +1,553 @@
+{
+  "otsikko": {
+    "lahettaja": {
+      "jarjestelma": "Järjestelmä A",
+      "organisaatio": {
+        "ytunnus": "1234567-8",
+        "nimi": "Urakoitsija 1 Oy"
+      }
+    },
+    "viestintunniste": {
+      "id": 14208233
+    },
+    "lahetysaika": "2020-01-13T12:15:42Z"
+  },
+  "reittitoteumat": [
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922030
+          },
+          "alkanut": "2020-01-13T12:04:26Z",
+          "paattynyt": "2020-01-13T12:04:39Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 2864,
+                "maara": {
+                  "yksikko": "jkm",
+                  "maara": 0.007
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:04:26Z",
+              "koordinaatit": {
+                "x": 586872.3199651402,
+                "y": 7198330.3793585794
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 2864
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:04:39Z",
+              "koordinaatit": {
+                "x": 586865.44083541073,
+                "y": 7198332.6179409185
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 2864,
+                    "maara": {
+                      "yksikko": "jkm",
+                      "maara": 0.007
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922031
+          },
+          "alkanut": "2020-01-13T12:04:39Z",
+          "paattynyt": "2020-01-13T12:05:37Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 2864,
+                "maara": {
+                  "yksikko": "jkm",
+                  "maara": 0.317
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:04:39Z",
+              "koordinaatit": {
+                "x": 586865.44083541073,
+                "y": 7198332.6179409185
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 2864
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:37Z",
+              "koordinaatit": {
+                "x": 587167.78579987725,
+                "y": 7198232.1842859695
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 2864,
+                    "maara": {
+                      "yksikko": "jkm",
+                      "maara": 0.317
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922032
+          },
+          "alkanut": "2020-01-13T11:59:40Z",
+          "paattynyt": "2020-01-13T12:03:27Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.055
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T11:59:40Z",
+              "koordinaatit": {
+                "x": 586807.18390949734,
+                "y": 7198351.57570551
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:03:27Z",
+              "koordinaatit": {
+                "x": 586860.11771773081,
+                "y": 7198334.3501712624
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.055
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922033
+          },
+          "alkanut": "2020-01-13T12:03:27Z",
+          "paattynyt": "2020-01-13T12:04:34Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.045
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:03:27Z",
+              "koordinaatit": {
+                "x": 586860.11771773081,
+                "y": 7198334.3501712624
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:04:34Z",
+              "koordinaatit": {
+                "x": 586817.39112413221,
+                "y": 7198348.25410958
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.045
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922034
+          },
+          "alkanut": "2020-01-13T12:04:34Z",
+          "paattynyt": "2020-01-13T12:05:03Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.06
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:04:34Z",
+              "koordinaatit": {
+                "x": 586817.39112413221,
+                "y": 7198348.25410958
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:03Z",
+              "koordinaatit": {
+                "x": 586875.0656806035,
+                "y": 7198329.485857442
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.06
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922035
+          },
+          "alkanut": "2020-01-13T12:05:03Z",
+          "paattynyt": "2020-01-13T12:05:09Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.005
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:03Z",
+              "koordinaatit": {
+                "x": 586875.0656806035,
+                "y": 7198329.485857442
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:09Z",
+              "koordinaatit": {
+                "x": 586869.93461493356,
+                "y": 7198331.1555909039
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.005
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922036
+          },
+          "alkanut": "2020-01-13T12:05:09Z",
+          "paattynyt": "2020-01-13T12:05:24Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.001
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:09Z",
+              "koordinaatit": {
+                "x": 586869.93461493356,
+                "y": 7198331.1555909039
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:05:24Z",
+              "koordinaatit": {
+                "x": 586870.7047214784,
+                "y": 7198330.9049855247
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.001
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "reittitoteuma": {
+        "toteuma": {
+          "tunniste": {
+            "id": 29922037
+          },
+          "alkanut": "2020-01-13T12:06:09Z",
+          "paattynyt": "2020-01-13T12:06:55Z",
+          "toteumatyyppi": "kokonaishintainen",
+          "suorittaja": {
+            "ytunnus": "1565583-5",
+            "nimi": "Urakoitsija 1 Oy"
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1370,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.295
+                }
+              }
+            }
+          ],
+          "materiaalit": []
+        },
+        "reitti": [
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:06:09Z",
+              "koordinaatit": {
+                "x": 586872.06228847429,
+                "y": 7198330.4632108193
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "reittipiste": {
+              "aika": "2020-01-13T12:06:55Z",
+              "koordinaatit": {
+                "x": 587153.09358559351,
+                "y": 7198237.00915907
+              },
+              "tehtavat": [
+                {
+                  "tehtava": {
+                    "id": 1370,
+                    "maara": {
+                      "yksikko": "tiekm",
+                      "maara": 0.295
+                    }
+                  }
+                }
+              ],
+              "materiaalit": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

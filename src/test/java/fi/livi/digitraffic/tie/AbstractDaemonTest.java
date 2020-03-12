@@ -7,6 +7,6 @@ import org.springframework.test.context.TestPropertySource;
     "spring.main.web-application-type=none",
     "road.datasource.hikari.maximum-pool-size=2"
 })
-public abstract class AbstractDaemonTest extends AbstractTest {
+public abstract class AbstractDaemonTest extends AbstractSpringJUnitTest {
 
 }

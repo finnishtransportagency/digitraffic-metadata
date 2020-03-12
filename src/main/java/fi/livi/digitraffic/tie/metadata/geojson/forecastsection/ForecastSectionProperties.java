@@ -3,8 +3,8 @@ package fi.livi.digitraffic.tie.metadata.geojson.forecastsection;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import fi.livi.digitraffic.tie.metadata.model.Road;
-import fi.livi.digitraffic.tie.metadata.model.RoadSection;
+import fi.livi.digitraffic.tie.model.v1.Road;
+import fi.livi.digitraffic.tie.model.v1.RoadSection;
 import io.swagger.annotations.ApiModelProperty;
 
 @JsonPropertyOrder({ "naturalId", "description", "roadSectionNumber", "roadNumber", "roadSectionVersionNumber", "startDistance",

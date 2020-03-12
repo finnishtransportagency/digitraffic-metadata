@@ -11,10 +11,10 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 
 import fi.ely.lotju.tiesaa.proto.TiesaaProtos;
-import fi.livi.digitraffic.tie.data.jms.JMSMessageListener;
-import fi.livi.digitraffic.tie.data.jms.marshaller.WeatherMessageMarshaller;
-import fi.livi.digitraffic.tie.data.service.LockingService;
-import fi.livi.digitraffic.tie.data.service.SensorDataUpdateService;
+import fi.livi.digitraffic.tie.service.jms.JMSMessageListener;
+import fi.livi.digitraffic.tie.service.jms.marshaller.WeatherMessageMarshaller;
+import fi.livi.digitraffic.tie.service.LockingService;
+import fi.livi.digitraffic.tie.service.v1.SensorDataUpdateService;
 import progress.message.jclient.QueueConnectionFactory;
 
 @ConditionalOnProperty(name = "jms.weather.inQueue")

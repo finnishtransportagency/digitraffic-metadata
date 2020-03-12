@@ -9,13 +9,11 @@ import java.io.IOException;
 
 import org.apache.commons.imaging.ImagingException;
 import org.apache.commons.io.FileUtils;
-import org.hamcrest.core.IsEqual;
-import org.hamcrest.core.IsNot;
-import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.core.io.Resource;
 
 import fi.livi.digitraffic.tie.AbstractDaemonTestWithoutS3;
+import fi.livi.digitraffic.tie.service.ImageManipulationService;
 
 public class ImageManipulationServiceTest extends AbstractDaemonTestWithoutS3 {
 

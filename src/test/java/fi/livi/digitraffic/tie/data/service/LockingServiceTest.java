@@ -25,8 +25,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 
 import fi.livi.digitraffic.tie.AbstractJpaTest;
-import fi.livi.digitraffic.tie.data.dao.LockingDao;
+import fi.livi.digitraffic.tie.dao.LockingDao;
 import fi.livi.digitraffic.tie.helper.DateHelper;
+import fi.livi.digitraffic.tie.service.LockingService;
+import fi.livi.digitraffic.tie.service.LockingServiceInternal;
 
 @Transactional(Transactional.TxType.NOT_SUPPORTED)
 @Import({LockingDao.class, LockingService.class, LockingServiceInternal.class})

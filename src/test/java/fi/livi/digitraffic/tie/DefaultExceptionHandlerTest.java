@@ -1,5 +1,8 @@
 package fi.livi.digitraffic.tie;
 
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_DATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.TMS_DATA_PATH;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -24,11 +27,9 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration;
-import fi.livi.digitraffic.tie.data.controller.DataController;
-import fi.livi.digitraffic.tie.data.dto.tms.TmsRootDataObjectDto;
-import fi.livi.digitraffic.tie.data.service.ObjectNotFoundException;
-import fi.livi.digitraffic.tie.data.service.TmsDataService;
+import fi.livi.digitraffic.tie.dto.v1.tms.TmsRootDataObjectDto;
+import fi.livi.digitraffic.tie.service.ObjectNotFoundException;
+import fi.livi.digitraffic.tie.service.v1.TmsDataService;
 import fi.livi.digitraffic.tie.service.BadRequestException;
 
 @TestPropertySource(properties = {
@@ -48,9 +49,7 @@ public class DefaultExceptionHandlerTest extends AbstractRestWebTest {
     }
 
     private ResultActions performQuery() throws Exception {
-        return mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-            RoadWebApplicationConfiguration.API_DATA_PART_PATH +
-            DataController.TMS_DATA_PATH + "/1"));
+        return mockMvc.perform(get(API_V1_BASE_PATH + API_DATA_PART_PATH + TMS_DATA_PATH + "/1"));
     }
 
     @Test

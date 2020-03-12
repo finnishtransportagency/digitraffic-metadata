@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import fi.livi.digitraffic.tie.data.service.LockingService;
-import fi.livi.digitraffic.tie.data.service.MqttRelayService;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.service.roadstationsensor.RoadStationSensorService;
+import fi.livi.digitraffic.tie.service.LockingService;
+import fi.livi.digitraffic.tie.service.v1.MqttRelayService;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.service.RoadStationSensorService;
 
 @ConditionalOnProperty("mqtt.tms.enabled")
 @ConditionalOnNotWebApplication

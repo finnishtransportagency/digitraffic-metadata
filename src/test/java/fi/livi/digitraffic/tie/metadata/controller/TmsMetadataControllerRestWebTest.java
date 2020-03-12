@@ -1,5 +1,9 @@
 package fi.livi.digitraffic.tie.metadata.controller;
 
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_METADATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.TMS_STATIONS_AVAILABLE_SENSORS_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.TMS_STATIONS_PATH;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isA;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -7,7 +11,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,20 +19,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 
 import fi.livi.digitraffic.tie.AbstractRestWebTest;
-import fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration;
-import fi.livi.digitraffic.tie.metadata.dao.tms.TmsStationRepository;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationSensor;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.model.TmsStation;
-import fi.livi.digitraffic.tie.metadata.service.roadstation.RoadStationService;
-import fi.livi.digitraffic.tie.metadata.service.roadstationsensor.RoadStationSensorService;
+import fi.livi.digitraffic.tie.dao.v1.tms.TmsStationRepository;
+import fi.livi.digitraffic.tie.model.CalculatorDeviceType;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.model.v1.RoadStation;
+import fi.livi.digitraffic.tie.model.v1.RoadStationSensor;
+import fi.livi.digitraffic.tie.model.v1.TmsStation;
+import fi.livi.digitraffic.tie.service.RoadDistrictService;
+import fi.livi.digitraffic.tie.service.RoadStationSensorService;
 
+@Import({ RoadDistrictService.class})
 public class TmsMetadataControllerRestWebTest extends AbstractRestWebTest {
-
-    @Autowired
-    private RoadStationService roadStationService;
 
     @Autowired
     private TmsStationRepository tmsStationRepository;
@@ -37,9 +40,16 @@ public class TmsMetadataControllerRestWebTest extends AbstractRestWebTest {
     @Autowired
     private RoadStationSensorService roadStationSensorService;
 
+    @Autowired
+    protected RoadDistrictService roadDistrictService;
+
     @Before
     public void initData() {
-        roadStationService.obsoleteRoadStationsExcludingLotjuIds(RoadStationType.TMS_STATION, Collections.emptyList());
+        entityManager.createNativeQuery(
+            "UPDATE road_station rs " +
+                "SET obsolete_date = now() " +
+                "WHERE rs.obsolete_date is null " +
+                "  AND rs.road_station_type = '" + RoadStationType.TMS_STATION + "'").executeUpdate();
         TmsStation ts = generateDummyTmsStation();
         tmsStationRepository.save(ts);
 
@@ -57,9 +67,7 @@ public class TmsMetadataControllerRestWebTest extends AbstractRestWebTest {
     @Test
     public void testTmsMetadataRestApi() throws Exception {
 
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-                            RoadWebApplicationConfiguration.API_METADATA_PART_PATH +
-                            MetadataController.TMS_STATIONS_PATH))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_METADATA_PART_PATH + TMS_STATIONS_PATH))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(CONTENT_TYPE))
                 .andExpect(jsonPath("$.type", is("FeatureCollection")))
@@ -82,9 +90,7 @@ public class TmsMetadataControllerRestWebTest extends AbstractRestWebTest {
 
     @Test
     public void testTmsStationSensorsMetadataRestApi() throws Exception {
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-            RoadWebApplicationConfiguration.API_METADATA_PART_PATH +
-            MetadataController.TMS_STATIONS_AVAILABLE_SENSORS_PATH))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_METADATA_PART_PATH + TMS_STATIONS_AVAILABLE_SENSORS_PATH))
             .andExpect(status().isOk())
             .andExpect(content().contentType(CONTENT_TYPE))
             .andExpect(jsonPath("$.roadStationSensors[0].id", isA(Integer.class)))
@@ -94,5 +100,27 @@ public class TmsMetadataControllerRestWebTest extends AbstractRestWebTest {
             .andExpect(jsonPath("$.roadStationSensors[0].vehicleClass").hasJsonPath())
             .andExpect(jsonPath("$.roadStationSensors[0].lane").hasJsonPath())
             .andExpect(jsonPath("$.roadStationSensors[0].direction").hasJsonPath());
+    }
+
+    private TmsStation generateDummyTmsStation() {
+        final RoadStation rs = generateDummyRoadStation(RoadStationType.TMS_STATION);
+
+        final TmsStation ts = new TmsStation();
+        ts.setRoadStation(rs);
+        ts.setLotjuId(rs.getLotjuId());
+        ts.setNaturalId(rs.getLotjuId());
+        ts.setRoadDistrict(roadDistrictService.findByNaturalId(1));
+        ts.setCalculatorDeviceType(CalculatorDeviceType.DSL_5);
+        ts.setName("st120_Pähkinärinne");
+        ts.setDirection1Municipality("Vihti");
+        ts.setDirection1MunicipalityCode(927);
+        ts.setDirection2Municipality("Helsinki");
+        ts.setDirection2MunicipalityCode(91);
+        ts.setWinterFreeFlowSpeed1(70);
+        ts.setWinterFreeFlowSpeed2(70);
+        ts.setSummerFreeFlowSpeed1(80);
+        ts.setSummerFreeFlowSpeed2(80);
+
+        return ts;
     }
 }

@@ -14,29 +14,29 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Component;
 
-import fi.livi.digitraffic.tie.data.dto.SensorValueDto;
+import fi.livi.digitraffic.tie.dto.v1.SensorValueDto;
 import fi.livi.digitraffic.tie.helper.DateHelper;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.BasicData;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.ConfidentialityValueEnum;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.CountryEnum;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.D2LogicalModel;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.Exchange;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.HeaderInformation;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.InformationStatusEnum;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.InternationalIdentifier;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasuredDataPublication;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasuredValue;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasurementSiteRecordVersionedReference;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.MeasurementSiteTableVersionedReference;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.SiteMeasurements;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.SiteMeasurementsIndexMeasuredValue;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.SpeedValue;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TrafficData;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TrafficFlow;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TrafficSpeed;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.VehicleFlowValue;
-import fi.livi.digitraffic.tie.metadata.converter.TmsStationMetadata2Datex2Converter;
-import fi.livi.digitraffic.tie.metadata.model.TmsStation;
+import fi.livi.digitraffic.tie.datex2.BasicData;
+import fi.livi.digitraffic.tie.datex2.ConfidentialityValueEnum;
+import fi.livi.digitraffic.tie.datex2.CountryEnum;
+import fi.livi.digitraffic.tie.datex2.D2LogicalModel;
+import fi.livi.digitraffic.tie.datex2.Exchange;
+import fi.livi.digitraffic.tie.datex2.HeaderInformation;
+import fi.livi.digitraffic.tie.datex2.InformationStatusEnum;
+import fi.livi.digitraffic.tie.datex2.InternationalIdentifier;
+import fi.livi.digitraffic.tie.datex2.MeasuredDataPublication;
+import fi.livi.digitraffic.tie.datex2.MeasuredValue;
+import fi.livi.digitraffic.tie.datex2.MeasurementSiteRecordVersionedReference;
+import fi.livi.digitraffic.tie.datex2.MeasurementSiteTableVersionedReference;
+import fi.livi.digitraffic.tie.datex2.SiteMeasurements;
+import fi.livi.digitraffic.tie.datex2.SiteMeasurementsIndexMeasuredValue;
+import fi.livi.digitraffic.tie.datex2.SpeedValue;
+import fi.livi.digitraffic.tie.datex2.TrafficData;
+import fi.livi.digitraffic.tie.datex2.TrafficFlow;
+import fi.livi.digitraffic.tie.datex2.TrafficSpeed;
+import fi.livi.digitraffic.tie.datex2.VehicleFlowValue;
+import fi.livi.digitraffic.tie.converter.TmsStationMetadata2Datex2Converter;
+import fi.livi.digitraffic.tie.model.v1.TmsStation;
 
 @ConditionalOnWebApplication
 @Component
@@ -56,7 +56,7 @@ public class TmsStationData2Datex2Converter {
 
         final MeasuredDataPublication publication =
             new MeasuredDataPublication()
-                .withPublicationTime(DateHelper.toXMLGregorianCalendarAtUtc(updated))
+                .withPublicationTime(DateHelper.toInstant(updated))
                 .withPublicationCreator(new InternationalIdentifier()
                                             .withCountry(CountryEnum.FI)
                                             .withNationalIdentifier("FI"))
@@ -87,8 +87,8 @@ public class TmsStationData2Datex2Converter {
                 .withMeasurementSiteReference(new MeasurementSiteRecordVersionedReference()
                                                   .withId(TmsStationMetadata2Datex2Converter.getMeasurementSiteReference(station.getNaturalId(), sensorValue.getSensorNaturalId()))
                                                   .withVersion(TmsStationMetadata2Datex2Converter.MEASUREMENT_SITE_RECORD_VERSION))
-                .withMeasurementTimeDefault(DateHelper.toXMLGregorianCalendarAtUtc(sensorValue.getStationLatestMeasuredTime()))
-                .withMeasuredValue(new SiteMeasurementsIndexMeasuredValue()
+                .withMeasurementTimeDefault(DateHelper.toInstant(sensorValue.getStationLatestMeasuredTime()))
+                .withMeasuredValues(new SiteMeasurementsIndexMeasuredValue()
                                        .withIndex(1) // Only one measurement per sensor
                                        .withMeasuredValue(new MeasuredValue().withBasicData(data)));
         } else {

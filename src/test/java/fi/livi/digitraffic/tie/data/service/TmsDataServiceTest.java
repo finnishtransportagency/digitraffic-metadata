@@ -8,23 +8,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Import;
 
 import fi.livi.digitraffic.tie.AbstractServiceTest;
-import fi.livi.digitraffic.tie.data.dto.tms.TmsRootDataObjectDto;
-import fi.livi.digitraffic.tie.data.dto.tms.TmsStationDto;
-import fi.livi.digitraffic.tie.metadata.converter.StationSensorConverter;
-import fi.livi.digitraffic.tie.metadata.converter.TmsStationMetadata2FeatureConverter;
-import fi.livi.digitraffic.tie.metadata.dao.TmsSensorConstantDao;
-import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
-import fi.livi.digitraffic.tie.metadata.model.DataType;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.service.DataStatusService;
-import fi.livi.digitraffic.tie.metadata.service.RoadDistrictService;
-import fi.livi.digitraffic.tie.metadata.service.roadstation.RoadStationService;
-import fi.livi.digitraffic.tie.metadata.service.roadstationsensor.RoadStationSensorService;
-import fi.livi.digitraffic.tie.metadata.service.tms.TmsStationSensorConstantService;
-import fi.livi.digitraffic.tie.metadata.service.tms.TmsStationService;
+import fi.livi.digitraffic.tie.dto.v1.tms.TmsRootDataObjectDto;
+import fi.livi.digitraffic.tie.dto.v1.tms.TmsStationDto;
+import fi.livi.digitraffic.tie.model.DataType;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.service.DataStatusService;
+import fi.livi.digitraffic.tie.service.ObjectNotFoundException;
+import fi.livi.digitraffic.tie.service.v1.TmsDataService;
 
 public class TmsDataServiceTest extends AbstractServiceTest {
 

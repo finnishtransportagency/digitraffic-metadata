@@ -1,5 +1,8 @@
 package fi.livi.digitraffic.tie.data.controller;
 
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_DATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.TMS_DATA_PATH;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -14,11 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 
 import fi.livi.digitraffic.tie.AbstractRestWebTest;
-import fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration;
-import fi.livi.digitraffic.tie.metadata.dao.SensorValueRepository;
-import fi.livi.digitraffic.tie.metadata.model.DataType;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.service.DataStatusService;
+import fi.livi.digitraffic.tie.dao.v1.SensorValueRepository;
+import fi.livi.digitraffic.tie.model.DataType;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.service.DataStatusService;
 
 public class TmsStationDataControllerRestWebTest extends AbstractRestWebTest {
 
@@ -38,11 +40,9 @@ public class TmsStationDataControllerRestWebTest extends AbstractRestWebTest {
 
     @Test
     public void testTmsDataRestApi() throws Exception {
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-                            RoadWebApplicationConfiguration.API_DATA_PART_PATH +
-                            DataController.TMS_DATA_PATH))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_DATA_PART_PATH + TMS_DATA_PATH))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.dataUpdatedTime", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsStations", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsStations[0].id", Matchers.notNullValue()))
@@ -52,11 +52,9 @@ public class TmsStationDataControllerRestWebTest extends AbstractRestWebTest {
 
     @Test
     public void testTmsDataRestApiById() throws Exception {
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-                RoadWebApplicationConfiguration.API_DATA_PART_PATH +
-                DataController.TMS_DATA_PATH + "/23801"))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_DATA_PART_PATH + TMS_DATA_PATH + "/23801"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.dataUpdatedTime", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsStations", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsStations[0].id", Matchers.notNullValue()))

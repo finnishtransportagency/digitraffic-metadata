@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Aineistot - Liikennevirasto</title>
+    <link rel="stylesheet" href="/static/css/livi.css" type="text/css"/>
+    <script type="text/javascript">
+        function setLang(lang) {
+            var x = document.querySelectorAll('[lang]');
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = x[i].getAttribute('lang') == lang ? "block" : "none"
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- Header -->
+<div id="header" class="w3-container w3-theme">
+    <div class="w3-display-container w3-padding-top w3-padding-bottom">
+        <div class="w3-bar">
+            <a href="http://liikennevirasto.fi">
+                <span class="livi-logo"></span>
+            </a>
+            <div class="w3-right w3-padding-12 w3-margin-top">
+                <button class="w3-button w3-white w3-border w3-border-black w3-small" onclick="setLang('fi')">
+                    <span class="w3-hide-small">Suomeksi</span>
+                    <span class="w3-hide-medium w3-hide-large">FI</span>
+                </button>
+                <button class="w3-button w3-white w3-border w3-border-black w3-small" onclick="setLang('sv')">
+                    <span class="w3-hide-small">På svenska</span>
+                    <span class="w3-hide-medium w3-hide-large">SV</span>
+                </button>
+                <button class="w3-button w3-white w3-border w3-border-black w3-small" onclick="setLang('en')">
+                    <span class="w3-hide-small">In English</span>
+                    <span class="w3-hide-medium w3-hide-large">EN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w3-container" lang="fi">
+    <p>ava.liikennevirasto.fi on Liikenneviraston avoimien aineistojen jakelupalvelu.</p>
+    <p>Lisätietoja Liikenneviraston avoimesta datasta: <a href="http://liikennevirasto.fi/avoindata">http://liikennevirasto.fi/avoindata</a></p>
+</div>
+<div class="w3-container" lang="sv" style="display: none;">
+    <p>ava.liikennevirasto.fi är en distributionstjänst för öppna data av Trafikverket.</p>
+    <p>Mer information om Trafikverkets öppna data: <a href="http://www.liikennevirasto.fi/web/sv/oppna-data">http://www.liikennevirasto.fi/web/sv/oppna-data</a></p>
+</div>
+<div class="w3-container" lang="en" style="display: none;">
+    <p>ava.liikennevirasto.fi is an distribution service for open datasets of the Finnish transport agency.</p>
+    <p>More information about open data from the Finnish Transport Agency: <a href="http://www.liikennevirasto.fi/web/en/open-data">http://www.liikennevirasto.fi/web/en/open-data</a></p>
+</div>
+<ul><li><a href="/incidents/"> Parent Directory</a></li>
+    <li><a href="Datex2_2019-11-26-14-35-08-487.xml"> Datex2_2019-11-26-14-35-08-487.xml</a></li>
+</ul>
+<!-- footer -->
+<div id="footer" class="w3-container">
+    <div class="w3-display-container w3-padding-top w3-padding-bottom">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by/4.0/88x31.png" />
+        </a>
+        <p lang="fi">
+            T&auml;m&auml; teos on lisensoitu <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Nime&auml; 4.0 Kansainv&auml;linen -lisenssill&auml;</a>.
+
+        </p>
+        <p lang="en" style="display: none;">
+            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        </p>
+        <p lang="sv" style="display: none;">
+            Detta verk är licensierat under en <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Erkännande 4.0 Internationell Licens</a>.
+        </p>
+    </div>
+</div>
+</body>
+</html>
+
+
+

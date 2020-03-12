@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://datex2.eu/schema/2/2_0 https://raw.githubusercontent.com/finnishtransportagency/metadata/master/schema/DATEXIISchema_2_2_3_with_definitions_FI.xsd"
+                modelBaseVersion="2">
+    <exchange>
+        <supplierIdentification>
+            <country>fi</country>
+            <nationalIdentifier>FTA</nationalIdentifier>
+        </supplierIdentification>
+    </exchange>
+    <payloadPublication lang="fi" xsi:type="SituationPublication">
+        <publicationTime>2019-11-26T14:34:30.678+02:00</publicationTime>
+        <publicationCreator>
+            <country>fi</country>
+            <nationalIdentifier>FTA</nationalIdentifier>
+        </publicationCreator>
+        <situation id="GUID50365428" version="1">
+            <headerInformation>
+                <confidentiality>restrictedToAuthoritiesTrafficOperatorsAndPublishers</confidentiality>
+                <informationStatus>real</informationStatus>
+            </headerInformation>
+            <situationRecord id="GUID5036607201" version="1" xsi:type="Accident">
+                <situationRecordCreationTime>2019-11-26T14:04:46.802+02:00</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-11-26T14:12:05.589+02:00</situationRecordVersionTime>
+                <situationRecordFirstSupplierVersionTime>2019-11-26T14:04:46.802+02:00</situationRecordFirstSupplierVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <severity>low</severity>
+                <validity>
+                    <validityStatus>active</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-11-26T14:04:46.802+02:00</overallStartTime>
+                    </validityTimeSpecification>
+                </validity>
+                <generalPublicComment>
+                    <comment>
+                        <values>
+                            <value lang="fi">Tie 21, Muonio. Liikennetiedote onnettomuudesta.
+
+                                Tie 21 välillä Tornio - Kilpisjärvi, Muonio.
+                                Tarkempi paikka: Välillä Tapojärvi - Kangosjärvi. Muoniosta noin 20 km Kolarin suuntaan.
+
+                                Onnettomuus.
+                                Aiempi onnettomuus.
+                                Raskaan ajoneuvon nostotyö.
+                                Liikenne pysäytetään ajoittain.
+
+                                Ajankohta: 26.11.2019 klo 14:04 alkaen toistaiseksi.
+
+                                Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/
+
+                                Tieliikennekeskus Oulu - ITM Finland
+                                Puh: 0206373331
+                                Faksi: 0206373710
+                                Sähköposti: oulu.liikennekeskus@tmfg.fi
+                            </value>
+                        </values>
+                    </comment>
+                </generalPublicComment>
+                <groupOfLocations xsi:type="Linear">
+                    <alertCLinear xsi:type="AlertCMethod2Linear">
+                        <alertCLocationCountryCode>6</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>17</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>1.11.37</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>unknown</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod2PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>2287</specificLocation>
+                            </alertCLocation>
+                        </alertCMethod2PrimaryPointLocation>
+                        <alertCMethod2SecondaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>2288</specificLocation>
+                            </alertCLocation>
+                        </alertCMethod2SecondaryPointLocation>
+                    </alertCLinear>
+                </groupOfLocations>
+                <accidentType>accident</accidentType>
+                <accidentType>earlierAccident</accidentType>
+            </situationRecord>
+            <situationRecord id="GUID5036607202" version="1" xsi:type="GeneralObstruction">
+                <situationRecordCreationTime>2019-11-26T14:04:46.802+02:00</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-11-26T14:12:05.589+02:00</situationRecordVersionTime>
+                <situationRecordFirstSupplierVersionTime>2019-11-26T14:04:46.802+02:00</situationRecordFirstSupplierVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <severity>low</severity>
+                <validity>
+                    <validityStatus>active</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-11-26T14:04:46.802+02:00</overallStartTime>
+                    </validityTimeSpecification>
+                </validity>
+                <groupOfLocations xsi:type="Point"/>
+                <obstructionType>craneOperating</obstructionType>
+            </situationRecord>
+            <situationRecord id="GUID5036607203" version="1" xsi:type="RoadOrCarriagewayOrLaneManagement">
+                <situationRecordCreationTime>2019-11-26T14:04:46.802+02:00</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-11-26T14:12:05.589+02:00</situationRecordVersionTime>
+                <situationRecordFirstSupplierVersionTime>2019-11-26T14:04:46.802+02:00</situationRecordFirstSupplierVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <severity>low</severity>
+                <validity>
+                    <validityStatus>active</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-11-26T14:04:46.802+02:00</overallStartTime>
+                    </validityTimeSpecification>
+                </validity>
+                <groupOfLocations xsi:type="Point"/>
+                <complianceOption>mandatory</complianceOption>
+                <roadOrCarriagewayOrLaneManagementType>intermittentShortTermClosures</roadOrCarriagewayOrLaneManagementType>
+            </situationRecord>
+        </situation>
+        <situation id="GUID50365429" version="1">
+            <headerInformation>
+                <confidentiality>restrictedToAuthoritiesTrafficOperatorsAndPublishers</confidentiality>
+                <informationStatus>real</informationStatus>
+            </headerInformation>
+            <situationRecord id="GUID5036607301" version="2" xsi:type="Accident">
+                <situationRecordCreationTime>2019-11-26T14:34:30.678+02:00</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-11-26T15:35:04.693+02:00</situationRecordVersionTime>
+                <situationRecordFirstSupplierVersionTime>2019-11-26T14:34:30.678+02:00</situationRecordFirstSupplierVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <severity>low</severity>
+                <validity>
+                    <validityStatus>definedByValidityTimeSpec</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-11-26T14:32:22.925+02:00</overallStartTime>
+                        <overallEndTime>DISORDER2_END_PLACEHOLDER</overallEndTime>
+                    </validityTimeSpecification>
+                </validity>
+                <generalPublicComment>
+                    <comment>
+                        <values>
+                            <value lang="fi">Tie 4, Inari. Ensitiedote liikenneonnettomuudesta.
+
+                                Tie 4 välillä Ivalo - Utsjoki, Inari.
+                                Tarkempi paikka: Välillä Ukonjärvi - Karhunpesäkivi.
+
+
+                                Ajankohta: 26.11.2019 klo 14:32.
+
+                                Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/
+
+                                Tieliikennekeskus Oulu - ITM Finland
+                                Puh: 0206373331
+                                Faksi: 0206373710
+                                Sähköposti: oulu.liikennekeskus@tmfg.fi
+                            </value>
+                        </values>
+                    </comment>
+                </generalPublicComment>
+                <groupOfLocations xsi:type="Linear">
+                    <alertCLinear xsi:type="AlertCMethod2Linear">
+                        <alertCLocationCountryCode>6</alertCLocationCountryCode>
+                        <alertCLocationTableNumber>17</alertCLocationTableNumber>
+                        <alertCLocationTableVersion>1.11.37</alertCLocationTableVersion>
+                        <alertCDirection>
+                            <alertCDirectionCoded>unknown</alertCDirectionCoded>
+                        </alertCDirection>
+                        <alertCMethod2PrimaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>1286</specificLocation>
+                            </alertCLocation>
+                        </alertCMethod2PrimaryPointLocation>
+                        <alertCMethod2SecondaryPointLocation>
+                            <alertCLocation>
+                                <specificLocation>1287</specificLocation>
+                            </alertCLocation>
+                        </alertCMethod2SecondaryPointLocation>
+                    </alertCLinear>
+                </groupOfLocations>
+                <accidentType>other</accidentType>
+            </situationRecord>
+            <situationRecord id="GUID5036607302" version="2" xsi:type="GeneralObstruction">
+                <situationRecordCreationTime>2019-11-26T14:34:30.678+02:00</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-11-26T15:35:04.693+02:00</situationRecordVersionTime>
+                <situationRecordFirstSupplierVersionTime>2019-11-26T14:34:30.678+02:00</situationRecordFirstSupplierVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <severity>low</severity>
+                <validity>
+                    <validityStatus>definedByValidityTimeSpec</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-11-26T14:32:22.925+02:00</overallStartTime>
+                        <overallEndTime>DISORDER2_END_PLACEHOLDER</overallEndTime>
+                    </validityTimeSpecification>
+                </validity>
+                <groupOfLocations xsi:type="Point"/>
+                <obstructionType>unprotectedAccidentArea</obstructionType>
+            </situationRecord>
+        </situation>
+    </payloadPublication>
+</d2LogicalModel>

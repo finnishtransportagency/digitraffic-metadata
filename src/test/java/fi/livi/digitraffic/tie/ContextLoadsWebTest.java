@@ -6,7 +6,7 @@ import org.springframework.test.context.TestPropertySource;
 
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 @TestPropertySource(properties = { "spring.localstack.enabled=false" })
-public class ContextLoadsWebTest extends AbstractTest {
+public class ContextLoadsWebTest extends AbstractSpringJUnitTest {
     @Test
     public void contextLoads() {
     }

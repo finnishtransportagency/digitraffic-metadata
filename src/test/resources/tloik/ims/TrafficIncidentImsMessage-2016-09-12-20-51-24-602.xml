@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imsMessage xmlns="https://raw.githubusercontent.com/tmfg/metadata/master/schema/ImsXmlMessage_1_2_0.xsd">
+    <messageId>50003469</messageId>
+    <date>2019-12-13T14:43:18.388+02:00</date>
+    <messageSubject>LIIKENNETIEDOTE 13.12.2019 14:43:18</messageSubject>
+    <messageText></messageText>
+    <shortMessageText></shortMessageText>
+    <messageContent>
+        <d2Message><![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<d2LogicalModel xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datex2.eu/schema/2/2_0 https://raw.githubusercontent.com/finnishtransportagency/metadata/master/schema/DATEXIISchema_2_2_3_with_definitions_FI.xsd" modelBaseVersion="2">
+  <exchange>
+    <supplierIdentification>
+      <country>fi</country>
+      <nationalIdentifier>FTA</nationalIdentifier>
+    </supplierIdentification>
+  </exchange>
+  <payloadPublication lang="fi" xsi:type="SituationPublication">
+    <publicationTime>2016-09-12T20:51:00.587+03:00</publicationTime>
+    <publicationCreator>
+      <country>fi</country>
+      <nationalIdentifier>FTA</nationalIdentifier>
+    </publicationCreator>
+    <situation id="GUID50005166" version="1">
+      <headerInformation>
+        <confidentiality>restrictedToAuthoritiesTrafficOperatorsAndPublishers</confidentiality>
+        <informationStatus>real</informationStatus>
+      </headerInformation>
+      <situationRecord id="GUID5000526801" version="1" xsi:type="Accident">
+        <situationRecordCreationTime>2016-09-12T20:51:00.587+03:00</situationRecordCreationTime>
+        <situationRecordVersionTime>2016-09-12T20:51:00.587+03:00</situationRecordVersionTime>
+        <situationRecordFirstSupplierVersionTime>2016-09-12T20:51:00.587+03:00</situationRecordFirstSupplierVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2016-09-12T20:51:00.587+03:00</overallStartTime>
+            <overallEndTime>2016-09-12T21:21:19.466+03:00</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="fi">Tie 25, Raasepori. Ensitiedote liikenneonnettomuudesta.
+
+Tie 25 välillä Tammisaari - Karjaa, Raasepori.
+Tarkempi paikka: Paikasta Raasepori 1,9 km, suuntaan Karjaan läntinen sisääntulo.
+
+
+Ajankohta: 12.09.2016 klo 20:51.
+
+Liikenne- ja kelitiedot verkossa: http://liikennetilanne.liikennevirasto.fi/
+
+Liikenneviraston tieliikennekeskus Helsinki
+Puh: 0206373328
+Faksi: 0206373713
+Sähköposti: helsinki.liikennekeskus@liikennevirasto.fi</value>
+            </values>
+          </comment>
+        </generalPublicComment>
+        <groupOfLocations xsi:type="Linear">
+          <alertCLinear xsi:type="AlertCMethod4Linear">
+            <alertCLocationCountryCode>6</alertCLocationCountryCode>
+            <alertCLocationTableNumber>17</alertCLocationTableNumber>
+            <alertCLocationTableVersion>1.11.01</alertCLocationTableVersion>
+            <alertCDirection>
+              <alertCDirectionCoded>unknown</alertCDirectionCoded>
+            </alertCDirection>
+            <alertCMethod4PrimaryPointLocation>
+              <alertCLocation>
+                <specificLocation>2512</specificLocation>
+              </alertCLocation>
+              <offsetDistance>
+                <offsetDistance>1895</offsetDistance>
+              </offsetDistance>
+            </alertCMethod4PrimaryPointLocation>
+            <alertCMethod4SecondaryPointLocation>
+              <alertCLocation>
+                <specificLocation>2513</specificLocation>
+              </alertCLocation>
+              <offsetDistance>
+                <offsetDistance>4130</offsetDistance>
+              </offsetDistance>
+            </alertCMethod4SecondaryPointLocation>
+          </alertCLinear>
+        </groupOfLocations>
+        <accidentType>other</accidentType>
+      </situationRecord>
+      <situationRecord id="GUID5000526802" version="1" xsi:type="GeneralObstruction">
+        <situationRecordCreationTime>2016-09-12T20:51:00.587+03:00</situationRecordCreationTime>
+        <situationRecordVersionTime>2016-09-12T20:51:00.587+03:00</situationRecordVersionTime>
+        <situationRecordFirstSupplierVersionTime>2016-09-12T20:51:00.587+03:00</situationRecordFirstSupplierVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2016-09-12T20:51:00.587+03:00</overallStartTime>
+            <overallEndTime>2016-09-12T21:21:19.466+03:00</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <groupOfLocations xsi:type="Point"/>
+        <obstructionType>unprotectedAccidentArea</obstructionType>
+      </situationRecord>
+    </situation>
+  </payloadPublication>
+</d2LogicalModel>
+                ]]></d2Message>
+        <jMessage><![CDATA[
+{
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            24.77474,
+            62.50221
+        ]
+    },
+    "properties": {
+        "situationId": "GUID50005166",
+        "version": 1,
+        "releaseTime": "2016-09-12T20:51:00.587+03:00",
+        "locationToDisplay": {
+            "e": 331529.0,
+            "n": 6805963.0
+        },
+        "announcements": [
+            {
+                "language": "fi",
+                "title": "Tie 25, Raasepori. Ensitiedote liikenneonnettomuudesta.",
+                "location": {
+                    "countryCode": 6,
+                    "locationTableNumber": 17,
+                    "locationTableVersion": "1.11.37",
+                    "description": "Tie 25 välillä Tammisaari - Karjaa, Raasepori.\nTarkempi paikka: Paikasta Raasepori 1,9 km, suuntaan Karjaan läntinen sisääntulo."
+                },
+                "locationDetails": {
+                    "roadAddressLocation": {
+                        "primaryPoint": {
+                            "municipality": "Tammisaari",
+                            "province": "Uusimaa",
+                            "country": "Suomi",
+                            "roadAddress": {
+                                "road": 130,
+                                "roadSection": 24,
+                                "distance": 3927
+                            },
+                            "alertCLocation": {
+                                "locationCode": 37128,
+                                "name": "Karjaa",
+                                "distance": 2184
+                            }
+                        },
+                        "secondaryPoint": {
+                            "municipality": "Tammisaari",
+                            "province": "Uusimaa",
+                            "country": "Suomi",
+                            "roadAddress": {
+                                "road": 130,
+                                "roadSection": 23,
+                                "distance": 5921
+                            },
+                            "alertCLocation": {
+                                "locationCode": 37126,
+                                "name": "Karjaan läntinen sisääntulo.",
+                                "distance": 5264
+                            }
+                        },
+                        "direction": "unknown"
+                    }
+                },
+                "features": [
+                    "Huono ajokeli"
+                ],
+                "comment": "TESTI TESTI TESTI\nML",
+                "timeAndDuration": {
+                    "startTime": "2016-09-12T20:51:00.587+03:00",
+                    "estimatedDuration": {
+                        "minimum": "PT6H",
+                        "informal": "Yli 6 tuntia"
+                    }
+                },
+                "additionalInformation": "Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/",
+                "sender": "Liikenneviraston tieliikennekeskus Helsinki"
+            }
+        ],
+        "contact": {
+            "phone": "0206373328",
+            "fax": "0206373713",
+            "email": "helsinki.liikennekeskus@liikennevirasto.fi"
+        }
+    }
+}
+]]></jMessage>
+    </messageContent>
+</imsMessage>

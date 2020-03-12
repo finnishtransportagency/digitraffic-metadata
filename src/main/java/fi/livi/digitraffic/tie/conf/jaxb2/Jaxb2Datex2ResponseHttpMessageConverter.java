@@ -1,6 +1,7 @@
 package fi.livi.digitraffic.tie.conf.jaxb2;
 
 import java.util.Set;
+
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 
@@ -10,17 +11,16 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
 
 import com.google.common.collect.Sets;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.RoadworksDatex2Response;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TmsDataDatex2Response;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TmsStationDatex2Response;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.TrafficDisordersDatex2Response;
-import fi.livi.digitraffic.tie.lotju.xsd.datex2.WeightRestrictionsDatex2Response;
+
+import fi.livi.digitraffic.tie.datex2.response.RoadworksDatex2Response;
+import fi.livi.digitraffic.tie.datex2.response.TrafficDisordersDatex2Response;
+import fi.livi.digitraffic.tie.datex2.response.WeightRestrictionsDatex2Response;
 
 public class Jaxb2Datex2ResponseHttpMessageConverter extends Jaxb2RootElementHttpMessageConverter {
     private static final Logger log = LoggerFactory.getLogger(Jaxb2Datex2ResponseHttpMessageConverter.class);
 
-    private static final Set<Class<?>> SUPPORTED = Sets.newHashSet(TrafficDisordersDatex2Response.class, TmsStationDatex2Response.class,
-        TmsDataDatex2Response.class, RoadworksDatex2Response.class, WeightRestrictionsDatex2Response.class);
+    private static final Set<Class<?>> SUPPORTED = Sets.newHashSet(
+        TrafficDisordersDatex2Response.class, RoadworksDatex2Response.class, WeightRestrictionsDatex2Response.class);
 
     private final String schemaDomainUrlAndPath;
 

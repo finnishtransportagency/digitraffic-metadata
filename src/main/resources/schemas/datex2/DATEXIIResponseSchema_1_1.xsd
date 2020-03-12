@@ -58,19 +58,4 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
-    <xsd:element name="TmsStationDatex2Response">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element maxOccurs="1" minOccurs="1" name="d2LogicalModel" type="D2LogicalModel:D2LogicalModel"/>
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:element name="TmsDataDatex2Response">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element maxOccurs="1" minOccurs="1" name="d2LogicalModel" type="D2LogicalModel:D2LogicalModel"/>
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
 </xsd:schema>

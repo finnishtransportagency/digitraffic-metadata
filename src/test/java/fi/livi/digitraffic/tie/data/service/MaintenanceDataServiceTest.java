@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.annotation.Rollback;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import fi.livi.digitraffic.tie.data.model.maintenance.harja.WorkMachineTrackingDto;
+import fi.livi.digitraffic.tie.model.v1.maintenance.harja.WorkMachineTrackingDto;
 
 public class MaintenanceDataServiceTest extends AbstractWorkmachineDataServiceTest {
     private static final Logger log = LoggerFactory.getLogger(MaintenanceDataServiceTest.class);

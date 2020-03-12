@@ -1,0 +1,276 @@
+{
+    "otsikko" : {
+        "lahettaja" : {
+            "jarjestelma" : "Järjestelmä Oy",
+            "organisaatio" : {
+                "nimi" : "Yritys Oy",
+                "ytunnus" : "1765515-0"
+            }
+        },
+        "viestintunniste" : {
+            "id" : 17012148
+        },
+        "lahetysaika" : "2020-03-11T01:54:23Z"
+    },
+    "reittitoteumat" : [ {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 33037246
+                },
+                "alkanut" : "2020-03-11T01:41:40Z",
+                "paattynyt" : "2020-03-11T01:43:33Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "1765515-0"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1370,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 2.153
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:41:40Z",
+                    "koordinaatit" : {
+                        "x" : 536512.9939930398,
+                        "y" : 7118902.95609855
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:43:33Z",
+                    "koordinaatit" : {
+                        "x" : 537264.9009999945,
+                        "y" : 7117087.9100003205
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 2.153
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 33037247
+                },
+                "alkanut" : "2020-03-11T01:43:33Z",
+                "paattynyt" : "2020-03-11T01:44:38Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "1765515-0"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1370,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.918
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:43:33Z",
+                    "koordinaatit" : {
+                        "x" : 537264.9009999945,
+                        "y" : 7117087.9100003205
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:44:38Z",
+                    "koordinaatit" : {
+                        "x" : 537192.1758381733,
+                        "y" : 7116172.319148083
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.918
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 33037248
+                },
+                "alkanut" : "2020-03-11T01:45:19Z",
+                "paattynyt" : "2020-03-11T01:45:20Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "1765515-0"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1370,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.016
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:45:19Z",
+                    "koordinaatit" : {
+                        "x" : 569060.9919278827,
+                        "y" : 7111867.926677886
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:45:20Z",
+                    "koordinaatit" : {
+                        "x" : 569073.5174174606,
+                        "y" : 7111858.242971653
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.016
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 33037249
+                },
+                "alkanut" : "2020-03-11T01:45:20Z",
+                "paattynyt" : "2020-03-11T01:45:58Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "1765515-0"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1370,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.395
+                        }
+                    }
+                }, {
+                    "tehtava" : {
+                        "id" : 1366,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.395
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:45:20Z",
+                    "koordinaatit" : {
+                        "x" : 569073.5174174606,
+                        "y" : 7111858.242971653
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370
+                        }
+                    }, {
+                        "tehtava" : {
+                            "id" : 1366
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-11T01:45:58Z",
+                    "koordinaatit" : {
+                        "x" : 569389.8609999911,
+                        "y" : 7111619.447000309
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1370,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.395
+                            }
+                        }
+                    }, {
+                        "tehtava" : {
+                            "id" : 1366,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.395
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    } ]
+}

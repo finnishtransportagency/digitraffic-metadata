@@ -7,11 +7,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KameraTyyppi;
-import fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.AjoneuvoluokkaTyyppi;
-import fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.LaiteTyyppi;
-import fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.LamAsemaTyyppi;
-import fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.TiesaaAsemaTyyppi;
+import fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.TiesaaAsemaTyyppi;
+import fi.livi.digitraffic.tie.external.lotju.metadata.lam.AjoneuvoluokkaTyyppi;
+import fi.livi.digitraffic.tie.external.lotju.metadata.lam.LaiteTyyppi;
+import fi.livi.digitraffic.tie.external.lotju.metadata.lam.LamAsemaTyyppi;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KameraTyyppi;
+import fi.livi.digitraffic.tie.model.CalculatorDeviceType;
+import fi.livi.digitraffic.tie.model.CollectionStatus;
+import fi.livi.digitraffic.tie.model.RoadStationState;
+import fi.livi.digitraffic.tie.model.TmsStationType;
+import fi.livi.digitraffic.tie.model.VehicleClass;
+import fi.livi.digitraffic.tie.model.WeatherStationType;
+import fi.livi.digitraffic.tie.model.v1.camera.CameraType;
 
 @RunWith(JUnit4.class)
 public class TypesTest {
@@ -25,21 +32,21 @@ public class TypesTest {
 
     @Test
     public void testAllCameraStationCollectionStates() {
-        for (final fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KeruunTILA kt : fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KeruunTILA.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KeruunTILA kt : fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KeruunTILA.values()) {
             assertNotNull(CollectionStatus.convertKeruunTila(kt));
         }
     }
 
     @Test
     public void testAllWeatherStationCollectionStates() {
-        for (final fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.KeruunTILA kt : fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.KeruunTILA.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.KeruunTILA kt : fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.KeruunTILA.values()) {
             assertNotNull(CollectionStatus.convertKeruunTila(kt));
         }
     }
 
     @Test
     public void testAllTmsStationCollectionStates() {
-        for (final fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.KeruunTILA kt : fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.KeruunTILA.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.lam.KeruunTILA kt : fi.livi.digitraffic.tie.external.lotju.metadata.lam.KeruunTILA.values()) {
             assertNotNull(CollectionStatus.convertKeruunTila(kt));
         }
     }
@@ -53,21 +60,21 @@ public class TypesTest {
 
     @Test
     public void testAllCameraRoadStationStates() {
-        for (final fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.TilaTyyppi tt : fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.TilaTyyppi.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.kamera.TilaTyyppi tt : fi.livi.digitraffic.tie.external.lotju.metadata.kamera.TilaTyyppi.values()) {
             assertNotNull(RoadStationState.fromTilaTyyppi(tt));
         }
     }
 
     @Test
     public void testAllTmsRoadStationStates() {
-        for (final fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.TilaTyyppi tt : fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.TilaTyyppi.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.lam.TilaTyyppi tt : fi.livi.digitraffic.tie.external.lotju.metadata.lam.TilaTyyppi.values()) {
             assertNotNull(RoadStationState.fromTilaTyyppi(tt));
         }
     }
 
     @Test
     public void testAllWeatherRoadStationStates() {
-        for (final fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.TilaTyyppi tt : fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.TilaTyyppi.values()) {
+        for (final fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.TilaTyyppi tt : fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.TilaTyyppi.values()) {
             assertNotNull(RoadStationState.fromTilaTyyppi(tt));
         }
     }

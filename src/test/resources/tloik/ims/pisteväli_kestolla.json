@@ -1,0 +1,87 @@
+{
+  "type": "Feature",
+  "properties": {
+    "situationId": "GUID50001253",
+    "version": 1,
+    "releaseTime": "2020-01-31T09:13:45.299Z",
+    "locationToDisplay": {
+      "e": 480827.0,
+      "n": 6719506.0
+    },
+    "announcements": [
+      {
+        "language": "fi",
+        "title": "Tie 3532, Pyhtää. Liikennetiedote. ",
+        "location": {
+          "countryCode": 6,
+          "locationTableNumber": 17,
+          "locationTableVersion": "1.11.37",
+          "description": "Tie 3532 välillä Hirvivuolle - Vastila, Pyhtää.\nTarkempi paikka: Välillä Hirvikoski - Pöllönmäki."
+        },
+        "locationDetails": {
+          "roadAddressLocation": {
+            "primaryPoint": {
+              "municipality": "Pyhtää",
+              "province": "Kymenlaakso",
+              "country": "Suomi",
+              "roadAddress": {
+                "road": 3532,
+                "roadSection": 1,
+                "distance": 5834
+              },
+              "alertCLocation": {
+                "locationCode": 5785,
+                "name": "Hirvikoski"
+              }
+            },
+            "secondaryPoint": {
+              "municipality": "Pyhtää",
+              "province": "Kymenlaakso",
+              "country": "Suomi",
+              "roadAddress": {
+                "road": 3532,
+                "roadSection": 1,
+                "distance": 0
+              },
+              "alertCLocation": {
+                "locationCode": 4717,
+                "name": "Pöllönmäki"
+              }
+            },
+            "direction": "unknown"
+          }
+        },
+        "features": [
+          "Huono ajokeli"
+        ],
+        "timeAndDuration": {
+          "startTime": "2020-01-31T09:13:45.299Z",
+          "estimatedDuration": {
+            "minimum": "PT6H",
+            "informal": "Yli 6 tuntia"
+          }
+        },
+        "additionalInformation": "Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/",
+        "sender": "Liikenneviraston tieliikennekeskus Tampere"
+      }
+    ],
+    "contact": {
+      "phone": "0206373330",
+      "fax": "0206373712",
+      "email": "tampere.liikennekeskus@liikennevirasto.fi"
+    }
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        26.649781849723624,
+        60.610954361206154
+      ],
+      [
+        26.70083910669409,
+        60.57115977457859
+      ]
+    ]
+  }
+}

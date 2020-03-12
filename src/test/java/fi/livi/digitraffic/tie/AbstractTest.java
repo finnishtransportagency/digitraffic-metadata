@@ -1,6 +1,6 @@
 package fi.livi.digitraffic.tie;
 
-import static fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.JulkisuusTaso.JULKINEN;
+import static fi.livi.digitraffic.tie.external.lotju.metadata.kamera.JulkisuusTaso.JULKINEN;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,45 +17,37 @@ import java.util.stream.IntStream;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.junit.Assert;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.ResourcePatternUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.EsiasentoVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.Julkisuus;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.JulkisuusTaso;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.JulkisuusVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KameraVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KeruunTILA;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.TieosoiteVO;
 import fi.livi.digitraffic.tie.helper.DateHelper;
-import fi.livi.digitraffic.tie.metadata.model.CalculatorDeviceType;
-import fi.livi.digitraffic.tie.metadata.model.CameraPreset;
-import fi.livi.digitraffic.tie.metadata.model.CameraType;
-import fi.livi.digitraffic.tie.metadata.model.CollectionStatus;
-import fi.livi.digitraffic.tie.metadata.model.RoadAddress;
-import fi.livi.digitraffic.tie.metadata.model.RoadStation;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.model.TmsStation;
-import fi.livi.digitraffic.tie.metadata.service.RoadDistrictService;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2016._10._06.EsiasentoVO;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.Julkisuus;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.JulkisuusTaso;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.JulkisuusVO;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KameraVO;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KeruunTILA;
-import fi.livi.ws.wsdl.lotju.metatiedot._2015._09._29.TieosoiteVO;
+import fi.livi.digitraffic.tie.model.CollectionStatus;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.model.v1.RoadAddress;
+import fi.livi.digitraffic.tie.model.v1.RoadStation;
+import fi.livi.digitraffic.tie.model.v1.camera.CameraPreset;
+import fi.livi.digitraffic.tie.model.v1.camera.CameraType;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = RoadApplication.class,
-                webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(properties = { "config.test=true", "logging.level.org.springframework.test.context.transaction.TransactionContext=WARN" })
-@Transactional
+@TestPropertySource(properties = {
+    "logging.level.org.springframework.test.context.transaction.TransactionContext=WARN"
+})
 public abstract class AbstractTest {
+
     @Autowired
     protected ResourceLoader resourceLoader;
 
@@ -64,9 +56,6 @@ public abstract class AbstractTest {
 
     @PersistenceContext
     protected EntityManager entityManager;
-
-    @Autowired
-    protected RoadDistrictService roadDistrictService;
 
     protected static final int MIN_LOTJU_ID = 10000;
     protected static final int MAX_LOTJU_ID = 99999;
@@ -122,28 +111,6 @@ public abstract class AbstractTest {
         cp.setCameraLotjuId(cp.getLotjuId());
 
         return cp;
-    }
-
-    protected TmsStation generateDummyTmsStation() {
-        final RoadStation rs = generateDummyRoadStation(RoadStationType.TMS_STATION);
-
-        final TmsStation ts = new TmsStation();
-        ts.setRoadStation(rs);
-        ts.setLotjuId(rs.getLotjuId());
-        ts.setNaturalId(rs.getLotjuId());
-        ts.setRoadDistrict(roadDistrictService.findByNaturalId(1));
-        ts.setCalculatorDeviceType(CalculatorDeviceType.DSL_5);
-        ts.setName("st120_Pähkinärinne");
-        ts.setDirection1Municipality("Vihti");
-        ts.setDirection1MunicipalityCode(927);
-        ts.setDirection2Municipality("Helsinki");
-        ts.setDirection2MunicipalityCode(91);
-        ts.setWinterFreeFlowSpeed1(70);
-        ts.setWinterFreeFlowSpeed2(70);
-        ts.setSummerFreeFlowSpeed1(80);
-        ts.setSummerFreeFlowSpeed2(80);
-
-        return ts;
     }
 
     public static RoadStation generateDummyRoadStation(final RoadStationType roadStationType) {

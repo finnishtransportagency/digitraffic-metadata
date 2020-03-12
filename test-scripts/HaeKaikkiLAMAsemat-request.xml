@@ -1,6 +1,0 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://ws.livi.fi/wsdl/LOTJU/LAMmetatiedot/2014/03/06">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ns:HaeKaikkiLAMAsemat/>
-   </soapenv:Body>
-</soapenv:Envelope>

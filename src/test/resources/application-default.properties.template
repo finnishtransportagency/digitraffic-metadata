@@ -14,9 +14,9 @@ mqtt.server.username=
 mqtt.server.password=
 
 # Lotju SOAP APIs
-metadata.server.address.tms=http://localhost:#{T(fi.livi.digitraffic.tie.metadata.service.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/LAMMetatiedot/v5
-metadata.server.address.camera=http://localhost:#{T(fi.livi.digitraffic.tie.metadata.service.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/KameraPerustiedot/v7
-metadata.server.address.weather=http://localhost:#{T(fi.livi.digitraffic.tie.metadata.service.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/TiesaaPerustiedot/v4
+metadata.server.address.tms=http://localhost:#{T(fi.livi.digitraffic.tie.service.v1.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/LAMMetatiedot/v5
+metadata.server.address.camera=http://localhost:#{T(fi.livi.digitraffic.tie.service.v1.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/KameraPerustiedot/v7
+metadata.server.address.weather=http://localhost:#{T(fi.livi.digitraffic.tie.service.v1.lotju.LotjuServiceEndpointMock).RANDOM_PORT}/LOTJU/TiesaaPerustiedot/v4
 
 # Job schedules in ms or by cron in UTC
 # Cron: http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html
@@ -46,17 +46,6 @@ dt.job.ForecastSectionCoordinatesMetadataUpdateJob.schedule =  0 0 3 * * ?
 # Weathercam url for public fetch. Append camera preset + .jpg to get image url
 weathercam.baseUrl=http://weathercam-test.digitraffic.fi/
 
-# SFTP settings for camera image upload
-camera-image-uploader.sftp.host = localhost
-camera-image-uploader.sftp.port = 2232
-camera-image-uploader.sftp.user = digitraffic
-camera-image-uploader.sftp.knownHostsPath = file:src/test/resources/sftp/client_known_hosts
-camera-image-uploader.sftp.privateKeyPath = file:src/test/resources/sftp/client_id_rsa
-camera-image-uploader.sftp.privateKeyPassphrase = digitraffic
-camera-image-uploader.sftp.uploadFolder = weathercam-test.digitraffic.fi
-camera-image-uploader.sftp.poolSize = 5
-camera-image-uploader.sftp.port=61234
-camera-image-uploader.sftp.sessionWaitTimeout = 5000
 # Binary Kuva.proto url. Port 62859 is hard coded in AbstractSftpTest
 camera-image-download.url = http://localhost:62859/kamerakuva/
 
@@ -68,15 +57,15 @@ dt.amazon.s3.weathercam.userSecretKey = dummy
 
 # JMS settings
 
-# Sonja
-jms.connectionUrls=
+# Sonja - disable by commenting url out
+#jms.connectionUrls=
 jms.userId=
 jms.password=
 
-# Sonja for datex2
-jms.datex2.connectionUrls=
-jms.datex2.userId=
-jms.datex2.password=
+# Sonja test - disable by commenting url out
+#jms.test.connectionUrls=
+jms.test.userId=
+jms.test.password=
 
 # JMS topics
 # Comment out to disable (Only daemon should have these enabled)

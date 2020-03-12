@@ -1,14 +1,10 @@
 package fi.livi.digitraffic.tie;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 
 import javax.transaction.Transactional;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration;
@@ -30,15 +26,10 @@ import fi.livi.digitraffic.tie.conf.RoadApplicationConfiguration;
 @Import({RoadApplicationConfiguration.class, JsonbAutoConfiguration.class})
 @RunWith(SpringRunner.class)
 @Transactional
-public abstract class AbstractJpaTest {
+public abstract class AbstractJpaTest extends AbstractTest {
     @Autowired
     protected ResourceLoader resourceLoader;
 
-    protected String readResourceContent(final String resourcePattern) throws IOException {
-        final Resource datex2Resource = loadResource(resourcePattern);
-
-        return FileUtils.readFileToString(datex2Resource.getFile(), UTF_8);
-    }
 
     protected Resource loadResource(final String pattern) {
         return resourceLoader.getResource(pattern);

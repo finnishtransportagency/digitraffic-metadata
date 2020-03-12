@@ -22,7 +22,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"fi.livi.digitraffic.tie.metadata.dao", "fi.livi.digitraffic.tie.data.dao"},
+@EnableJpaRepositories(basePackages =
+    {"fi.livi.digitraffic.tie.metadata.dao", "fi.livi.digitraffic.tie.data.dao", "fi.livi.digitraffic.tie.dao"},
                        enableDefaultTransactions = false)
 @EnableTransactionManagement
 @EnableRetry

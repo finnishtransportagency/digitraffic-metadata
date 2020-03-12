@@ -6,7 +6,7 @@
 
     <groupId>fi.fta.digitraffic</groupId>
     <artifactId>road</artifactId>
-    <version>2.20.0</version>
+    <version>2.24.1</version>
     <packaging>jar</packaging>
 
     <name>dt-road</name>
@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version>
+        <version>2.2.3.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -28,7 +28,7 @@
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
-        <jackson.dataformat.version>2.9.9</jackson.dataformat.version>
+        <jackson.dataformat.version>2.10.1</jackson.dataformat.version>
     </properties>
 
     <repositories>
@@ -216,7 +216,7 @@
             <!-- From jcenter-snapshots repository -->
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0-20190527.223435-24</version>
+            <version>3.0.0-20200106.122158-51</version>
         </dependency>
 
         <!-- https://github.com/springfox/springfox/issues/2265 -->
@@ -289,17 +289,23 @@
             <version>0.1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-spatial</artifactId>
+            <version>5.4.10.Final</version>
+        </dependency>
+
         <!-- Logging in JSON format for ELK-stack -->
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-            <version>6.2</version>
+            <version>6.3</version>
         </dependency>
 
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-s3</artifactId>
-            <version>1.11.674</version>
+            <version>1.11.688</version>
         </dependency>
 
         <dependency>
@@ -400,17 +406,14 @@
                 <configuration>
                     <excludes>
                         <exclude>fi/livi/digitraffic/tie/RoadApplication.java</exclude>
-                        <exclude>fi/livi/digitraffic/tie/domain/**/*.java</exclude>
-                        <exclude>fi/livi/digitraffic/tie/metadata/quartz/**/*.java</exclude>
+                        <exclude>fi/livi/digitraffic/tie/scheduler/*.java</exclude>
                         <exclude>fi/livi/digitraffic/tie/model/**/*.java</exclude>
                         <exclude>fi/livi/digitraffic/tie/conf/**/*.java</exclude>
                         <exclude>fi/livi/digitraffic/tie/aop/**/*.java</exclude>
-                        <exclude>fi/livi/digitraffic/tie/data/websocket/**/*.java</exclude>
                         <exclude>fi/ely/lotju/**/proto/*.java</exclude>
                         <exclude>**/dto/**/*.java</exclude>
 
-                        <exclude>fi/livi/ws/wsdl/lotju/**/*.class</exclude>
-                        <exclude>fi/livi/digitraffic/tie/lotju/xsd/**/*.class</exclude>
+                        <exclude>fi/livi/digitraffic/tie/external/**/*.class</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -481,22 +484,33 @@
                                 <extraargs>
                                     <extraarg>-xjc-npa</extraarg>
                                     <extraarg>-xjc-mark-generated</extraarg>
+                                    <!-- Fix: A class/interface with the same name TieOsoiteV0 is already in use. -->
+                                    <extraarg>-autoNameResolution</extraarg>
                                 </extraargs>
                             </defaultOptions>
                             <wsdlOptions>
                                 <!-- Tiesääasemien staattiset tiedot / The static information of the road weather stations -->
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/schemas/LOTJU/wsdl/v4/TiesaaPerustiedot.wsdl</wsdl>
+                                    <wsdl>${basedir}/src/main/resources/schemas/lotju/metadata/v4/TiesaaPerustiedot.wsdl</wsdl>
+                                    <packagenames>
+                                        <packagename>fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa</packagename>
+                                    </packagenames>
                                 </wsdlOption>
 
                                 <!-- LAM-pisteiden staattiset tiedot / The static information of the Traffic Flow Measurement System (TMS) -->
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/schemas/LOTJU/wsdl/v5/LAMMetatiedot.wsdl</wsdl>
+                                    <wsdl>${basedir}/src/main/resources/schemas/lotju/metadata/v5/LAMMetatiedot.wsdl</wsdl>
+                                    <packagenames>
+                                        <packagename>fi.livi.digitraffic.tie.external.lotju.metadata.lam</packagename>
+                                    </packagenames>
                                 </wsdlOption>
 
                                 <!-- Kelikameroiden staattiset tiedot / The static information of the weather cameras -->
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/schemas/LOTJU/wsdl/v7/KameraPerustiedot.wsdl</wsdl>
+                                    <wsdl>${basedir}/src/main/resources/schemas/lotju/metadata/v7/KameraPerustiedot.wsdl</wsdl>
+                                    <packagenames>
+                                        <packagename>fi.livi.digitraffic.tie.external.lotju.metadata.kamera</packagename>
+                                    </packagenames>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -528,11 +542,49 @@
                             <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
                             <xsdOptions>
                                 <xsdOption>
-                                    <xsd>${basedir}/src/main/resources/schemas/datex2/DATEXIIResponseSchema_1_1.xsd</xsd>
-                                    <packagename>fi.livi.digitraffic.tie.lotju.xsd.datex2</packagename>
+                                    <extension>true</extension>
+                                    <bindingFiles>
+                                        <bindingFile>${basedir}/src/main/resources/schemas/datex2/DATEXIIBinding.xjb</bindingFile>
+                                    </bindingFiles>
+                                    <xsd>${basedir}/src/main/resources/schemas/datex2/DATEXIISchema_2_2_3_with_definitions_FI.xsd</xsd>
+                                    <packagename>fi.livi.digitraffic.tie.datex2</packagename>
                                     <extensionArgs>
-                                        <!-- Fix: A class/interface with the same name "fi.livi.digitraffic.tie.lotju.xsd.datex2.GroupOfParkingSpaces"
-                                             is already in use. Use a class customization to resolve this conflict -->
+                                        <!-- Fix: A class/interface with the same name is already in use. -->
+                                        <extensionArg>-XautoNameResolution</extensionArg>
+                                        <!--Generate withProperty methods-->
+                                        <extensionArg>-Xfluent-api</extensionArg>
+                                        <extensionArg>-npa</extensionArg>
+                                        <extensionArg>-mark-generated</extensionArg>
+                                        <extensionArg>-extension</extensionArg>
+                                        <!-- Generate episode file for D2LogicalModel -->
+                                        <extensionArg>-episode</extensionArg>
+                                        <extensionArg>D2LogicalModel.episode</extensionArg>
+                                    </extensionArgs>
+                                </xsdOption>
+                                <xsdOption>
+                                    <extension>true</extension>
+                                    <bindingFiles>
+                                        <bindingFile>${basedir}/src/main/resources/schemas/datex2/DATEXIIResponseBinding.xjb</bindingFile>
+                                    </bindingFiles>
+                                    <xsd>${basedir}/src/main/resources/schemas/datex2/DATEXIIResponseSchema_1_1.xsd</xsd>
+                                    <packagename>fi.livi.digitraffic.tie.datex2.response</packagename>
+                                    <extensionArgs>
+                                        <!-- Fix: A class/interface with the same name is already in use. -->
+                                        <extensionArg>-XautoNameResolution</extensionArg>
+                                        <!--Generate withProperty methods-->
+                                        <extensionArg>-Xfluent-api</extensionArg>
+                                        <extensionArg>-npa</extensionArg>
+                                        <extensionArg>-mark-generated</extensionArg>
+                                        <!-- Use episode file for D2LogicalModel imports-->
+                                        <extensionArg>-b</extensionArg>
+                                        <extensionArg>D2LogicalModel.episode</extensionArg>
+                                    </extensionArgs>
+                                </xsdOption>
+                                <xsdOption>
+                                    <xsd>${basedir}/src/main/resources/schemas/lotju/jms/v3/metatietomuutos_kamera_tietovirta.xsd</xsd>
+                                    <packagename>fi.livi.digitraffic.tie.lotju.xsd.metatietomuutos.kameratietovirta</packagename>
+                                    <extensionArgs>
+                                        <!-- Fix: A class/interface with the same name is already in use. -->
                                         <extensionArg>-XautoNameResolution</extensionArg>
                                         <!--Generate withProperty methods-->
                                         <extensionArg>-Xfluent-api</extensionArg>
@@ -541,10 +593,11 @@
                                     </extensionArgs>
                                 </xsdOption>
                                 <xsdOption>
-                                    <xsd>${basedir}/src/main/resources/schemas/LOTJU/xsd/v3/metatietomuutos_kamera_tietovirta.xsd</xsd>
-                                    <packagename>fi.livi.digitraffic.tie.lotju.xsd.metatietomuutos.kameratietovirta</packagename>
+                                    <extension>true</extension>
+                                    <xsd>${basedir}/src/main/resources/schemas/tloik/ims/ImsXmlMessage_1_2_0.xsd</xsd>
+                                    <packagename>fi.livi.digitraffic.tie.external.tloik.ims</packagename>
                                     <extensionArgs>
-                                        <!-- Fix: A class/interface with the same name "fi.livi.digitraffic.tie.lotju.xsd.datex2.GroupOfParkingSpaces"
+                                        <!-- Fix: A class/interface with the same name "fi.livi.digitraffic.tie.datex2.GroupOfParkingSpaces"
                                              is already in use. Use a class customization to resolve this conflict -->
                                         <extensionArg>-XautoNameResolution</extensionArg>
                                         <!--Generate withProperty methods-->
@@ -565,7 +618,7 @@
                 <version>1.0.1</version>
 
                 <configuration>
-                    <sourceDirectory>${basedir}/src/main/resources/schemas/json/</sourceDirectory>
+                    <sourceDirectory>${basedir}/src/main/resources/schemas/</sourceDirectory>
                     <targetPackage>fi.livi.digitraffic.tie.external</targetPackage>
                     <outputDirectory>${project.build.directory}/generated-sources/json</outputDirectory>
                     <dateTimeType>java.time.ZonedDateTime</dateTimeType>
@@ -573,6 +626,9 @@
                     <includes>
                         <include>**/*.json</include>
                     </includes>
+                    <includeJsr303Annotations>true</includeJsr303Annotations>
+                    <includeConstructors>true</includeConstructors>
+                    <generateBuilders>true</generateBuilders>
                 </configuration>
                 <executions>
                     <execution>

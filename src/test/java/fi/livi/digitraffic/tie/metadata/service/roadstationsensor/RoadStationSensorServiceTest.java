@@ -6,12 +6,11 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Import;
 
 import fi.livi.digitraffic.tie.AbstractServiceTest;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationSensor;
-import fi.livi.digitraffic.tie.metadata.model.RoadStationType;
-import fi.livi.digitraffic.tie.metadata.service.DataStatusService;
+import fi.livi.digitraffic.tie.model.v1.RoadStationSensor;
+import fi.livi.digitraffic.tie.model.RoadStationType;
+import fi.livi.digitraffic.tie.service.RoadStationSensorService;
 
 public class RoadStationSensorServiceTest extends AbstractServiceTest {
     @Autowired
@@ -28,7 +27,7 @@ public class RoadStationSensorServiceTest extends AbstractServiceTest {
     public void findAllNonObsoleteAndAllowedRoadStationSensorsForTmsStation() {
         final List<RoadStationSensor> sensors = roadStationSensorService.findAllPublishableRoadStationSensors(RoadStationType.TMS_STATION);
 
-        assertCollectionSize(22, sensors);
+        assertCollectionSize(26, sensors);
     }
 
     @Test

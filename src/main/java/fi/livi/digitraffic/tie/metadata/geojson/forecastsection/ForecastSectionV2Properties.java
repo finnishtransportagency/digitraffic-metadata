@@ -5,7 +5,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import fi.livi.digitraffic.tie.metadata.model.forecastsection.RoadSegment;
+import fi.livi.digitraffic.tie.model.v1.forecastsection.RoadSegment;
 import io.swagger.annotations.ApiModelProperty;
 
 @JsonPropertyOrder({ "naturalId", "description" })

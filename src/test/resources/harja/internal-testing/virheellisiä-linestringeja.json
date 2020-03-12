@@ -1,0 +1,4084 @@
+{
+    "otsikko" : {
+        "lahettaja" : {
+            "jarjestelma" : "Testi Oy",
+            "organisaatio" : {
+                "nimi" : "Yritys Oy",
+                "ytunnus" : "12345678-9"
+            }
+        },
+        "viestintunniste" : {
+            "id" : 16896489
+        },
+        "lahetysaika" : "2020-03-06T06:13:54Z"
+    },
+    "reittitoteumat" : [ {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903834
+                },
+                "alkanut" : "2020-03-06T05:55:07Z",
+                "paattynyt" : "2020-03-06T05:55:12Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.077
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:07Z",
+                    "koordinaatit" : {
+                        "x" : 642789.0072371147,
+                        "y" : 6982518.051180035
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:12Z",
+                    "koordinaatit" : {
+                        "x" : 642818.4004286324,
+                        "y" : 6982446.572037654
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.077
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903835
+                },
+                "alkanut" : "2020-03-06T05:55:12Z",
+                "paattynyt" : "2020-03-06T05:55:22Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.14
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.200000000055297E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:12Z",
+                    "koordinaatit" : {
+                        "x" : 642818.4004286324,
+                        "y" : 6982446.572037654
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:22Z",
+                    "koordinaatit" : {
+                        "x" : 642871.0625230075,
+                        "y" : 6982317.388695731
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.14
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.200000000055297E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903836
+                },
+                "alkanut" : "2020-03-06T05:55:22Z",
+                "paattynyt" : "2020-03-06T05:55:27Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:22Z",
+                    "koordinaatit" : {
+                        "x" : 642871.0625230075,
+                        "y" : 6982317.388695731
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:27Z",
+                    "koordinaatit" : {
+                        "x" : 642897.8581730917,
+                        "y" : 6982252.17932311
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903837
+                },
+                "alkanut" : "2020-03-06T05:55:27Z",
+                "paattynyt" : "2020-03-06T05:55:38Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.148
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:27Z",
+                    "koordinaatit" : {
+                        "x" : 642897.8581730917,
+                        "y" : 6982252.17932311
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:38Z",
+                    "koordinaatit" : {
+                        "x" : 642953.4728098616,
+                        "y" : 6982115.46675387
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.148
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903838
+                },
+                "alkanut" : "2020-03-06T05:55:38Z",
+                "paattynyt" : "2020-03-06T05:55:43Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.007
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:38Z",
+                    "koordinaatit" : {
+                        "x" : 642953.4728098616,
+                        "y" : 6982115.46675387
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:43Z",
+                    "koordinaatit" : {
+                        "x" : 642979.7690688107,
+                        "y" : 6982050.661546621
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.007
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903839
+                },
+                "alkanut" : "2020-03-06T05:55:43Z",
+                "paattynyt" : "2020-03-06T05:55:53Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.14
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:43Z",
+                    "koordinaatit" : {
+                        "x" : 642979.7690688107,
+                        "y" : 6982050.661546621
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:53Z",
+                    "koordinaatit" : {
+                        "x" : 643032.673217085,
+                        "y" : 6981920.639748687
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.14
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903840
+                },
+                "alkanut" : "2020-03-06T05:55:53Z",
+                "paattynyt" : "2020-03-06T05:56:03Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.127
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.200000000055297E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:55:53Z",
+                    "koordinaatit" : {
+                        "x" : 643032.673217085,
+                        "y" : 6981920.639748687
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:03Z",
+                    "koordinaatit" : {
+                        "x" : 643080.7653503902,
+                        "y" : 6981803.173586421
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.127
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.200000000055297E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903841
+                },
+                "alkanut" : "2020-03-06T05:56:03Z",
+                "paattynyt" : "2020-03-06T05:56:14Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.148
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:03Z",
+                    "koordinaatit" : {
+                        "x" : 643080.7653503902,
+                        "y" : 6981803.173586421
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:14Z",
+                    "koordinaatit" : {
+                        "x" : 643137.0894543116,
+                        "y" : 6981666.068999209
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.148
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903842
+                },
+                "alkanut" : "2020-03-06T05:56:14Z",
+                "paattynyt" : "2020-03-06T05:56:24Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.14
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:14Z",
+                    "koordinaatit" : {
+                        "x" : 643137.0894543116,
+                        "y" : 6981666.068999209
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:24Z",
+                    "koordinaatit" : {
+                        "x" : 643189.8111665824,
+                        "y" : 6981536.041152218
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.14
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903843
+                },
+                "alkanut" : "2020-03-06T05:56:24Z",
+                "paattynyt" : "2020-03-06T05:56:34Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.141
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0011500000000014552
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:24Z",
+                    "koordinaatit" : {
+                        "x" : 643189.8111665824,
+                        "y" : 6981536.041152218
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:34Z",
+                    "koordinaatit" : {
+                        "x" : 643243.1171595941,
+                        "y" : 6981406.039606994
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.141
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0011500000000014552
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903844
+                },
+                "alkanut" : "2020-03-06T05:56:34Z",
+                "paattynyt" : "2020-03-06T05:56:44Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.148
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:34Z",
+                    "koordinaatit" : {
+                        "x" : 643243.1171595941,
+                        "y" : 6981406.039606994
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:44Z",
+                    "koordinaatit" : {
+                        "x" : 643299.0290251845,
+                        "y" : 6981269.770138786
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.148
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903845
+                },
+                "alkanut" : "2020-03-06T05:56:44Z",
+                "paattynyt" : "2020-03-06T05:56:49Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.007
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:44Z",
+                    "koordinaatit" : {
+                        "x" : 643299.0290251845,
+                        "y" : 6981269.770138786
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:49Z",
+                    "koordinaatit" : {
+                        "x" : 643325.3373973749,
+                        "y" : 6981204.967598984
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.007
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903846
+                },
+                "alkanut" : "2020-03-06T05:56:49Z",
+                "paattynyt" : "2020-03-06T05:56:55Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.004
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 2.300000000032014E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:49Z",
+                    "koordinaatit" : {
+                        "x" : 643325.3373973749,
+                        "y" : 6981204.967598984
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:55Z",
+                    "koordinaatit" : {
+                        "x" : 643350.9879722082,
+                        "y" : 6981139.71079082
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.004
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 2.300000000032014E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903847
+                },
+                "alkanut" : "2020-03-06T05:56:55Z",
+                "paattynyt" : "2020-03-06T05:57:00Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.055
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:56:55Z",
+                    "koordinaatit" : {
+                        "x" : 643350.9879722082,
+                        "y" : 6981139.71079082
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:00Z",
+                    "koordinaatit" : {
+                        "x" : 643371.7063541221,
+                        "y" : 6981087.429042799
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.055
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903848
+                },
+                "alkanut" : "2020-03-06T05:57:00Z",
+                "paattynyt" : "2020-03-06T05:57:05Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:00Z",
+                    "koordinaatit" : {
+                        "x" : 643371.7063541221,
+                        "y" : 6981087.429042799
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:05Z",
+                    "koordinaatit" : {
+                        "x" : 643399.3534446607,
+                        "y" : 6981023.111309805
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903849
+                },
+                "alkanut" : "2020-03-06T05:57:05Z",
+                "paattynyt" : "2020-03-06T05:57:20Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.288
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.018
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0013799999999973807
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:05Z",
+                    "koordinaatit" : {
+                        "x" : 643399.3534446607,
+                        "y" : 6981023.111309805
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:20Z",
+                    "koordinaatit" : {
+                        "x" : 643505.6014883122,
+                        "y" : 6980756.715098687
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.288
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.018
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0013799999999973807
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903850
+                },
+                "alkanut" : "2020-03-06T05:57:20Z",
+                "paattynyt" : "2020-03-06T05:57:31Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.138
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.200000000055297E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:20Z",
+                    "koordinaatit" : {
+                        "x" : 643505.6014883122,
+                        "y" : 6980756.715098687
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:31Z",
+                    "koordinaatit" : {
+                        "x" : 643551.5149066101,
+                        "y" : 6980625.541298827
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.138
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.200000000055297E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903851
+                },
+                "alkanut" : "2020-03-06T05:57:31Z",
+                "paattynyt" : "2020-03-06T05:57:41Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.147
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:31Z",
+                    "koordinaatit" : {
+                        "x" : 643551.5149066101,
+                        "y" : 6980625.541298827
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:41Z",
+                    "koordinaatit" : {
+                        "x" : 643596.3720597281,
+                        "y" : 6980485.385241316
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.147
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903852
+                },
+                "alkanut" : "2020-03-06T05:57:41Z",
+                "paattynyt" : "2020-03-06T05:57:46Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.071
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:41Z",
+                    "koordinaatit" : {
+                        "x" : 643596.3720597281,
+                        "y" : 6980485.385241316
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:46Z",
+                    "koordinaatit" : {
+                        "x" : 643616.3183930537,
+                        "y" : 6980417.751386366
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.071
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903853
+                },
+                "alkanut" : "2020-03-06T05:57:46Z",
+                "paattynyt" : "2020-03-06T05:57:51Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.007
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:46Z",
+                    "koordinaatit" : {
+                        "x" : 643616.3183930537,
+                        "y" : 6980417.751386366
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:51Z",
+                    "koordinaatit" : {
+                        "x" : 643634.7948503963,
+                        "y" : 6980350.47847668
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.007
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903854
+                },
+                "alkanut" : "2020-03-06T05:57:51Z",
+                "paattynyt" : "2020-03-06T05:58:01Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.125
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:57:51Z",
+                    "koordinaatit" : {
+                        "x" : 643634.7948503963,
+                        "y" : 6980350.47847668
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:01Z",
+                    "koordinaatit" : {
+                        "x" : 643665.8464465378,
+                        "y" : 6980228.864797587
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.125
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903855
+                },
+                "alkanut" : "2020-03-06T05:58:01Z",
+                "paattynyt" : "2020-03-06T05:58:07Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.076
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.600000000064028E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:01Z",
+                    "koordinaatit" : {
+                        "x" : 643665.8464465378,
+                        "y" : 6980228.864797587
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:07Z",
+                    "koordinaatit" : {
+                        "x" : 643683.2685331245,
+                        "y" : 6980154.737083002
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.076
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.600000000064028E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903856
+                },
+                "alkanut" : "2020-03-06T05:58:07Z",
+                "paattynyt" : "2020-03-06T05:58:17Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.141
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.013
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:07Z",
+                    "koordinaatit" : {
+                        "x" : 643683.2685331245,
+                        "y" : 6980154.737083002
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:17Z",
+                    "koordinaatit" : {
+                        "x" : 643712.8478009907,
+                        "y" : 6980018.1651061345
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.141
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.013
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903857
+                },
+                "alkanut" : "2020-03-06T05:58:17Z",
+                "paattynyt" : "2020-03-06T05:58:22Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.069
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:17Z",
+                    "koordinaatit" : {
+                        "x" : 643712.8478009907,
+                        "y" : 6980018.1651061345
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:22Z",
+                    "koordinaatit" : {
+                        "x" : 643725.944084931,
+                        "y" : 6979949.804635328
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.069
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903858
+                },
+                "alkanut" : "2020-03-06T05:58:22Z",
+                "paattynyt" : "2020-03-06T05:58:27Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:22Z",
+                    "koordinaatit" : {
+                        "x" : 643725.944084931,
+                        "y" : 6979949.804635328
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:27Z",
+                    "koordinaatit" : {
+                        "x" : 643738.6535522032,
+                        "y" : 6979881.42716648
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903859
+                },
+                "alkanut" : "2020-03-06T05:58:27Z",
+                "paattynyt" : "2020-03-06T05:58:42Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.215
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.02
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.001610000000000582
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:27Z",
+                    "koordinaatit" : {
+                        "x" : 643738.6535522032,
+                        "y" : 6979881.42716648
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:42Z",
+                    "koordinaatit" : {
+                        "x" : 643769.4914622713,
+                        "y" : 6979667.8887180565
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.215
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.02
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.001610000000000582
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903860
+                },
+                "alkanut" : "2020-03-06T05:58:42Z",
+                "paattynyt" : "2020-03-06T05:58:48Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.071
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:42Z",
+                    "koordinaatit" : {
+                        "x" : 643769.4914622713,
+                        "y" : 6979667.8887180565
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:48Z",
+                    "koordinaatit" : {
+                        "x" : 643777.689486435,
+                        "y" : 6979598.46162076
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.071
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903861
+                },
+                "alkanut" : "2020-03-06T05:58:48Z",
+                "paattynyt" : "2020-03-06T05:59:03Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.203
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.018
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0013799999999973807
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:58:48Z",
+                    "koordinaatit" : {
+                        "x" : 643777.689486435,
+                        "y" : 6979598.46162076
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:03Z",
+                    "koordinaatit" : {
+                        "x" : 643794.7240064923,
+                        "y" : 6979396.656101811
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.203
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.018
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0013799999999973807
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903862
+                },
+                "alkanut" : "2020-03-06T05:59:03Z",
+                "paattynyt" : "2020-03-06T05:59:08Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.069
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 2.300000000032014E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:03Z",
+                    "koordinaatit" : {
+                        "x" : 643794.7240064923,
+                        "y" : 6979396.656101811
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:08Z",
+                    "koordinaatit" : {
+                        "x" : 643798.8561362196,
+                        "y" : 6979327.049998569
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.069
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 2.300000000032014E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903863
+                },
+                "alkanut" : "2020-03-06T05:59:08Z",
+                "paattynyt" : "2020-03-06T05:59:29Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.289
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.025
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0018399999999965076
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:08Z",
+                    "koordinaatit" : {
+                        "x" : 643798.8561362196,
+                        "y" : 6979327.049998569
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:29Z",
+                    "koordinaatit" : {
+                        "x" : 643814.6531107642,
+                        "y" : 6979038.806079563
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.289
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.025
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0018399999999965076
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903864
+                },
+                "alkanut" : "2020-03-06T05:59:29Z",
+                "paattynyt" : "2020-03-06T05:59:34Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.07
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.600000000064028E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:29Z",
+                    "koordinaatit" : {
+                        "x" : 643814.6531107642,
+                        "y" : 6979038.806079563
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:34Z",
+                    "koordinaatit" : {
+                        "x" : 643818.1262283252,
+                        "y" : 6978968.745447874
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.07
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.600000000064028E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903865
+                },
+                "alkanut" : "2020-03-06T05:59:34Z",
+                "paattynyt" : "2020-03-06T05:59:39Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.062
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.006
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:34Z",
+                    "koordinaatit" : {
+                        "x" : 643818.1262283252,
+                        "y" : 6978968.745447874
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:39Z",
+                    "koordinaatit" : {
+                        "x" : 643820.1975320829,
+                        "y" : 6978906.282755617
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.062
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.006
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903866
+                },
+                "alkanut" : "2020-03-06T05:59:39Z",
+                "paattynyt" : "2020-03-06T05:59:44Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.054
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.003
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:39Z",
+                    "koordinaatit" : {
+                        "x" : 643820.1975320829,
+                        "y" : 6978906.282755617
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:44Z",
+                    "koordinaatit" : {
+                        "x" : 643822.3789505153,
+                        "y" : 6978852.335650367
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.054
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.003
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903867
+                },
+                "alkanut" : "2020-03-06T05:59:44Z",
+                "paattynyt" : "2020-03-06T05:59:54Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.071
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 2.2999999999592547E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:44Z",
+                    "koordinaatit" : {
+                        "x" : 643822.3789505153,
+                        "y" : 6978852.335650367
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:54Z",
+                    "koordinaatit" : {
+                        "x" : 643826.1799513667,
+                        "y" : 6978781.43839765
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.071
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 2.2999999999592547E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903868
+                },
+                "alkanut" : "2020-03-06T05:59:54Z",
+                "paattynyt" : "2020-03-06T06:00:00Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.038
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.600000000064028E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:59:54Z",
+                    "koordinaatit" : {
+                        "x" : 643826.1799513667,
+                        "y" : 6978781.43839765
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:00Z",
+                    "koordinaatit" : {
+                        "x" : 643829.8780070515,
+                        "y" : 6978743.728474131
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.038
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.600000000064028E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903869
+                },
+                "alkanut" : "2020-03-06T06:00:00Z",
+                "paattynyt" : "2020-03-06T06:00:20Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.245
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.022
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.001609999999993306
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:00Z",
+                    "koordinaatit" : {
+                        "x" : 643829.8780070515,
+                        "y" : 6978743.728474131
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:20Z",
+                    "koordinaatit" : {
+                        "x" : 643840.7655855559,
+                        "y" : 6978498.673286093
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.245
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.022
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.001609999999993306
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903870
+                },
+                "alkanut" : "2020-03-06T06:00:20Z",
+                "paattynyt" : "2020-03-06T06:00:51Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.49
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.038
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0027600000000020373
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:20Z",
+                    "koordinaatit" : {
+                        "x" : 643840.7655855559,
+                        "y" : 6978498.673286093
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:51Z",
+                    "koordinaatit" : {
+                        "x" : 643866.5114604882,
+                        "y" : 6978008.737950331
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.49
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.038
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0027600000000020373
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903871
+                },
+                "alkanut" : "2020-03-06T06:00:51Z",
+                "paattynyt" : "2020-03-06T06:01:01Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.134
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:00:51Z",
+                    "koordinaatit" : {
+                        "x" : 643866.5114604882,
+                        "y" : 6978008.737950331
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:01Z",
+                    "koordinaatit" : {
+                        "x" : 643873.855244978,
+                        "y" : 6977875.017398991
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.134
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903872
+                },
+                "alkanut" : "2020-03-06T06:01:01Z",
+                "paattynyt" : "2020-03-06T06:01:11Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.129
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.200000000055297E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:01Z",
+                    "koordinaatit" : {
+                        "x" : 643873.855244978,
+                        "y" : 6977875.017398991
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:11Z",
+                    "koordinaatit" : {
+                        "x" : 643880.2184193633,
+                        "y" : 6977745.934586381
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.129
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.200000000055297E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903873
+                },
+                "alkanut" : "2020-03-06T06:01:11Z",
+                "paattynyt" : "2020-03-06T06:01:17Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.067
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.004
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.599999999991269E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:11Z",
+                    "koordinaatit" : {
+                        "x" : 643880.2184193633,
+                        "y" : 6977745.934586381
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:17Z",
+                    "koordinaatit" : {
+                        "x" : 643883.8138569978,
+                        "y" : 6977679.709265159
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.067
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.004
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.599999999991269E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903874
+                },
+                "alkanut" : "2020-03-06T06:01:17Z",
+                "paattynyt" : "2020-03-06T06:01:27Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.107
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.01
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 6.899999999950523E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:17Z",
+                    "koordinaatit" : {
+                        "x" : 643883.8138569978,
+                        "y" : 6977679.709265159
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:27Z",
+                    "koordinaatit" : {
+                        "x" : 643889.592089115,
+                        "y" : 6977572.728598823
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.107
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.01
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 6.899999999950523E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903875
+                },
+                "alkanut" : "2020-03-06T06:01:27Z",
+                "paattynyt" : "2020-03-06T06:01:42Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.191
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.017
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0011500000000014552
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:27Z",
+                    "koordinaatit" : {
+                        "x" : 643889.592089115,
+                        "y" : 6977572.728598823
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:42Z",
+                    "koordinaatit" : {
+                        "x" : 643900.10139085,
+                        "y" : 6977382.551209068
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.191
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.017
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0011500000000014552
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903876
+                },
+                "alkanut" : "2020-03-06T06:01:42Z",
+                "paattynyt" : "2020-03-06T06:01:52Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.135
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.011
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:42Z",
+                    "koordinaatit" : {
+                        "x" : 643900.10139085,
+                        "y" : 6977382.551209068
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:52Z",
+                    "koordinaatit" : {
+                        "x" : 643907.1326679182,
+                        "y" : 6977247.114845173
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.135
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.011
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903877
+                },
+                "alkanut" : "2020-03-06T06:01:52Z",
+                "paattynyt" : "2020-03-06T06:01:58Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.047
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 4.600000000064028E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:52Z",
+                    "koordinaatit" : {
+                        "x" : 643907.1326679182,
+                        "y" : 6977247.114845173
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:58Z",
+                    "koordinaatit" : {
+                        "x" : 643911.4181193124,
+                        "y" : 6977200.494593293
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.047
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 4.600000000064028E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903878
+                },
+                "alkanut" : "2020-03-06T06:01:58Z",
+                "paattynyt" : "2020-03-06T06:02:03Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.059
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.005
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 2.2999999999592547E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:01:58Z",
+                    "koordinaatit" : {
+                        "x" : 643911.4181193124,
+                        "y" : 6977200.494593293
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:02:03Z",
+                    "koordinaatit" : {
+                        "x" : 643917.2522372573,
+                        "y" : 6977140.750924515
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.059
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.005
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 2.2999999999592547E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903879
+                },
+                "alkanut" : "2020-03-06T06:02:03Z",
+                "paattynyt" : "2020-03-06T06:02:23Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.262
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.023
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.0018400000000037835
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:02:03Z",
+                    "koordinaatit" : {
+                        "x" : 643917.2522372573,
+                        "y" : 6977140.750924515
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:02:23Z",
+                    "koordinaatit" : {
+                        "x" : 643947.6105596374,
+                        "y" : 6976881.234271725
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.262
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.023
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.0018400000000037835
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903880
+                },
+                "alkanut" : "2020-03-06T06:02:23Z",
+                "paattynyt" : "2020-03-06T06:02:34Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 1369,
+                        "maara" : {
+                            "yksikko" : "tiekm",
+                            "maara" : 0.134
+                        }
+                    }
+                } ],
+                "materiaalit" : [ {
+                    "materiaali" : "Talvisuola",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 0.012
+                    }
+                }, {
+                    "materiaali" : "Talvisuolaliuos NaCl",
+                    "maara" : {
+                        "yksikko" : "t",
+                        "maara" : 9.199999999982538E-4
+                    }
+                } ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:02:23Z",
+                    "koordinaatit" : {
+                        "x" : 643947.6105596374,
+                        "y" : 6976881.234271725
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:02:34Z",
+                    "koordinaatit" : {
+                        "x" : 643967.8431369916,
+                        "y" : 6976748.081504861
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 1369,
+                            "maara" : {
+                                "yksikko" : "tiekm",
+                                "maara" : 0.134
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ {
+                        "materiaali" : "Talvisuola",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 0.012
+                        }
+                    }, {
+                        "materiaali" : "Talvisuolaliuos NaCl",
+                        "maara" : {
+                            "yksikko" : "t",
+                            "maara" : 9.199999999982538E-4
+                        }
+                    } ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903881
+                },
+                "alkanut" : "2020-03-06T05:20:47Z",
+                "paattynyt" : "2020-03-06T06:06:16Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 2866,
+                        "maara" : {
+                            "yksikko" : "-",
+                            "maara" : 57.0
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T05:20:47Z",
+                    "koordinaatit" : {
+                        "x" : 613807.6076404247,
+                        "y" : 7015165.508137704
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 2866
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:06:16Z",
+                    "koordinaatit" : {
+                        "x" : 613766.0026554309,
+                        "y" : 7015204.472340769
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 2866,
+                            "maara" : {
+                                "yksikko" : "-",
+                                "maara" : 57.0
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    }, {
+        "reittitoteuma" : {
+            "toteuma" : {
+                "tunniste" : {
+                    "id" : 32903882
+                },
+                "alkanut" : "2020-03-06T06:06:16Z",
+                "paattynyt" : "2020-03-06T06:06:39Z",
+                "suorittaja" : {
+                    "nimi" : "Yritys Oy",
+                    "ytunnus" : "12345678-9"
+                },
+                "toteumatyyppi" : "kokonaishintainen",
+                "tehtavat" : [ {
+                    "tehtava" : {
+                        "id" : 2866,
+                        "maara" : {
+                            "yksikko" : "-",
+                            "maara" : 54.0
+                        }
+                    }
+                } ],
+                "materiaalit" : [ ]
+            },
+            "reitti" : [ {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:06:16Z",
+                    "koordinaatit" : {
+                        "x" : 613766.0026554309,
+                        "y" : 7015204.472340769
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 2866
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            }, {
+                "reittipiste" : {
+                    "aika" : "2020-03-06T06:06:39Z",
+                    "koordinaatit" : {
+                        "x" : 613805.5075353021,
+                        "y" : 7015167.4752241215
+                    },
+                    "tehtavat" : [ {
+                        "tehtava" : {
+                            "id" : 2866,
+                            "maara" : {
+                                "yksikko" : "-",
+                                "maara" : 54.0
+                            }
+                        }
+                    } ],
+                    "materiaalit" : [ ],
+                    "havainnot" : [ ]
+                }
+            } ]
+        }
+    } ]
+}

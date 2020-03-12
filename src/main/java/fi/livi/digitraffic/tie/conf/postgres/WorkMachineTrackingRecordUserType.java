@@ -27,7 +27,7 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import fi.livi.digitraffic.tie.conf.SpringContext;
-import fi.livi.digitraffic.tie.data.model.maintenance.harja.WorkMachineTrackingRecord;
+import fi.livi.digitraffic.tie.model.v1.maintenance.harja.WorkMachineTrackingRecord;
 
 public class WorkMachineTrackingRecordUserType implements UserType {
 

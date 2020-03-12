@@ -1,11 +1,12 @@
 package fi.livi.digitraffic.tie.conf;
 
 import static com.google.common.base.Predicates.or;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_BETA_BASE_PATH;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_DATA_PART_PATH;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_METADATA_PART_PATH;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_V1_BASE_PATH;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_V2_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_BETA_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_DATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_METADATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V2_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V3_BASE_PATH;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 import java.time.LocalDate;
@@ -25,14 +26,13 @@ import org.springframework.util.Assert;
 
 import com.fasterxml.classmate.TypeResolver;
 import com.google.common.base.Predicate;
-
-import fi.livi.digitraffic.tie.data.controller.DataController;
-import fi.livi.digitraffic.tie.metadata.controller.MetadataController;
+import fi.livi.digitraffic.tie.controller.v1.DataController;
+import fi.livi.digitraffic.tie.controller.v1.MetadataController;
 import fi.livi.digitraffic.tie.metadata.geojson.Geometry;
 import fi.livi.digitraffic.tie.metadata.geojson.LineString;
 import fi.livi.digitraffic.tie.metadata.geojson.MultiLineString;
 import fi.livi.digitraffic.tie.metadata.geojson.Point;
-import fi.livi.digitraffic.tie.metadata.service.MetadataApiInfoService;
+import fi.livi.digitraffic.tie.service.MetadataApiInfoService;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.DocExpansion;
@@ -93,7 +93,7 @@ public class SwaggerConfiguration {
                 typeResolver.resolve(MultiLineString.class),
                 typeResolver.resolve(Point.class)
             )
-            .produces(new HashSet<>(Collections.singletonList(MediaType.APPLICATION_JSON_UTF8_VALUE)))
+            .produces(new HashSet<>(Collections.singletonList(MediaType.APPLICATION_JSON_VALUE)))
             .apiInfo(metadataApiInfoService.getApiInfo())
             .select()
             .paths(apiPaths)
@@ -110,7 +110,8 @@ public class SwaggerConfiguration {
             regex(API_V1_BASE_PATH + API_METADATA_PART_PATH + "/*.*"),
             regex(API_V1_BASE_PATH + API_DATA_PART_PATH + "/*.*"),
             regex(API_V2_BASE_PATH + API_METADATA_PART_PATH + "/*.*"),
-            regex(API_V2_BASE_PATH + API_DATA_PART_PATH + "/*.*")
+            regex(API_V2_BASE_PATH + API_DATA_PART_PATH + "/*.*"),
+            regex(API_V3_BASE_PATH + API_METADATA_PART_PATH + "/*.*")
         );
     }
 }

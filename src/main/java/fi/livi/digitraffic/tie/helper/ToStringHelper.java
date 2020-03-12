@@ -10,13 +10,13 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import fi.ely.lotju.kamera.proto.KuvaProtos;
 import fi.ely.lotju.lam.proto.LAMRealtimeProtos;
 import fi.ely.lotju.tiesaa.proto.TiesaaProtos;
-import fi.livi.digitraffic.tie.metadata.model.TmsSensorConstant;
-import fi.livi.digitraffic.tie.metadata.model.TmsSensorConstantValue;
-import fi.livi.digitraffic.tie.metadata.model.TmsStation;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2016._10._06.EsiasentoVO;
-import fi.livi.ws.wsdl.lotju.kamerametatiedot._2018._06._15.KameraVO;
-import fi.livi.ws.wsdl.lotju.lammetatiedot._2018._03._12.LamAsemaVO;
-import fi.livi.ws.wsdl.lotju.tiesaa._2017._05._02.TiesaaAsemaVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.tiesaa.TiesaaAsemaVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.lam.LamAsemaVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.EsiasentoVO;
+import fi.livi.digitraffic.tie.external.lotju.metadata.kamera.KameraVO;
+import fi.livi.digitraffic.tie.model.v1.TmsSensorConstant;
+import fi.livi.digitraffic.tie.model.v1.TmsSensorConstantValue;
+import fi.livi.digitraffic.tie.model.v1.TmsStation;
 
 /**
  * Provides helper functions to stringify objects for logging

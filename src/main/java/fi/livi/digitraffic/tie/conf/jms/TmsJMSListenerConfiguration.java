@@ -13,15 +13,15 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 
 import fi.ely.lotju.lam.proto.LAMRealtimeProtos;
-import fi.livi.digitraffic.tie.data.jms.JMSMessageListener;
-import fi.livi.digitraffic.tie.data.jms.marshaller.TmsMessageMarshaller;
-import fi.livi.digitraffic.tie.data.service.LockingService;
-import fi.livi.digitraffic.tie.data.service.SensorDataUpdateService;
+import fi.livi.digitraffic.tie.service.jms.JMSMessageListener;
+import fi.livi.digitraffic.tie.service.jms.marshaller.TmsMessageMarshaller;
+import fi.livi.digitraffic.tie.service.LockingService;
+import fi.livi.digitraffic.tie.service.v1.SensorDataUpdateService;
 import progress.message.jclient.QueueConnectionFactory;
 
 @ConditionalOnProperty(name = "jms.tms.inQueue")
 @Configuration
-public class TmsJMSListenerConfiguration extends AbstractJMSListenerConfiguration<LAMRealtimeProtos.Lam> {
+public class    TmsJMSListenerConfiguration extends AbstractJMSListenerConfiguration<LAMRealtimeProtos.Lam> {
     private static final Logger log = LoggerFactory.getLogger(TmsJMSListenerConfiguration.class);
 
     private final JMSParameters jmsParameters;

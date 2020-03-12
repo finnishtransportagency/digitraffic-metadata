@@ -1,7 +1,8 @@
 package fi.livi.digitraffic.tie;
 
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_METADATA_PART_PATH;
-import static fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_METADATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.TMS_STATIONS_PATH;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
@@ -18,8 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import fi.livi.digitraffic.tie.metadata.controller.MetadataController;
-import fi.livi.digitraffic.tie.metadata.service.BuildVersionService;
+import fi.livi.digitraffic.tie.service.BuildVersionService;
 
 public class SwaggerUiWebTest extends AbstractRestWebTest {
 
@@ -52,6 +52,6 @@ public class SwaggerUiWebTest extends AbstractRestWebTest {
                 .andExpect(content().contentType(restContentType))
                 .andExpect(jsonPath("$.swagger", is("2.0")))
                 .andExpect(jsonPath("$.info.version", is(versionService.getAppFullVersion())))
-                .andExpect(jsonPath("$.paths." + API_V1_BASE_PATH + API_METADATA_PART_PATH + MetadataController.TMS_STATIONS_PATH, anything()));
+                .andExpect(jsonPath("$.paths." + API_V1_BASE_PATH + API_METADATA_PART_PATH + TMS_STATIONS_PATH, anything()));
     }
 }

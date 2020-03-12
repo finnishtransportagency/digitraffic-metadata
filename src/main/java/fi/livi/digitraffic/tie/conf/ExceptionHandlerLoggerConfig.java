@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import fi.livi.digitraffic.tie.data.controller.exception.handler.DefaultExceptionHandler;
+import fi.livi.digitraffic.tie.controller.handler.DefaultExceptionHandler;
 
 @Configuration
 public class ExceptionHandlerLoggerConfig {

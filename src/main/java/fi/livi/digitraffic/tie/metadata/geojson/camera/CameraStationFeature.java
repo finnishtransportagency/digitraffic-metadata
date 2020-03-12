@@ -70,20 +70,20 @@ public class CameraStationFeature implements Feature<Point> {
         final CameraStationFeature that = (CameraStationFeature) o;
 
         return new EqualsBuilder()
-                .append(type, that.type)
-                .append(id, that.id)
-                .append(geometry, that.geometry)
-                .append(properties, that.properties)
-                .isEquals();
+            .append(type, that.type)
+            .append(id, that.id)
+            .append(geometry, that.geometry)
+            .append(properties, that.properties)
+            .isEquals();
     }
 
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
-                .append(type)
-                .append(id)
-                .append(geometry)
-                .append(properties)
-                .toHashCode();
+            .append(type)
+            .append(id)
+            .append(geometry)
+            .append(properties)
+            .toHashCode();
     }
 }

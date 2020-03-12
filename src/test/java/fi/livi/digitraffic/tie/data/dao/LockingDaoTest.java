@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import fi.livi.digitraffic.tie.AbstractJpaTest;
+import fi.livi.digitraffic.tie.dao.LockingDao;
 
 @Import(LockingDao.class)
 public class LockingDaoTest extends AbstractJpaTest {

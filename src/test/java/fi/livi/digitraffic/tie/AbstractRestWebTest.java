@@ -14,8 +14,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @TestPropertySource(properties = { "spring.localstack.enabled=false" })
-public abstract class AbstractRestWebTest extends AbstractTest {
-    protected final MediaType CONTENT_TYPE = MediaType.APPLICATION_JSON_UTF8;
+public abstract class AbstractRestWebTest extends AbstractSpringJUnitTest {
+    protected final MediaType CONTENT_TYPE = MediaType.APPLICATION_JSON;
 
     private HttpMessageConverter mappingJackson2HttpMessageConverter;
 

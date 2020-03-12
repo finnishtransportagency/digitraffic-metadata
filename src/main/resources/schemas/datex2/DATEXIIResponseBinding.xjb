@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<jaxb:bindings version="1.0"
+              xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xjc= "http://java.sun.com/xml/ns/jaxb/xjc"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jaxb:bindings schemaLocation="DATEXIIResponseSchema_1_1.xsd" node="/xs:schema">
+        <jaxb:globalBindings>
+            <jaxb:javaType name="java.time.Instant" xmlType="xs:dateTime"
+                           parseMethod="fi.livi.digitraffic.tie.conf.jaxb2.DateTimeConverter.parseDateTime"
+                           printMethod="fi.livi.digitraffic.tie.conf.jaxb2.DateTimeConverter.printDateTime" />
+            <xjc:simple/>
+        </jaxb:globalBindings>
+    </jaxb:bindings>
+</jaxb:bindings>

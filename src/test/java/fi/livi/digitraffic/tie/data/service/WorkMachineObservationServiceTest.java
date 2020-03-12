@@ -13,7 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fi.livi.digitraffic.tie.data.model.maintenance.WorkMachineObservation;
+import fi.livi.digitraffic.tie.model.v1.maintenance.WorkMachineObservation;
+import fi.livi.digitraffic.tie.service.v1.MaintenanceDataService;
 
 public class WorkMachineObservationServiceTest extends AbstractWorkmachineDataServiceTest {
     private static final Logger log = LoggerFactory.getLogger(WorkMachineObservationServiceTest.class);

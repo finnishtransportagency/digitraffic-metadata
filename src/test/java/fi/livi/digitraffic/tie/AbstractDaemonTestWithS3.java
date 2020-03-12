@@ -15,8 +15,6 @@ import fi.livi.digitraffic.tie.conf.amazon.SpringLocalstackDockerRunnerWithVersi
 import xyz.fabiano.spring.localstack.LocalstackService;
 import xyz.fabiano.spring.localstack.annotation.SpringLocalstackProperties;
 
-// Dirty but amazonS3 must be cleared every time as port changes
-//@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
 @RunWith(SpringLocalstackDockerRunnerWithVersion.class)
 @SpringLocalstackProperties(services = { LocalstackService.S3 }, region = "eu-west-1", randomPorts = false)
 public abstract class AbstractDaemonTestWithS3 extends AbstractDaemonTest {

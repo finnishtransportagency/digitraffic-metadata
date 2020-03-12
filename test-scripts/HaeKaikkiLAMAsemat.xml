@@ -1,0 +1,6 @@
+<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://ws.livi.fi/wsdl/LOTJU/LAMmetatiedot/2018/03/12">
+    <x:Header/>
+    <x:Body>
+        <ns2:HaeKaikkiLAMAsemat></ns2:HaeKaikkiLAMAsemat>
+    </x:Body>
+</x:Envelope>

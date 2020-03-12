@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.GregorianCalendar;
+
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -16,10 +17,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import fi.livi.digitraffic.tie.AbstractTest;
+import fi.livi.digitraffic.tie.AbstractSpringJUnitTest;
 
 @RunWith(JUnit4.class)
-public class DateHelperTest extends AbstractTest {
+public class DateHelperTest extends AbstractSpringJUnitTest {
 
     private static final String DATE_STRING_OFFSET_2 = "2016-01-22T10:00:01+02:00";
     private static final String DATE_STRING_Z = "2016-01-22T08:00:01Z";

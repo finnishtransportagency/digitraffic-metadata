@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imsMessage xmlns="https://raw.githubusercontent.com/tmfg/metadata/master/schema/ImsXmlMessage_1_2_0.xsd">
+    <messageId>50003469</messageId>
+    <date>2019-12-13T14:43:18.388+02:00</date>
+    <messageSubject>LIIKENNETIEDOTE 13.12.2019 14:43:18</messageSubject>
+    <messageText><![CDATA[
+                Tie 130, Lempäälä. Liikennetiedote.
+
+Tie 130 välillä Hämeenlinna - Tampere, Lempäälä.
+Tarkempi paikka: Paikasta Marjamäki 2,2 km, vaikutusalue 5,8 km, suuntaan Pispantallin risteyssilta.
+
+Huono ajokeli.
+
+Lisätieto: TESTI TESTI TESTI
+ML
+
+Ajankohta: 13.12.2019 klo 14:43 alkaen toistaiseksi.
+
+Liikenne- ja kelitiedot verkossa: http://liikennetilanne.liikennevirasto.fi/
+
+Liikenneviraston tieliikennekeskus Helsinki
+Puh: 0206373328
+Faksi: 0206373713
+Sähköposti: helsinki.liikennekeskus@liikennevirasto.fi
+http://extranet.liikennevirasto.fi/webloik/kartta/liikennetilanne/50001238
+        ]]></messageText>
+    <shortMessageText>Tie 130 välillä Hämeenlinna - Tampere, Lempäälä. Tarkempi paikka: Paikasta Marjamäki 2,2 km, vaikutusalue 5,8 km, suuntaan
+        Pispantallin risteyssilta. Liikennetiedote. Huono ajokeli. Lisätieto: TESTI TESTI TESTI MLAjankohta: 13.12.2019 klo 14:43 alkaen toistaiseksi.
+        Liikenneviraston tieliikennekeskus Helsinki
+    </shortMessageText>
+    <messageContent>
+        <d2Message><![CDATA[
+                        <?xml version="1.0" encoding="UTF-8"?><d2LogicalModel xsi:schemaLocation="http://datex2.eu/schema/2/2_0 https://raw.githubusercontent.com/finnishtransportagency/metadata/master/schema/DATEXIISchema_2_2_3_with_definitions_FI.xsd" xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" modelBaseVersion="2"><exchange><supplierIdentification><country>fi</country><nationalIdentifier>FTA</nationalIdentifier></supplierIdentification></exchange><payloadPublication lang="fi" xsi:type="SituationPublication"><publicationTime>2019-12-13T14:43:18.388+02:00</publicationTime><publicationCreator><country>fi</country><nationalIdentifier>FTA</nationalIdentifier></publicationCreator><situation id="GUID50001234" version="1"><headerInformation><confidentiality>restrictedToAuthoritiesTrafficOperatorsAndPublishers</confidentiality><informationStatus>real</informationStatus></headerInformation><situationRecord id="GUID5000126101" version="1" xsi:type="WeatherRelatedRoadConditions"><situationRecordCreationTime>2019-12-13T14:43:18.388+02:00</situationRecordCreationTime><situationRecordVersionTime>2019-12-13T14:45:13.068+02:00</situationRecordVersionTime><situationRecordFirstSupplierVersionTime>2019-12-13T14:43:18.388+02:00</situationRecordFirstSupplierVersionTime><probabilityOfOccurrence>certain</probabilityOfOccurrence><severity>low</severity><validity><validityStatus>active</validityStatus><validityTimeSpecification><overallStartTime>2019-12-13T14:43:18.388+02:00</overallStartTime></validityTimeSpecification></validity><generalPublicComment><comment><values><value lang="fi">Tie 130, Lempäälä. Liikennetiedote.
+
+Tie 130 välillä Hämeenlinna - Tampere, Lempäälä.
+Tarkempi paikka: Paikasta Marjamäki 2,2 km, vaikutusalue 5,8 km, suuntaan Pispantallin risteyssilta.
+
+Huono ajokeli.
+
+Lisätieto: TESTI TESTI TESTI
+ML
+
+Ajankohta: 13.12.2019 klo 14:43 alkaen toistaiseksi.
+
+
+Liikenne- ja kelitiedot verkossa: http://liikennetilanne.liikennevirasto.fi/
+
+Liikenneviraston tieliikennekeskus Helsinki
+Puh: 0206373328
+Faksi: 0206373713
+Sähköposti: helsinki.liikennekeskus@liikennevirasto.fi
+http://extranet.liikennevirasto.fi/webloik/kartta/liikennetilanne/50001238</value></values></comment></generalPublicComment><groupOfLocations xsi:type="Linear"><alertCLinear xsi:type="AlertCMethod4Linear"><alertCLocationCountryCode>6</alertCLocationCountryCode><alertCLocationTableNumber>17</alertCLocationTableNumber><alertCLocationTableVersion>1.11.37</alertCLocationTableVersion><alertCDirection><alertCDirectionCoded>unknown</alertCDirectionCoded></alertCDirection><alertCMethod4PrimaryPointLocation><alertCLocation><specificLocation>37128</specificLocation></alertCLocation><offsetDistance><offsetDistance>2184</offsetDistance></offsetDistance></alertCMethod4PrimaryPointLocation><alertCMethod4SecondaryPointLocation><alertCLocation><specificLocation>37126</specificLocation></alertCLocation><offsetDistance><offsetDistance>5264</offsetDistance></offsetDistance></alertCMethod4SecondaryPointLocation></alertCLinear></groupOfLocations><drivingConditionType>hazardous</drivingConditionType><weatherRelatedRoadConditionType>other</weatherRelatedRoadConditionType></situationRecord></situation></payloadPublication></d2LogicalModel>
+                ]]></d2Message>
+        <jMessage></jMessage>
+    </messageContent>
+</imsMessage>

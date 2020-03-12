@@ -1,0 +1,218 @@
+{
+  "otsikko": {
+    "lahettaja": {
+      "jarjestelma": "Järjestelmä B",
+      "organisaatio": {
+        "nimi": "Urakoitsija 2 Oy",
+        "ytunnus": "2163026-3"
+      }
+    },
+    "viestintunniste": {
+      "id": -1062003619
+    },
+    "lahetysaika": "2020-01-13T14:28:16+02:00"
+  },
+  "reittitoteuma": {
+    "toteuma": {
+      "tunniste": {
+        "id": -1062003619
+      },
+      "sopimusId": 943,
+      "alkanut": "2020-01-13T12:47:39+02:00",
+      "paattynyt": "2020-01-13T14:25:35+02:00",
+      "suorittaja": {
+        "nimi": "Urakoitsija 2 Oy",
+        "ytunnus": "9876543-2"
+      },
+      "toteumatyyppi": "kokonaishintainen",
+      "tehtavat": [
+        {
+          "tehtava": {
+            "id": 1368,
+            "maara": {
+              "yksikko": "km",
+              "maara": 7.950009039347904
+            }
+          }
+        }, {
+              "tehtava": {
+                  "id": 12911,
+                  "maara": {
+                      "yksikko": "km",
+                      "maara": 7.950009039347904
+                  }
+              }
+          }
+      ]
+    },
+    "reitti": [
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:47:39+02:00",
+          "koordinaatit": {
+            "x": 662891.067412269,
+            "y": 6888171.21713604
+          },
+          "tehtavat": []
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:47:53+02:00",
+          "koordinaatit": {
+            "x": 662898.666014271,
+            "y": 6888169.72688804
+          },
+          "tehtavat": [
+              {
+                  "tehtava": {
+                      "id": 12911,
+                      "maara": {
+                          "yksikko": "km",
+                          "maara": 7.950009039347904
+                      }
+                  }
+              },
+              {
+                  "tehtava": {
+                      "id": 1368,
+                      "maara": {
+                          "yksikko": "tiekm",
+                          "maara": 0.0
+                      }
+                  }
+              }
+          ]
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:14+02:00",
+          "koordinaatit": {
+            "x": 662901.171764356,
+            "y": 6888168.21575532
+          },
+          "tehtavat": [
+              {
+                  "tehtava": {
+                      "id": 12911,
+                      "maara": {
+                          "yksikko": "km",
+                          "maara": 7.950009039347904
+                      }
+                  }
+              },
+              {
+                  "tehtava": {
+                      "id": 1368,
+                      "maara": {
+                          "yksikko": "tiekm",
+                          "maara": 0.0
+                      }
+                  }
+              }          ]
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:19+02:00",
+          "koordinaatit": {
+            "x": 662894.681385642,
+            "y": 6888171.81671431
+          },
+          "tehtavat": []
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:22+02:00",
+          "koordinaatit": {
+            "x": 662889.838378473,
+            "y": 6888171.88735263
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1368,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.005
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:31+02:00",
+          "koordinaatit": {
+            "x": 662873.138607315,
+            "y": 6888173.4816465
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1368,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.017
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:34+02:00",
+          "koordinaatit": {
+            "x": 662866.698916083,
+            "y": 6888172.20828586
+          },
+          "tehtavat": [
+            {
+              "tehtava": {
+                "id": 1368,
+                "maara": {
+                  "yksikko": "tiekm",
+                  "maara": 0.007
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:38+02:00",
+          "koordinaatit": {
+            "x": 662859.344280867,
+            "y": 6888171.91018839
+          },
+          "tehtavat": []
+        }
+      },
+      {
+        "reittipiste": {
+          "aika": "2020-01-13T12:48:47+02:00",
+          "koordinaatit": {
+            "x": 662844.331782755,
+            "y": 6888174.15164858
+          },
+          "tehtavat": [
+              {
+                  "tehtava": {
+                      "id": 12911,
+                      "maara": {
+                          "yksikko": "km",
+                          "maara": 7.950009039347904
+                      }
+                  }
+              }
+          ]
+        }
+      }
+    ]
+  }
+}

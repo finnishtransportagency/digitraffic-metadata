@@ -14,18 +14,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Component;
 
-import fi.livi.digitraffic.tie.data.dto.camera.CameraPresetDataDto;
-import fi.livi.digitraffic.tie.data.dto.camera.CameraRootDataObjectDto;
-import fi.livi.digitraffic.tie.data.dto.camera.CameraStationDataDto;
+import fi.livi.digitraffic.tie.converter.feature.AbstractMetadataToFeatureConverter;
+import fi.livi.digitraffic.tie.dto.v1.camera.CameraPresetDataDto;
+import fi.livi.digitraffic.tie.dto.v1.camera.CameraRootDataObjectDto;
+import fi.livi.digitraffic.tie.dto.v1.camera.CameraStationDataDto;
 import fi.livi.digitraffic.tie.helper.DataValidityHelper;
-import fi.livi.digitraffic.tie.metadata.converter.AbstractMetadataToFeatureConverter;
 import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
-import fi.livi.digitraffic.tie.metadata.model.CameraPreset;
+import fi.livi.digitraffic.tie.model.v1.camera.CameraPreset;
 
 @ConditionalOnWebApplication
 @Component
 public final class CameraPreset2CameraDataConverter extends AbstractMetadataToFeatureConverter {
-
     private static final Logger log = LoggerFactory.getLogger( CameraPreset2CameraDataConverter.class );
 
     private final String weathercamBaseurl;
@@ -65,7 +64,6 @@ public final class CameraPreset2CameraDataConverter extends AbstractMetadataToFe
     }
 
     private CameraPresetDataDto convertPreset(final CameraPreset cp) {
-
         final CameraPresetDataDto dto = new CameraPresetDataDto();
         dto.setMeasuredTime(cp.getPictureLastModified());
         dto.setId(cp.getPresetId());

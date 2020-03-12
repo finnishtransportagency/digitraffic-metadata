@@ -21,7 +21,7 @@
             <fileNamePattern>road-${appType}-logstash.%d{yyyy-MM-dd-HH}.log.gz</fileNamePattern>
             <maxHistory>2</maxHistory>
 			<totalSizeCap>256MB</totalSizeCap>
-        </rollingPolicy>		
+        </rollingPolicy>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
     </appender>
 
@@ -73,19 +73,19 @@
     </appender>
 
     <!-- TMS and weather sensors data -->
-    <logger name="fi.livi.digitraffic.tie.data.service.SensorDataUpdateService" additivity="true">
+    <logger name="fi.livi.digitraffic.tie.service.v1.SensorDataUpdateService" additivity="true">
         <appender-ref ref="FILE_JMS" />
     </logger>
-    <logger name="fi.livi.digitraffic.tie.data.service.SensorDataUpdateService" additivity="false">
+    <logger name="fi.livi.digitraffic.tie.service.v1.SensorDataUpdateService" additivity="false">
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 
 
     <!-- JMS message listener -->
-    <logger name="fi.livi.digitraffic.tie.data.jms" additivity="true">
+    <logger name="fi.livi.digitraffic.tie.service.jms" additivity="true">
         <appender-ref ref="FILE_JMS" />
     </logger>
-    <logger name="fi.livi.digitraffic.tie.data.jms" additivity="false">
+    <logger name="fi.livi.digitraffic.tie.service.jms" additivity="false">
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 
@@ -98,26 +98,26 @@
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 
-    <logger name="fi.livi.digitraffic.tie.data.dao.SensorValueDao" additivity="true">
+    <logger name="fi.livi.digitraffic.tie.dao.v1.SensorValueDao" additivity="true">
         <appender-ref ref="FILE_JMS" />
     </logger>
-    <logger name="fi.livi.digitraffic.tie.data.dao.SensorValueDao" additivity="false">
+    <logger name="fi.livi.digitraffic.tie.dao.v1.SensorValueDao" additivity="false">
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 
     <!-- Camera presets images -->
-    <logger name="fi.livi.digitraffic.tie.data.service.CameraImageUpdateService" additivity="true">
+    <logger name="fi.livi.digitraffic.tie.service.v1.camera.CameraImageUpdateService" additivity="true">
         <appender-ref ref="FILE_JMS" />
     </logger>
-    <logger name="fi.livi.digitraffic.tie.data.service.CameraImageUpdateService" additivity="false">
+    <logger name="fi.livi.digitraffic.tie.service.v1.camera.CameraImageUpdateService" additivity="false">
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 
     <!-- Camera presets data -->
-    <logger name="fi.livi.digitraffic.tie.data.service.CameraDataUpdateService" additivity="true">
+    <logger name="fi.livi.digitraffic.tie.service.v1.camera.CameraDataUpdateService" additivity="true">
         <appender-ref ref="FILE_JMS" />
     </logger>
-    <logger name="fi.livi.digitraffic.tie.data.service.CameraDataUpdateService" additivity="false">
+    <logger name="fi.livi.digitraffic.tie.service.v1.camera.CameraDataUpdateService" additivity="false">
         <appender-ref ref="FILE_LOGSTASH" />
     </logger>
 

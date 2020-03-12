@@ -7,7 +7,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import fi.livi.digitraffic.tie.metadata.service.BuildVersionService;
+import fi.livi.digitraffic.tie.service.BuildVersionService;
 
 @Component
 public class ApplicationStartup implements ApplicationListener<ApplicationReadyEvent> {

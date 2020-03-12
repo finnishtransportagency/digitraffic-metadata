@@ -1,0 +1,157 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.77474,
+                    61.50221
+                ]
+            },
+            "properties": {
+                "situationId": "GUID50001238",
+                "version": 1,
+                "releaseTime": "2019-12-13T14:43:18.388+02:00",
+                "announcements": [
+                    {
+                        "language": "fi",
+                        "title": "Tie 130, Lempäälä. Liikennetiedote. ",
+                        "location": {
+                            "countryCode": 6,
+                            "locationTableNumber": 17,
+                            "locationTableVersion": "1.11.37",
+                            "description": "Tie 130 välillä Hämeenlinna - Tampere, Lempäälä.\nTarkempi paikka: Paikasta Marjamäki 2,2 km, vaikutusalue 5,8 km, suuntaan Pispantallin risteyssilta."
+                        },
+                        "locationDetails": {
+                            "roadAddressLocation": {
+                                "primaryPoint": {
+                                    "municipality": "Lempäälä",
+                                    "province": "Pirkanmaa",
+                                    "country": "Suomi",
+                                    "roadAddress": {
+                                        "road": 130,
+                                        "roadSection": 24,
+                                        "distance": 3927
+                                    },
+                                    "alertCLocation": {
+                                        "locationCode": 37128,
+                                        "name": "Marjamäki",
+                                        "distance": 2184
+                                    }
+                                },
+                                "secondaryPoint": {
+                                    "municipality": "Lempäälä",
+                                    "province": "Pirkanmaa",
+                                    "country": "Suomi",
+                                    "roadAddress": {
+                                        "road": 130,
+                                        "roadSection": 23,
+                                        "distance": 5921
+                                    },
+                                    "alertCLocation": {
+                                        "locationCode": 37126,
+                                        "name": "Pispantallin risteyssilta",
+                                        "distance": 5264
+                                    }
+                                },
+                                "direction": "unknown"
+                            }
+                        },
+                        "features": [
+                            "Huono ajokeli"
+                        ],
+                        "comment": "TESTI TESTI TESTI\nML",
+                        "timeAndDuration": {
+                            "startTime": "2019-12-13T14:43:18.388+02:00"
+                        },
+                        "additionalInformation": "Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/",
+                        "sender": "Liikenneviraston tieliikennekeskus Helsinki"
+                    }
+                ],
+                "contact": {
+                    "phone": "0206373328",
+                    "fax": "0206373713",
+                    "email": "helsinki.liikennekeskus@liikennevirasto.fi"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.77929,
+                    61.49935
+                ]
+            },
+            "properties": {
+                "situationId": "GUID12345678",
+                "version": 1,
+                "releaseTime": "2019-12-13T14:43:18.388+02:00",
+                "announcements": [
+                    {
+                        "language": "fi",
+                        "title": "Tie 130, Lempäälä. Liikennetiedote. ",
+                        "location": {
+                            "countryCode": 6,
+                            "locationTableNumber": 17,
+                            "locationTableVersion": "1.11.37",
+                            "description": "Tie 130 välillä Hämeenlinna - Tampere, Lempäälä.\nTarkempi paikka: Paikasta Marjamäki 2,2 km, vaikutusalue 5,8 km, suuntaan Pispantallin risteyssilta."
+                        },
+                        "locationDetails": {
+                            "roadAddressLocation": {
+                                "primaryPoint": {
+                                    "municipality": "Lempäälä",
+                                    "province": "Pirkanmaa",
+                                    "country": "Suomi",
+                                    "roadAddress": {
+                                        "road": 130,
+                                        "roadSection": 24,
+                                        "distance": 3927
+                                    },
+                                    "alertCLocation": {
+                                        "locationCode": 37128,
+                                        "name": "Marjamäki",
+                                        "distance": 2184
+                                    }
+                                },
+                                "secondaryPoint": {
+                                    "municipality": "Lempäälä",
+                                    "province": "Pirkanmaa",
+                                    "country": "Suomi",
+                                    "roadAddress": {
+                                        "road": 130,
+                                        "roadSection": 23,
+                                        "distance": 5921
+                                    },
+                                    "alertCLocation": {
+                                        "locationCode": 37126,
+                                        "name": "Pispantallin risteyssilta",
+                                        "distance": 5264
+                                    }
+                                },
+                                "direction": "unknown"
+                            }
+                        },
+                        "features": [
+                            "Huono ajokeli"
+                        ],
+                        "comment": "TESTI TESTI TESTI\nML",
+                        "timeAndDuration": {
+                            "startTime": "2019-12-13T14:43:18.388+02:00"
+                        },
+                        "additionalInformation": "Liikenne- ja kelitiedot verkossa: http://liikennetilanne.tmfg.fi/",
+                        "sender": "Liikenneviraston tieliikennekeskus Helsinki"
+                    }
+                ],
+                "contact": {
+                    "phone": "0206373328",
+                    "fax": "0206373713",
+                    "email": "helsinki.liikennekeskus@liikennevirasto.fi"
+                }
+            }
+        }
+    ]
+}

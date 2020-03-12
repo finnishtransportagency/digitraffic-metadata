@@ -2,8 +2,8 @@ package fi.livi.digitraffic.tie.documentation;
 
 import java.util.Collections;
 
-import fi.livi.digitraffic.tie.metadata.service.BuildVersionService;
-import fi.livi.digitraffic.tie.metadata.service.MessageService;
+import fi.livi.digitraffic.tie.service.BuildVersionService;
+import fi.livi.digitraffic.tie.service.MessageService;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 

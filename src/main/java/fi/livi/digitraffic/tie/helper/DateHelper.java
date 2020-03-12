@@ -1,9 +1,16 @@
 package fi.livi.digitraffic.tie.helper;
 
 import static java.time.ZoneOffset.UTC;
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MILLI_OF_SECOND;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
+import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
@@ -18,6 +25,24 @@ import org.slf4j.LoggerFactory;
 public final class DateHelper {
 
     private static final Logger log = LoggerFactory.getLogger(DateHelper.class);
+
+    public static final DateTimeFormatter ISO_DATE_TIME_WITH_MILLIS_AT_UTC;
+    static {
+        ISO_DATE_TIME_WITH_MILLIS_AT_UTC = new DateTimeFormatterBuilder()
+            .parseCaseInsensitive()
+            .append(DateTimeFormatter.ISO_LOCAL_DATE)
+            .appendLiteral('T')
+            .appendValue(HOUR_OF_DAY, 2)
+            .appendLiteral(':')
+            .appendValue(MINUTE_OF_HOUR, 2)
+            .appendLiteral(':')
+            .appendValue(SECOND_OF_MINUTE, 2)
+            .appendLiteral('.')
+            .appendFraction(MILLI_OF_SECOND, 3, 3, false)
+            .appendLiteral('Z')
+            .toFormatter()
+            .withZone(UTC);
+    }
 
     private DateHelper() {}
 
@@ -85,6 +110,9 @@ public final class DateHelper {
     }
 
     public static XMLGregorianCalendar toXMLGregorianCalendarAtUtc(final ZonedDateTime zonedDateTime) {
+        if (zonedDateTime == null) {
+            return null;
+        }
         return toXMLGregorianCalendarAtUtc(zonedDateTime.toInstant());
     }
 
@@ -103,5 +131,52 @@ public final class DateHelper {
 
     public static ZonedDateTime getZonedDateTimeNowAtUtc() {
         return toZonedDateTimeAtUtc(Instant.now());
+    }
+
+    public static ZonedDateTime getZonedDateTimeNowAtUtcWithoutMillis() {
+        return withoutMillis(toZonedDateTimeAtUtc(Instant.now()));
+    }
+
+    public static Instant withoutNanos(final Instant from) {
+        if (from != null) {
+            return from.with(ChronoField.MILLI_OF_SECOND, from.get(ChronoField.MILLI_OF_SECOND));
+        }
+        return null;
+    }
+
+    public static Instant withoutMillis(final Instant from) {
+        if (from != null) {
+            return from.with(MILLI_OF_SECOND, 0);
+        }
+        return null;
+    }
+
+    public static ZonedDateTime withoutMillis(final ZonedDateTime from) {
+        if (from != null) {
+            return from.with(MILLI_OF_SECOND, 0);
+        }
+        return null;
+    }
+
+    public static ZonedDateTime toZonedDateTimeWithoutMillis(final Instant from) {
+        if (from != null) {
+            return toZonedDateTimeAtUtc(withoutMillis(from));
+        }
+        return null;
+    }
+
+    public static ZonedDateTime toZonedDateTimeWithoutNanos(final Instant from) {
+        if (from != null) {
+            return toZonedDateTimeAtUtc(withoutNanos(from));
+        }
+        return null;
+    }
+
+    public static String toIsoDateTimeWithMillis(final Instant from) {
+        return ISO_DATE_TIME_WITH_MILLIS_AT_UTC.format(from);
+    }
+
+    public static String toIsoDateTimeWithMillis(final ZonedDateTime from) {
+        return ISO_DATE_TIME_WITH_MILLIS_AT_UTC.format(from);
     }
 }

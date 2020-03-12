@@ -1,5 +1,8 @@
 package fi.livi.digitraffic.tie.data.controller;
 
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_DATA_PART_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V1_BASE_PATH;
+import static fi.livi.digitraffic.tie.controller.ApiPaths.FREE_FLOW_SPEEDS_PATH;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -10,17 +13,14 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 
 import fi.livi.digitraffic.tie.AbstractRestWebTest;
-import fi.livi.digitraffic.tie.conf.RoadWebApplicationConfiguration;
 
 public class FreeFlowSpeedRestWebTest extends AbstractRestWebTest {
 
     @Test
     public void testFreeFlowSpeedDataRestApi() throws Exception {
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-                            RoadWebApplicationConfiguration.API_DATA_PART_PATH +
-                            DataController.FREE_FLOW_SPEEDS_PATH))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_DATA_PART_PATH + FREE_FLOW_SPEEDS_PATH))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.dataUpdatedTime", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsFreeFlowSpeeds", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsFreeFlowSpeeds[0].id", Matchers.notNullValue()))
@@ -29,11 +29,9 @@ public class FreeFlowSpeedRestWebTest extends AbstractRestWebTest {
 
     @Test
     public void testFreeFlowSpeedDataRestApiByTmsId() throws Exception {
-        mockMvc.perform(get(RoadWebApplicationConfiguration.API_V1_BASE_PATH +
-                RoadWebApplicationConfiguration.API_DATA_PART_PATH +
-                DataController.FREE_FLOW_SPEEDS_PATH + "/tms/23801"))
+        mockMvc.perform(get(API_V1_BASE_PATH + API_DATA_PART_PATH + FREE_FLOW_SPEEDS_PATH + "/tms/23801"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.dataUpdatedTime", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsFreeFlowSpeeds", Matchers.notNullValue()))
                 .andExpect(jsonPath("$.tmsFreeFlowSpeeds[0].id", Matchers.notNullValue()))

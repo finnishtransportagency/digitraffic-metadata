@@ -2,8 +2,6 @@ package fi.livi.digitraffic.tie.conf.jms;
 
 import java.util.List;
 
-import javax.xml.bind.JAXBException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +11,11 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
-import fi.livi.digitraffic.tie.data.jms.JMSMessageListener;
-import fi.livi.digitraffic.tie.data.jms.marshaller.CameraMetadataUpdatedMessageMarshaller;
-import fi.livi.digitraffic.tie.data.service.LockingService;
-import fi.livi.digitraffic.tie.metadata.service.CameraMetadataUpdatedMessageDto;
-import fi.livi.digitraffic.tie.metadata.service.camera.CameraMetadataMessageHandler;
+import fi.livi.digitraffic.tie.service.CameraMetadataUpdatedMessageDto;
+import fi.livi.digitraffic.tie.service.LockingService;
+import fi.livi.digitraffic.tie.service.jms.JMSMessageListener;
+import fi.livi.digitraffic.tie.service.jms.marshaller.CameraMetadataUpdatedMessageMarshaller;
+import fi.livi.digitraffic.tie.service.v1.camera.CameraMetadataMessageHandler;
 import progress.message.jclient.QueueConnectionFactory;
 
 @ConditionalOnProperty(name = "jms.camera.meta.inQueue")
@@ -35,10 +33,10 @@ public class CameraMetadataJMSListenerConfiguration extends AbstractJMSListenerC
                                                   @Value("#{'${jms.camera.meta.inQueue}'.split(',')}")final List<String> jmsQueueKeys,
                                                   final CameraMetadataMessageHandler cameraMetadataMessageHandler,
                                                   final LockingService lockingService,
-                                                  final Jaxb2Marshaller jaxb2Marshaller) {
+                                                  final Jaxb2Marshaller kameraMetadataJaxb2Marshaller) {
         super(connectionFactory, lockingService, log);
         this.cameraMetadataMessageHandler = cameraMetadataMessageHandler;
-        this.jaxb2Marshaller = jaxb2Marshaller;
+        this.jaxb2Marshaller = kameraMetadataJaxb2Marshaller;
 
         jmsParameters = new JMSParameters(jmsQueueKeys, jmsUserId, jmsPassword,
             CameraMetadataJMSListenerConfiguration.class.getSimpleName(),
@@ -51,7 +49,7 @@ public class CameraMetadataJMSListenerConfiguration extends AbstractJMSListenerC
         }
 
         @Override
-        public JMSMessageListener<CameraMetadataUpdatedMessageDto> createJMSMessageListener() throws JAXBException {
+        public JMSMessageListener<CameraMetadataUpdatedMessageDto> createJMSMessageListener() {
             final JMSMessageListener.JMSDataUpdater<CameraMetadataUpdatedMessageDto> handleData = cameraMetadataMessageHandler::updateCameraMetadata;
             final CameraMetadataUpdatedMessageMarshaller messageMarshaller = new CameraMetadataUpdatedMessageMarshaller(jaxb2Marshaller);
 

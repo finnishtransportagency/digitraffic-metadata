@@ -1,0 +1,1 @@
+alter table nw2_annotation add author text;

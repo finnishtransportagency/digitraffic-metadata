@@ -15,7 +15,7 @@ import progress.message.jclient.ErrorCodes;
 
 public class JMSErrorResolver {
 
-    private static final Logger log = LoggerFactory.getLogger(Datex2JMSListenerConfiguration.class);
+    private static final Logger log = LoggerFactory.getLogger(JMSErrorResolver.class);
 
     private JMSErrorResolver() {}
 

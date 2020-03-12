@@ -35,6 +35,7 @@ dt.job.TmsStationsStatusMetadataUpdateJob.schedule =           0 0 0/1 * * ?
 dt.job.WeatherStationsStatusMetadataUpdateJob.schedule =       0 0 0/1 * * ?
 dt.job.Datex2RoadworksMessageUpdateJob.schedule =              0 0 0/1 * * ?
 dt.job.Datex2WeightRestrictionsMessageUpdateJob.schedule =     0 0 0/1 * * ?
+dt.job.CameraHistoryDeleteJob.schedule =                       0 0 0/1 * * ?
 # Every 12 h
 dt.job.CameraMetadataUpdateJob.schedule =                      0 0 3/12 * * ?
 dt.job.TmsStationMetadataUpdateJob.schedule =                  0 0 3/12 * * ?
@@ -44,12 +45,6 @@ dt.job.TmsStationSensorConstantsMetadataUpdateJob.schedule =   0 0 3 * * ?
 dt.job.LocationMetadataUpdateJob.schedule =                    0 0 3 * * ?
 dt.job.ForecastSectionV1MetadataUpdateJob.schedule =           0 0 3 * * ?
 dt.job.ForecastSectionV2MetadataUpdateJob.schedule =           0 0 3 * * ?
-
-# SFTP settings for camera image upload
-camera-image-uploader.sftp.host = aineistot.liikennevirasto.fi
-camera-image-uploader.sftp.user = digitraffic-aws-test
-camera-image-uploader.sftp.privateKeyPassphrase = tyokaverisi-halusi-kiittaa
-camera-image-uploader.sftp.uploadFolder = weathercam-aws-test.digitraffic.fi
 
 # Weathercam url for public fetch. Append camera preset + .jpg to get image url
 weathercam.baseUrl=http://weathercam-test.digitraffic.fi/
@@ -62,16 +57,15 @@ dt.amazon.s3.weathercam.userSecretKey =
 
 # JMS settings
 
-# Sonja
-jms.sonja.connection.enabled=false
-jms.connectionUrls=
+# Sonja - disable by commenting url out
+#jms.connectionUrls=
 jms.userId=
 jms.password=
 
-# Sonja for datex2
-jms.datex2.connectionUrls=
-jms.datex2.userId=
-jms.datex2.password=
+# Sonja test - disable by commenting url out
+#jms.test.connectionUrls=
+jms.test.userId=
+jms.test.password=
 
 # JMS topics
 # Comment out to disable (Only daemon should have these enabled)

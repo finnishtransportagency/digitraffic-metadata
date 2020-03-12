@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import fi.livi.digitraffic.tie.data.service.MaintenanceDataService;
+import fi.livi.digitraffic.tie.service.v1.MaintenanceDataService;
 
-@ConditionalOnProperty(name = "workmachine.handling.job.enabled" , matchIfMissing = true)
+@ConditionalOnProperty(name = "maintenance.tracking.job.enabled", matchIfMissing = true)
 @ConditionalOnNotWebApplication
 @Component
 public class MaintenanceDataJobConfiguration {
@@ -27,14 +27,11 @@ public class MaintenanceDataJobConfiguration {
     }
 
     /**
-     * This job get all work machine trackings that have been received, but haven't been converted
-     * from source JSON-format to db relations. After one tracking has been handled, meaning it has
-     * been extracted from JSON to db relations (observatios), tracking will be marked as handled.
-     *
-     * @throws JsonProcessingException
+     * This job extracts all unhandled maintenance trackings
+     * from source JSON-format to db relations.
      */
-    @Scheduled(fixedDelayString = "${workmachine.tracking.observation.handlingIntervalMs}")
-    public void handleUnhandledWorkMachineTrackings() throws JsonProcessingException {
+    @Scheduled(fixedDelayString = "${maintenance.tracking.job.intervalMs}")
+    public void handleUnhandledMaintenanceTrackings() throws JsonProcessingException {
         final StopWatch start = StopWatch.createStarted();
         int count = 0;
         int totalCount = 0;

@@ -1,10 +1,12 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <style></style>
     <script>
-        var url = "http://tie-test.digitraffic.fi/api/beta/camera-preset-history/";
+        var url = "https://tie-test.digitraffic.fi/api/beta/camera-history/history?id=";
         var current_index = -1;
         var myObj;
+        var preset = "C0460900";
 
         function get_history(preset) {
             xmlhttp = new XMLHttpRequest();
@@ -47,12 +49,12 @@
                 current_index += change;
 
                 if (current_index < 0) {
-                    current_index = myObj.history.length - 1;
-                } else if (current_index >= myObj.history.length) {
+                    current_index = myObj[0].cameraHistory[0].presetHistory.length - 1;
+                } else if (current_index >= myObj[0].cameraHistory[0].presetHistory.length) {
                     current_index = 0;
                 }
 
-                get_image(myObj.history[current_index].url, myObj.history[current_index].lastModified);
+                get_image(myObj[0].cameraHistory[0].presetHistory[current_index].imageUrl, myObj[0].cameraHistory[0].presetHistory[current_index].lastModified);
             }
         }
 
@@ -62,6 +64,8 @@
 <body>
 <h1>Kuva historia</h1>
 <div>
+    Esiasento: <input id="presetId" type="text" name="presetId" value="C0460900">
+    <button onclick="get_history(document.getElementById('presetId').value)">Päivitä</button>
     <button onclick="change_index(1)">Vanhempi</button>
     <button onclick="change_index(-1)">Uudempi</button>
 </div>

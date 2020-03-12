@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.util.Assert;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
@@ -21,23 +22,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.resource.TransformedResource;
 
+import fi.livi.digitraffic.tie.conf.jaxb2.Jaxb2D2LogicalModelHttpMessageConverter;
 import fi.livi.digitraffic.tie.conf.jaxb2.Jaxb2Datex2ResponseHttpMessageConverter;
+import fi.livi.digitraffic.tie.controller.beta.BetaController;
+import fi.livi.digitraffic.tie.converter.Datex2MessagetypeParameterStringToEnumConverter;
 
 @ConditionalOnWebApplication
 @Configuration
 public class RoadWebApplicationConfiguration implements WebMvcConfigurer {
-
-    public static final String API_V1_BASE_PATH = "/api/v1";
-    public static final String API_V2_BASE_PATH = "/api/v2";
-    public static final String API_BETA_BASE_PATH = "/api/beta";
-
-    public static final String API_METADATA_PART_PATH = "/metadata";
-    public static final String API_DATA_PART_PATH = "/data";
-    public static final String API_MAINTENANCE_PART_PATH = "/maintenance";
-    public static final String API_VARIABLE_SIGN_UPDATE_PART_PATH = "/variable-sign-update";
-
-    public static final String WEATHERCAM_PATH = "/weathercam";
-
     private final ConfigurableApplicationContext applicationContext;
 
     // Match when there is no http in location start
@@ -55,7 +47,14 @@ public class RoadWebApplicationConfiguration implements WebMvcConfigurer {
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         // put first
+        converters.add(0, new Jaxb2D2LogicalModelHttpMessageConverter(schemaDomainUrlAndPath));
         converters.add(0, new Jaxb2Datex2ResponseHttpMessageConverter(schemaDomainUrlAndPath));
+    }
+
+    @Override
+    public void addFormatters(final FormatterRegistry registry) {
+        // Converter for Controller Datex2Messagetype parameters
+        registry.addConverter(new Datex2MessagetypeParameterStringToEnumConverter());
     }
 
     @Override
