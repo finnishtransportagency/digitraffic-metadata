@@ -3,9 +3,7 @@ package fi.livi.digitraffic.tie.service.v1.location;
 import java.util.EnumMap;
 import java.util.Map;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
+import fi.livi.digitraffic.tie.helper.ToStringHelper;
 import fi.livi.digitraffic.tie.model.DataType;
 
 public class MetadataVersions {
@@ -34,7 +32,7 @@ public class MetadataVersions {
 
         @Override
         public String toString() {
-            return ToStringBuilder.reflectionToString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+            return ToStringHelper.toStringFull(this);
         }
     }
 }

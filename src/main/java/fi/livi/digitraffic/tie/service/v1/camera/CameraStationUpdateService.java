@@ -9,7 +9,6 @@ import java.util.Objects;
 import javax.persistence.EntityManager;
 
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -138,16 +137,16 @@ public class CameraStationUpdateService extends AbstractCameraStationAttributeUp
         if ( to.getCameraId() != null && !to.getCameraId().equals(cameraId) ) {
             log.warn("Update camera preset ( toId={}, toPresetId={} ) toCameraId={} cameraId={}",
                 to.getId(), to.getPresetId(), to.getCameraId(), cameraId);
-            log.debug("Old preset: {}", ToStringBuilder.reflectionToString(to));
-            log.debug("New kamera: {}", ToStringBuilder.reflectionToString(kameraFrom));
-            log.debug("New esiasento: {}", ToStringBuilder.reflectionToString(esiasentoFrom));
+            log.debug("Old preset: {}", ToStringHelper.toStringFull(to));
+            log.debug("New kamera: {}", ToStringHelper.toStringFull(kameraFrom));
+            log.debug("New esiasento: {}", ToStringHelper.toStringFull(esiasentoFrom));
         }
 
         // Preset properties
         if ( to.getPresetId() != null && !to.getPresetId().equals(presetId) ) {
-            log.info("Old preset: {}", ToStringBuilder.reflectionToString(to));
-            log.info("New kamera: {}", ToStringBuilder.reflectionToString(kameraFrom));
-            log.info("New esiasento: {}", ToStringBuilder.reflectionToString(esiasentoFrom));
+            log.info("Old preset: {}", ToStringHelper.toStringFull(to));
+            log.info("New kamera: {}", ToStringHelper.toStringFull(kameraFrom));
+            log.info("New esiasento: {}", ToStringHelper.toStringFull(esiasentoFrom));
             if (!isPermanentlyDeletedKeruunTila(kameraFrom.getKeruunTila())) {
                 log.warn("Update: CameraPresetId doesn't match toPresetId={} vs new presetId={}", to.getPresetId(), presetId);
             }

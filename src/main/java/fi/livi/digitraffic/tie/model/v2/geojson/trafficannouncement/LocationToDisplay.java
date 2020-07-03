@@ -1,8 +1,6 @@
 
 package fi.livi.digitraffic.tie.model.v2.geojson.trafficannouncement;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
