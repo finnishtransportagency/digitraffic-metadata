@@ -36,7 +36,7 @@ public class MqttRelayService {
             sendErrorStatisticsMap.put(type, 0);
         }
 
-        // in a threadsafe way, take messages from lessagelist and send them to mqtt gateway
+        // in a threadsafe way, take messages from message list and send them to mqtt gateway
         new Thread(() -> {
             while(true) {
 
@@ -74,12 +74,12 @@ public class MqttRelayService {
     }
 
     /**
-     * Add mqtt message to messagelist.  Messagelist is synchronized and threadsafe.
+     * Add mqtt message to messagelist. Messagelist is synchronized and threadsafe.
      * @param topic Mqtt message topic
      * @param payLoad Mqtt message payload
      * @param statisticsType Statistics type for the message
      */
-    public void sendMqttMessage(final String topic, final String payLoad, final StatisticsType statisticsType) {
+    public void queueMqttMessage(final String topic, final String payLoad, final StatisticsType statisticsType) {
         if (topic == null || payLoad == null || statisticsType == null) {
             throw new IllegalArgumentException(String.format("All parameters must be set topic:%s, payload:%s, statisticsType:%s",
                                                              topic, payLoad, statisticsType));
