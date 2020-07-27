@@ -206,40 +206,8 @@
         <!-- Swagger2 JSON API specification generation-->
         <dependency>
             <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-            <!-- https://github.com/springfox/springfox/issues/2265 -->
-            <exclusions>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-models</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <!-- From jcenter-snapshots repository -->
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0-20200106.122158-51</version>
-        </dependency>
-
-        <!-- https://github.com/springfox/springfox/issues/2265 -->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>1.6.1</version>
-        </dependency>
-
-        <!-- https://github.com/springfox/springfox/issues/2265 -->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-            <version>1.6.1</version>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${io.springfox.version}</version>
         </dependency>
 
         <!-- Static Reader of META-INF/MANIFEST.MF Files -->

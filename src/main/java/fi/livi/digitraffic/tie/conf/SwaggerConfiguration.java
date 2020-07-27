@@ -1,6 +1,5 @@
 package fi.livi.digitraffic.tie.conf;
 
-import static com.google.common.base.Predicates.or;
 import static fi.livi.digitraffic.tie.controller.ApiPaths.API_BETA_BASE_PATH;
 import static fi.livi.digitraffic.tie.controller.ApiPaths.API_DATA_PART_PATH;
 import static fi.livi.digitraffic.tie.controller.ApiPaths.API_METADATA_PART_PATH;
@@ -15,6 +14,7 @@ import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -25,7 +25,7 @@ import org.springframework.http.MediaType;
 import org.springframework.util.Assert;
 
 import com.fasterxml.classmate.TypeResolver;
-import com.google.common.base.Predicate;
+
 import fi.livi.digitraffic.tie.controller.v1.DataController;
 import fi.livi.digitraffic.tie.controller.v1.MetadataController;
 import fi.livi.digitraffic.tie.metadata.geojson.Geometry;
@@ -39,11 +39,9 @@ import springfox.documentation.swagger.web.DocExpansion;
 import springfox.documentation.swagger.web.ModelRendering;
 import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger.web.UiConfigurationBuilder;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @ConditionalOnWebApplication
 @Configuration
-@EnableSwagger2
 @ComponentScan(basePackageClasses = {
     DataController.class, MetadataController.class
 })
@@ -106,12 +104,10 @@ public class SwaggerConfiguration {
      * @return api paths
      */
     private static Predicate<String> getMetadataApiPaths() {
-        return or(
-            regex(API_V1_BASE_PATH + API_METADATA_PART_PATH + "/*.*"),
-            regex(API_V1_BASE_PATH + API_DATA_PART_PATH + "/*.*"),
-            regex(API_V2_BASE_PATH + API_METADATA_PART_PATH + "/*.*"),
-            regex(API_V2_BASE_PATH + API_DATA_PART_PATH + "/*.*"),
-            regex(API_V3_BASE_PATH + API_METADATA_PART_PATH + "/*.*")
-        );
+        return regex(API_V1_BASE_PATH + API_METADATA_PART_PATH + "/*.*").or(
+               regex(API_V1_BASE_PATH + API_DATA_PART_PATH + "/*.*")).or(
+               regex(API_V2_BASE_PATH + API_METADATA_PART_PATH + "/*.*")).or(
+               regex(API_V2_BASE_PATH + API_DATA_PART_PATH + "/*.*")).or(
+               regex(API_V3_BASE_PATH + API_METADATA_PART_PATH + "/*.*"));
     }
 }

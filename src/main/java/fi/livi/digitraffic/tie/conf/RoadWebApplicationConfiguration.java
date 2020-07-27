@@ -24,7 +24,6 @@ import org.springframework.web.servlet.resource.TransformedResource;
 
 import fi.livi.digitraffic.tie.conf.jaxb2.Jaxb2D2LogicalModelHttpMessageConverter;
 import fi.livi.digitraffic.tie.conf.jaxb2.Jaxb2Datex2ResponseHttpMessageConverter;
-import fi.livi.digitraffic.tie.controller.beta.BetaController;
 import fi.livi.digitraffic.tie.converter.Datex2MessagetypeParameterStringToEnumConverter;
 
 @ConditionalOnWebApplication
@@ -90,12 +89,12 @@ public class RoadWebApplicationConfiguration implements WebMvcConfigurer {
     }
 
     /**
-     * This redirects requests from root to /swagger-ui.html.
+     * This redirects requests from root / to /swagger-ui/index.html.
      * After that nginx redirects /swagger-ui.html to /api/v1/metadata/documentation/swagger-ui.html
      * @param registry
      */
     @Override
     public void addViewControllers(final ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("redirect:swagger-ui.html");
+        registry.addViewController("/").setViewName("redirect:/swagger-ui/index.html");
     }
 }
