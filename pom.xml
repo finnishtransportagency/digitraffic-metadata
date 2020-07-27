@@ -32,7 +32,7 @@
         <jackson.dataformat.version>2.10.3</jackson.dataformat.version>
         <com.google.protobuf.version>3.11.4</com.google.protobuf.version>
         <org.apache.cxf.version>3.3.6</org.apache.cxf.version>
-        <org.apache.sshd.version>2.4.0</org.apache.sshd.version>
+        <io.springfox.version>3.0.0</io.springfox.version>
     </properties>
 
     <repositories>
