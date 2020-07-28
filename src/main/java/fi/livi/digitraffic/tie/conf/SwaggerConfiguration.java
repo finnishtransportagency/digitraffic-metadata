@@ -8,19 +8,21 @@ import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V2_BASE_PATH;
 import static fi.livi.digitraffic.tie.controller.ApiPaths.API_V3_BASE_PATH;
 import static springfox.documentation.builders.PathSelectors.regex;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.util.Assert;
-
-import com.fasterxml.classmate.TypeResolver;
 
 import fi.livi.digitraffic.tie.controller.v1.DataController;
 import fi.livi.digitraffic.tie.controller.v1.MetadataController;
@@ -40,11 +42,23 @@ import springfox.documentation.swagger.web.UiConfigurationBuilder;
 public class SwaggerConfiguration {
 
     private final MetadataApiInfoService metadataApiInfoService;
+    private final String host;
+    private final String scheme;
 
     @Autowired
-    public SwaggerConfiguration(final MetadataApiInfoService metadataApiInfoService) {
+    public SwaggerConfiguration(final MetadataApiInfoService metadataApiInfoService,
+                                final @Value("${dt.domain.url}") String domainUrl) throws URISyntaxException {
         Assert.notNull(metadataApiInfoService, "MetadataApiInfoService can't be null");
         this.metadataApiInfoService = metadataApiInfoService;
+        URI uri = new URI(domainUrl);
+
+        final int port = uri.getPort();
+        if (port > -1) {
+            host = uri.getHost() + ":" + port;
+        } else {
+            host = uri.getHost();
+        }
+        scheme = uri.getScheme();
     }
 
     @Bean
@@ -68,8 +82,9 @@ public class SwaggerConfiguration {
     }
 
     private Docket getDocket(final String groupName, Predicate<String> apiPaths) {
-        final TypeResolver typeResolver = new TypeResolver();
         return new Docket(DocumentationType.SWAGGER_2)
+            .host(host)
+            .protocols(Set.of(scheme))
             .groupName(groupName)
             .produces(new HashSet<>(Collections.singletonList(MediaType.APPLICATION_JSON_VALUE)))
             .apiInfo(metadataApiInfoService.getApiInfo())
