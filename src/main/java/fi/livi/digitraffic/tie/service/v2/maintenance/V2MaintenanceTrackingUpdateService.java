@@ -134,6 +134,12 @@ public class V2MaintenanceTrackingUpdateService {
     private void handleRoute(final Havainto havainto,
                              final MaintenanceTrackingData trackingData, final String sendingSystem, final ZonedDateTime sendingTime) {
 
+        final String tkTyyppi = havainto.getTyokone().getTyokonetyyppi();
+        if (tkTyyppi != null && "liikenteenohjausaita".equalsIgnoreCase(tkTyyppi)) {
+            log.info("method=handleRoute skipping message with workMachinetype liikenteenohjausaita");
+            return;
+        }
+
         final Geometry geometry = resolveGeometry(havainto.getSijainti());
         if (geometry != null && !geometry.isEmpty()) {
 

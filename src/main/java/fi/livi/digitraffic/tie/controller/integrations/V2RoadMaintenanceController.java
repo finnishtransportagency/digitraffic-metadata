@@ -59,9 +59,10 @@ public class V2RoadMaintenanceController {
     public ResponseEntity<Void> postWorkMachineTracking(@RequestBody TyokoneenseurannanKirjausRequestSchema tyokoneenseurannanKirjaus)
         throws JsonProcessingException {
 
-        log.debug("method=postWorkMachineTracking JSON=\n{}",
-                 objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(tyokoneenseurannanKirjaus));
-
+        if(log.isDebugEnabled()) {
+            log.debug("method=postWorkMachineTracking JSON=\n{}",
+                objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(tyokoneenseurannanKirjaus));
+        }
         v2MaintenanceTrackingUpdateService.saveMaintenanceTrackingData(tyokoneenseurannanKirjaus);
 
         return ResponseEntity.ok().build();
