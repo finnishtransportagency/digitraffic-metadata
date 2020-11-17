@@ -9,37 +9,15 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "GeoJSON Feature Object.", value = "MaintenanceRealizationFeature")
 @JsonPropertyOrder({ "type", "id", "geometry", "properties" })
-public class MaintenanceRealizationFeature implements Feature<LineString> {
-
-    @ApiModelProperty(value = "GeoJSON LineString Geometry Object containing route points", required = true, position = 3)
-    private LineString geometry;
-
-    @ApiModelProperty(value = "Camera preset properties.", required = true, position = 4)
-    private final MaintenanceRealizationProperties properties;
+public class MaintenanceRealizationFeature extends Feature<LineString, MaintenanceRealizationProperties> {
 
     public MaintenanceRealizationFeature(final LineString geometry, final MaintenanceRealizationProperties properties) {
-        this.geometry = geometry;
-        this.properties = properties;
+        super(geometry, properties);
     }
 
-    @ApiModelProperty(value = "\"Feature\": GeoJSON Feature Object", required = true, position = 1, allowableValues = "Feature")
+    @ApiModelProperty(value = "Maintenance realization properties preset properties.", required = true, position = 4)
     @Override
-    public String getType() {
-        return "Feature";
-    }
-
-
-    @Override
-    public LineString getGeometry() {
-        return geometry;
-    }
-
-    @Override
-    public void setGeometry(final LineString geometry) {
-        this.geometry = geometry;
-    }
-
     public MaintenanceRealizationProperties getProperties() {
-        return properties;
+        return super.getProperties();
     }
 }

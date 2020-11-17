@@ -5,6 +5,10 @@ import java.util.List;
 import io.swagger.annotations.ApiModelProperty;
 
 public class LocationProperties {
+
+    @ApiModelProperty(value = "Unique locationCode for this location", required = true)
+    public final int locationCode;
+
     @ApiModelProperty(value = "Code of location subtype", required = true)
     public final String subtypeCode;
 
@@ -50,10 +54,11 @@ public class LocationProperties {
     @ApiModelProperty("The order of point within line or segment feature")
     public final String orderOfPoint;
 
-    public LocationProperties(final String subtypeCode, final String roadJunction, final String roadName, final String firstName, final String secondName,
-                              final Integer areaRef, final Integer linearRef, final Integer negOffset, final Integer posOffset, final Boolean urban,
-                              final List<Double> etrsGeometry, final String negDirection, final String posDirection,
+    public LocationProperties(final int locationCode, final String subtypeCode, final String roadJunction, final String roadName, final String firstName,
+                              final String secondName, final Integer areaRef, final Integer linearRef, final Integer negOffset, final Integer posOffset,
+                              final Boolean urban, final List<Double> etrsGeometry, final String negDirection, final String posDirection,
                               final String geocode, final String orderOfPoint) {
+        this.locationCode = locationCode;
         this.subtypeCode = subtypeCode;
         this.roadJunction = roadJunction;
         this.roadName = roadName;

@@ -10,17 +10,17 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Weather forecast sections")
 @JsonPropertyOrder({ "dataUpdatedTime", "dataLastCheckedTime", "forecastSections" })
-public class ForecastSectionsMetadata extends RootMetadataObjectDto {
+public class ForecastSectionsMetadata extends RootDataObjectDto {
+
+    @ApiModelProperty(value = "Data last checked date time", required = true)
+    public final ZonedDateTime dataLastCheckedTime;
 
     @ApiModelProperty(value = "Weather forecast sections", required = true)
-    private final ForecastSectionFeatureCollection forecastSections;
+    public final ForecastSectionFeatureCollection forecastSections;
 
     public ForecastSectionsMetadata(final ForecastSectionFeatureCollection forecastSections, final ZonedDateTime lastUpdated, final ZonedDateTime dataLastCheckedTime) {
-        super(lastUpdated, dataLastCheckedTime);
+        super(lastUpdated);
+        this.dataLastCheckedTime = dataLastCheckedTime;
         this.forecastSections = forecastSections;
-    }
-
-    public ForecastSectionFeatureCollection getForecastSections() {
-        return forecastSections;
     }
 }

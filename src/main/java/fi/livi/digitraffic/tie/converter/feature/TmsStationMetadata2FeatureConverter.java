@@ -6,6 +6,7 @@ import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fi.livi.digitraffic.tie.converter.StationSensorConverter;
-import fi.livi.digitraffic.tie.converter.exception.NonPublicRoadStationException;
 import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
 import fi.livi.digitraffic.tie.metadata.geojson.tms.TmsStationFeature;
 import fi.livi.digitraffic.tie.metadata.geojson.tms.TmsStationFeatureCollection;
@@ -35,34 +35,30 @@ public final class TmsStationMetadata2FeatureConverter extends AbstractMetadataT
     }
 
     public TmsStationFeatureCollection convert(final List<TmsStation> stations, final ZonedDateTime lastUpdated, final ZonedDateTime dataLastCheckedTime) {
-        final TmsStationFeatureCollection collection = new TmsStationFeatureCollection(lastUpdated, dataLastCheckedTime);
+
         final Map<Long, List<Long>> sensorMap = stationSensorConverter.createPublishableSensorMap(TMS_STATION_TYPE);
 
-        for(final TmsStation tms : stations) {
-            try {
-                collection.add(convert(sensorMap, tms));
-            } catch (final NonPublicRoadStationException nprse) {
-                //Skip non public roadstation
-                log.warn("Skipping: " + nprse.getMessage());
-            }
-        }
-        return collection;
+        final List<TmsStationFeature> features =
+            stations.stream()
+                .filter(tms -> tms.getRoadStation().isPublicNow())
+                .map(tms -> convert(sensorMap, tms)).collect(Collectors.toList());
+
+        return new TmsStationFeatureCollection(lastUpdated, dataLastCheckedTime, features);
     }
 
-    public TmsStationFeature convert(final TmsStation tms) throws NonPublicRoadStationException {
+    public TmsStationFeature convert(final TmsStation tms) {
         final Map<Long, List<Long>> sensorMap = stationSensorConverter.createPublishableSensorMap(tms.getRoadStationId(), TMS_STATION_TYPE);
 
         return convert(sensorMap, tms);
     }
 
-    public TmsStationFeature convert(final Map<Long, List<Long>> sensorMap, final TmsStation tms) throws NonPublicRoadStationException {
-        final TmsStationFeature f = new TmsStationFeature();
+    public TmsStationFeature convert(final Map<Long, List<Long>> sensorMap, final TmsStation tms) {
+        final TmsStationFeature f;
         if (log.isDebugEnabled()) {
             log.debug("Convert: " + tms);
         }
-        f.setId(tms.getRoadStationNaturalId());
 
-        final TmsStationProperties properties = f.getProperties();
+        final TmsStationProperties properties = new TmsStationProperties();
 
         // Tms station properties
         properties.setId(tms.getId());
@@ -82,10 +78,11 @@ public final class TmsStationMetadata2FeatureConverter extends AbstractMetadataT
         }
         // RoadStation properties
         final RoadStation rs = tms.getRoadStation();
-        setRoadStationProperties(properties, rs);
-
-        setCoordinates(f, rs);
-
-        return f;
+        if (rs == null) {
+            log.error("Null roadStation: {}", tms);
+        } else {
+            setRoadStationProperties(properties, rs);
+        }
+        return new TmsStationFeature(getGeometry(rs), properties, tms.getRoadStationNaturalId());
     }
 }

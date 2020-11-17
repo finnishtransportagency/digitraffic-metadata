@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import fi.livi.digitraffic.tie.helper.ToStringHelper;
+import fi.livi.digitraffic.tie.metadata.geojson.Properties;
 import fi.livi.digitraffic.tie.model.v1.datex2.Datex2MessageType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
     "announcements",
     "contact"
 })
-public class TrafficAnnouncementProperties {
+public class TrafficAnnouncementProperties extends Properties {
 
     @ApiModelProperty(value = "Situation id", required = true)
     @NotNull

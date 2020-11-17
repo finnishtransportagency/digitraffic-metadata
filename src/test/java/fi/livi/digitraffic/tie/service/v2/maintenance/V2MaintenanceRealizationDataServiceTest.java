@@ -1,20 +1,20 @@
 package fi.livi.digitraffic.tie.service.v2.maintenance;
 
-import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.REALIZATIONS_8_TASKS_2_END_TIME;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_X;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_X_AROUND_TASK;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_X_OUTSIDE_TASK;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_Y;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_Y_AROUND_TASK;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.RANGE_Y_OUTSIDE_TASK;
+import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.REALIZATIONS_8_TASKS_2_END_TIME;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.SINGLE_REALISATIONS_3_TASKS_END_TIME;
 import static fi.livi.digitraffic.tie.service.v2.maintenance.V2MaintenanceRealizationServiceTestHelper.TASK_IDS_INSIDE_BOX;
 
 import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -52,65 +52,65 @@ public class V2MaintenanceRealizationDataServiceTest extends AbstractServiceTest
     }
 
     @Test
-    public void findMaintenanceRealizationsWithinTime1() throws IOException {
+    public void findMaintenanceRealizationsWithinTime1() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.minus(1, ChronoUnit.HOURS), SINGLE_REALISATIONS_3_TASKS_END_TIME,
             RANGE_X.getLeft(), RANGE_Y.getLeft(), RANGE_X.getRight(), RANGE_Y.getRight(), Collections.emptyList());
-        Assert.assertEquals(3, result.features.size());
+        Assert.assertEquals(3, result.getFeatures().size());
     }
 
     @Test
-    public void findMaintenanceRealizationsWithinTime2() throws IOException {
+    public void findMaintenanceRealizationsWithinTime2() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             REALIZATIONS_8_TASKS_2_END_TIME.minus(1, ChronoUnit.HOURS), REALIZATIONS_8_TASKS_2_END_TIME,
             RANGE_X.getLeft(), RANGE_Y.getLeft(), RANGE_X.getRight(), RANGE_Y.getRight(), Collections.emptyList());
-        Assert.assertEquals(8, result.features.size());
+        Assert.assertEquals(8, result.getFeatures().size());
     }
 
     @Test
-    public void findMaintenanceRealizationsWithinTimeBoth() throws IOException {
+    public void findMaintenanceRealizationsWithinTimeBoth() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.minus(1, ChronoUnit.HOURS), REALIZATIONS_8_TASKS_2_END_TIME,
             RANGE_X.getLeft(), RANGE_Y.getLeft(), RANGE_X.getRight(), RANGE_Y.getRight(), Collections.emptyList());
-        Assert.assertEquals(11, result.features.size());
+        Assert.assertEquals(11, result.getFeatures().size());
     }
 
     @Test
-    public void findMaintenanceRealizationsNotWithinTime() throws IOException {
+    public void findMaintenanceRealizationsNotWithinTime() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.plusMillis(1), SINGLE_REALISATIONS_3_TASKS_END_TIME.plusSeconds(1),
             RANGE_X.getLeft(), RANGE_Y.getLeft(), RANGE_X.getRight(), RANGE_Y.getRight(), Collections.emptyList());
-        Assert.assertEquals(0, result.features.size());
+        Assert.assertEquals(0, result.getFeatures().size());
     }
 
     @Test
-    public void findMaintenanceRealizationsOnePointWithinBoundingBox() throws IOException {
+    public void findMaintenanceRealizationsOnePointWithinBoundingBox() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.minus(1, ChronoUnit.HOURS), SINGLE_REALISATIONS_3_TASKS_END_TIME,
             RANGE_X_AROUND_TASK.getLeft(), RANGE_Y_AROUND_TASK.getLeft(), RANGE_X_AROUND_TASK.getRight(), RANGE_Y_AROUND_TASK.getRight(),
             Collections.emptyList());
-        Assert.assertEquals(1, result.features.size());
-        final Set<Long> taskIds = result.features.get(0).getProperties().tasks.stream().collect(Collectors.toSet());
+        Assert.assertEquals(1, result.getFeatures().size());
+        final Set<Long> taskIds = new HashSet<>(result.getFeatures().get(0).getProperties().tasks);
         Assert.assertEquals(TASK_IDS_INSIDE_BOX, taskIds);
     }
 
     @Test
-    public void findMaintenanceRealizationsOutsideBoundingBox() throws IOException {
+    public void findMaintenanceRealizationsOutsideBoundingBox() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.minus(1, ChronoUnit.HOURS), SINGLE_REALISATIONS_3_TASKS_END_TIME.plusSeconds(1),
             RANGE_X_OUTSIDE_TASK.getLeft(), RANGE_Y_OUTSIDE_TASK.getLeft(), RANGE_X_OUTSIDE_TASK.getRight(), RANGE_Y_OUTSIDE_TASK.getRight(),
             Collections.emptyList());
-        Assert.assertEquals(0, result.features.size());
+        Assert.assertEquals(0, result.getFeatures().size());
     }
 
     @Test
-    public void findRealizationDataJsonByRealizationId() throws IOException {
+    public void findRealizationDataJsonByRealizationId() {
         final MaintenanceRealizationFeatureCollection result = maintenanceRealizationDataService.findMaintenanceRealizations(
             SINGLE_REALISATIONS_3_TASKS_END_TIME.minus(1, ChronoUnit.HOURS), SINGLE_REALISATIONS_3_TASKS_END_TIME.plusSeconds(1),
             RANGE_X_AROUND_TASK.getLeft(), RANGE_Y_AROUND_TASK.getLeft(), RANGE_X_AROUND_TASK.getRight(), RANGE_Y_AROUND_TASK.getRight(),
             Collections.emptyList());
 
-        final JsonNode json = maintenanceRealizationDataService.findRealizationDataJsonByRealizationId(result.features.get(0).getProperties().id);
+        final JsonNode json = maintenanceRealizationDataService.findRealizationDataJsonByRealizationId(result.getFeatures().get(0).getProperties().id);
         Assert.assertNotNull(json);
     }
 }

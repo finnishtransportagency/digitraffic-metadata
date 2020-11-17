@@ -1,15 +1,14 @@
 package fi.livi.digitraffic.tie.dto.v2.maintenance;
 
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
+import fi.livi.digitraffic.tie.metadata.geojson.Properties;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "MaintenanceRealizationProperties", description = "Maintenance realization properties")
-public class MaintenanceRealizationProperties {
+public class MaintenanceRealizationProperties extends Properties {
 
 
     @ApiModelProperty(value = "If for the realization", required = true)

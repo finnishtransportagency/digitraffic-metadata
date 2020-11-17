@@ -49,7 +49,7 @@ public class CoordinateConverter {
 
     }
 
-    public static Point convertFromETRS89ToWGS84(Point fromETRS89) {
+    public static Point convertFromETRS89ToWGS84(final Point fromETRS89) {
         CoordinateTransform transformer = null;
         try {
             // Take/wait transformer from the queue
@@ -87,7 +87,7 @@ public class CoordinateConverter {
     public static LineString convertLineStringFromETRS89ToWGS84(List<List<Double>> fromETRS89Coordinates) {
         List<List<Double>> coords =
             fromETRS89Coordinates.stream()
-                .map(l -> (List<Double>) new ArrayList(convertFromETRS89ToWGS84(new Point(l)).getCoordinates()))
+                .map(l -> (List<Double>) new ArrayList<>(convertFromETRS89ToWGS84(new Point(l)).getCoordinates()))
                 .collect(Collectors.toList());
         return new LineString(coords);
     }
@@ -97,11 +97,9 @@ public class CoordinateConverter {
     }
 
     public static List<List<Double>> convertLineStringCoordinatesFromWGS84ToETRS89(final List<List<Double>> fromWGS84Coordinates) {
-        List<List<Double>> coords =
-            fromWGS84Coordinates.stream()
-                .map(l -> (List<Double>) new ArrayList(convertFromWGS84ToETRS89(new Point(l)).getCoordinates()))
+        return fromWGS84Coordinates.stream()
+                .map(l -> (List<Double>) new ArrayList<>(convertFromWGS84ToETRS89(new Point(l)).getCoordinates()))
                 .collect(Collectors.toList());
-        return coords;
     }
 
     private static Point convert(final Point fromPoint, final CoordinateTransform transformer) {

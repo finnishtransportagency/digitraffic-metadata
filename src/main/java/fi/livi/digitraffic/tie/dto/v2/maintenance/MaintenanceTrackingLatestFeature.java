@@ -9,37 +9,14 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "GeoJSON Feature Object.", value = "MaintenanceTrackingLatestFeature")
 @JsonPropertyOrder({ "type", "properties", "geometry" })
-public class MaintenanceTrackingLatestFeature implements Feature<Geometry> {
+public class MaintenanceTrackingLatestFeature extends Feature<Geometry<?>, MaintenanceTrackingLatestProperties> {
+
+    public MaintenanceTrackingLatestFeature(final Geometry<?> geometry, final MaintenanceTrackingLatestProperties properties) {
+        super(geometry, properties);
+    }
 
     @ApiModelProperty(value = "GeoJSON Point or LineString Geometry Object containing route point(s)", required = true, position = 3)
-    private Geometry geometry;
-
-    @ApiModelProperty(value = "Latest tracking properties.", required = true, position = 4)
-    private final MaintenanceTrackingLatestProperties properties;
-
-    public MaintenanceTrackingLatestFeature(final Geometry geometry, final MaintenanceTrackingLatestProperties properties) {
-        this.geometry = geometry;
-        this.properties = properties;
-    }
-
-    @ApiModelProperty(value = "GeoJSON Feature Object", required = true, position = 1, allowableValues = "Feature")
-    @Override
-    public String getType() {
-        return "Feature";
-    }
-
-
-    @Override
-    public Geometry getGeometry() {
-        return geometry;
-    }
-
-    @Override
-    public void setGeometry(final Geometry geometry) {
-        this.geometry = geometry;
-    }
-
-    public MaintenanceTrackingLatestProperties getProperties() {
-        return properties;
+    public Geometry<?> getGeometry() {
+        return super.getGeometry();
     }
 }

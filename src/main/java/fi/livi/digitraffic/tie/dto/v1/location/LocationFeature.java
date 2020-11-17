@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
 public final class LocationFeature {
     public final String type = "Feature";
 
+    // TODO: Remove this from next version as it is duplicated in properties
     @ApiModelProperty(value = "Unique locationCode for this location", required = true)
     public final int id;
 
@@ -24,6 +25,7 @@ public final class LocationFeature {
         this.id = l.getLocationCode();
         this.geometry = getGeometry(l);
         this.properties = new LocationProperties(
+                l.getLocationCode(),
                 l.getSubtypeCode(),
                 l.getRoadJunction(),
                 l.getRoadName(), l.getFirstName(), l.getSecondName(), l.getAreaRef(),

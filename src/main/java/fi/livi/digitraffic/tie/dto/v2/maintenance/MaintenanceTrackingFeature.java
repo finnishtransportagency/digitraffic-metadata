@@ -9,17 +9,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "GeoJSON Feature Object.", value = "MaintenanceTrackingFeature")
 @JsonPropertyOrder({ "type", "properties", "geometry" })
-public class MaintenanceTrackingFeature implements Feature<Geometry> {
+public class MaintenanceTrackingFeature extends Feature<Geometry<?>, MaintenanceTrackingProperties> {
 
-    @ApiModelProperty(value = "GeoJSON Point or LineString Geometry Object containing route point(s)", required = true, position = 3)
-    private Geometry geometry;
-
-    @ApiModelProperty(value = "Tracking properties.", required = true, position = 4)
-    private final MaintenanceTrackingProperties properties;
-
-    public MaintenanceTrackingFeature(final Geometry geometry, final MaintenanceTrackingProperties properties) {
-        this.geometry = geometry;
-        this.properties = properties;
+    public MaintenanceTrackingFeature(final Geometry<?> geometry, final MaintenanceTrackingProperties properties) {
+        super(geometry, properties);
     }
 
     @ApiModelProperty(value = "GeoJSON Feature Object", required = true, position = 1, allowableValues = "Feature")
@@ -28,18 +21,9 @@ public class MaintenanceTrackingFeature implements Feature<Geometry> {
         return "Feature";
     }
 
-
+    @ApiModelProperty(value = "GeoJSON Point or LineString Geometry Object containing route point(s)", required = true, position = 3)
     @Override
-    public Geometry getGeometry() {
-        return geometry;
-    }
-
-    @Override
-    public void setGeometry(final Geometry geometry) {
-        this.geometry = geometry;
-    }
-
-    public MaintenanceTrackingProperties getProperties() {
-        return properties;
+    public Geometry<?> getGeometry() {
+        return super.getGeometry();
     }
 }

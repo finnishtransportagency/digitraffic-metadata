@@ -12,53 +12,21 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel(description = "GeoJSON Feature Object", value = "TmsStationFeature")
 @JsonPropertyOrder({ "type", "id", "geometry", "properties" })
-public class TmsStationFeature implements Feature<Point> {
+public class TmsStationFeature extends Feature<Point, TmsStationProperties> {
 
-    @ApiModelProperty(value = "\"Feature\": GeoJSON Feature Object", required = true, position = 1, allowableValues = "Feature")
-    @JsonPropertyOrder(value = "1")
-    private final String type = "Feature";
-
+    // TODO: Remove this from next version as it is duplicated in properties
     @ApiModelProperty(value = "Same as TmsStationProperties.roadStationId", required = true, position = 2)
     @JsonPropertyOrder(value = "2")
-    private long id;
+    public final long id;
 
-    @ApiModelProperty(value = "GeoJSON Point Geometry Object. Point where station is located", required = true, position = 3)
-    @JsonPropertyOrder(value = "3")
-    private Point geometry;
-
-    @ApiModelProperty(value = "TMS station properties", required = true, position = 4)
-    @JsonPropertyOrder(value = "4")
-    private TmsStationProperties properties = new TmsStationProperties();
-
-    @Override
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public Point getGeometry() {
-        return geometry;
-    }
-
-    @Override
-    public void setGeometry(final Point geometry) {
-        this.geometry = geometry;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(final long id) {
+    public TmsStationFeature(final Point geometry, final TmsStationProperties properties, long id) {
+        super(geometry, properties);
         this.id = id;
     }
 
-    public TmsStationProperties getProperties() {
-        return properties;
+    @ApiModelProperty(value = "GeoJSON Point Geometry Object. Point where station is located", required = true, position = 3)
+    @Override
+    public Point getGeometry() {
+        return super.getGeometry();
     }
-
-    public void setProperties(final TmsStationProperties properties) {
-        this.properties = properties;
-    }
-
 }

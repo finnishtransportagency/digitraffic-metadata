@@ -166,17 +166,17 @@ public class V2MaintenanceTrackingUpdateService {
                     log.debug("method=handleRoute WorkMachine tracking in transition");
                     // Mark found one to finished as the work machine is in transition after that
                     // Append latest point (without the task) to tracking if it's inside time limits.
-                    updateAsFinishedNullSafeAndAppendLastGeometry(previousTracking, geometry, direction, harjaObservationTime,
-                        status.isNextInsideLimits());
-                    sendToMqtt(previousTracking, geometry, direction, harjaObservationTime);
-                    // If previous is finished or tasks has changed or time gap is too long, we create new tracking for the machine
+                    if (updateAsFinishedNullSafeAndAppendLastGeometry(previousTracking, geometry, direction, harjaObservationTime,  status.isNextInsideLimits())) {
+                        sendToMqtt(previousTracking, geometry, direction, harjaObservationTime);
+                    }
+                // If previous is finished or tasks has changed or time gap is too long, we create new tracking for the machine
                 } else if (status.is(NEW)) {
 
                     // Append latest point to tracking if it's inside time limits. This happens only when task changes and
                     // last point will be new tasks first point.
-                    updateAsFinishedNullSafeAndAppendLastGeometry(previousTracking, geometry, direction, harjaObservationTime,
-                        status.isNextInsideLimits());
-                    sendToMqtt(previousTracking, geometry, direction, harjaObservationTime);
+                    if (updateAsFinishedNullSafeAndAppendLastGeometry(previousTracking, geometry, direction, harjaObservationTime, status.isNextInsideLimits())) {
+                        sendToMqtt(previousTracking, geometry, direction, harjaObservationTime);
+                    }
 
                     final MaintenanceTrackingWorkMachine workMachine =
                         getOrCreateWorkMachine(harjaWorkMachineId, harjaContractId, harjaWorkMachine.getTyokonetyyppi());
@@ -222,8 +222,8 @@ public class V2MaintenanceTrackingUpdateService {
             try {
                 final MaintenanceTrackingLatestFeature feature =
                     V2MaintenanceTrackingDataService.convertToTrackingLatestFeature(tracking);
-
-                final fi.livi.digitraffic.tie.metadata.geojson.Geometry<?> geoJsonGeom = PostgisGeometryHelper.convertToGeoJSONGeometry(geometry);
+                final Point lastPoint = resolveLastPoint(geometry);
+                final fi.livi.digitraffic.tie.metadata.geojson.Geometry<?> geoJsonGeom = PostgisGeometryHelper.convertToGeoJSONGeometry(lastPoint);
                 feature.setGeometry(geoJsonGeom);
                 feature.getProperties().setDirection(direction);
                 feature.getProperties().setTime(observationTime);
@@ -318,15 +318,27 @@ public class V2MaintenanceTrackingUpdateService {
             .collect(Collectors.toSet());
     }
 
-    private static void updateAsFinishedNullSafeAndAppendLastGeometry(final MaintenanceTracking trackingToFinish, final Geometry latestGeometry,
-                                                                      final BigDecimal direction, final ZonedDateTime latestGeometryOservationTime,
-                                                                      final boolean appendLatestGeometry) {
+    /**
+     *
+     * @param trackingToFinish
+     * @param latestGeometry
+     * @param direction
+     * @param latestGeometryOservationTime
+     * @param appendLatestGeometry
+     * @return true if geometry was appended to tracking
+     */
+    private static boolean updateAsFinishedNullSafeAndAppendLastGeometry(final MaintenanceTracking trackingToFinish, final Geometry latestGeometry,
+                                                                         final BigDecimal direction, final ZonedDateTime latestGeometryOservationTime,
+                                                                         final boolean appendLatestGeometry) {
+        boolean geometryAppended = false;
         if (trackingToFinish != null && !trackingToFinish.isFinished()) {
             if (appendLatestGeometry) {
                 trackingToFinish.appendGeometry(latestGeometry, latestGeometryOservationTime, direction);
+                geometryAppended = true;
             }
             trackingToFinish.setFinished();
         }
+        return geometryAppended;
     }
 
     /**

@@ -38,7 +38,9 @@ import fi.livi.digitraffic.tie.service.v1.camera.CameraImageUpdateService;
 import fi.livi.digitraffic.tie.service.v1.camera.CameraPresetHistoryDataService;
 import fi.livi.digitraffic.tie.service.v1.camera.CameraPresetHistoryUpdateService;
 import fi.livi.digitraffic.tie.service.v1.camera.CameraPresetService;
+import org.springframework.test.annotation.DirtiesContext;
 
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public class CameraImageUpdateServiceTestWithS3 extends AbstractCameraTestWithS3 {
 
     private static final Logger log = LoggerFactory.getLogger(CameraImageUpdateServiceTestWithS3.class);

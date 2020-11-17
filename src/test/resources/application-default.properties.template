@@ -109,3 +109,8 @@ logging.level.root=INFO
 # application.properties
 maintenance.tracking.job.enabled = false
 maintenance.realization.job.enabled = false
+
+# Low logging level for tests
+logging.level.root=WARN
+logging.level.fi.livi.digitraffic.tie.service.v1.camera.CameraMetadataMessageHandler=WARN
+logging.level.fi.livi.digitraffic.tie.service.v2.datex2.V2Datex2UpdateService=WARN

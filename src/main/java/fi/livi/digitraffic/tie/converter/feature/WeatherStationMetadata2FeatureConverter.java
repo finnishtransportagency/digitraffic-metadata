@@ -6,6 +6,7 @@ import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import fi.livi.digitraffic.tie.converter.StationSensorConverter;
-import fi.livi.digitraffic.tie.converter.exception.NonPublicRoadStationException;
 import fi.livi.digitraffic.tie.dao.v1.WeatherStationRepository;
 import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
 import fi.livi.digitraffic.tie.metadata.geojson.weather.WeatherStationFeature;
@@ -39,28 +39,22 @@ public final class WeatherStationMetadata2FeatureConverter extends AbstractMetad
     }
 
     public WeatherStationFeatureCollection convert(final List<WeatherStation> stations, final ZonedDateTime lastUpdated, final ZonedDateTime dataLastCheckedTime) {
-        final WeatherStationFeatureCollection collection = new WeatherStationFeatureCollection(lastUpdated, dataLastCheckedTime);
-        final Map<Long, List<Long>> sensorMap = stationSensorConverter.createPublishableSensorMap(WEATHER_STATION_TYPE);
 
-        for(final WeatherStation rws : stations) {
-            try {
-                collection.add(convert(sensorMap, rws));
-            } catch (final NonPublicRoadStationException nprse) {
-                //Skip non public roadstation
-                log.warn("Skipping: " + nprse.getMessage());
-            }
-        }
-        return collection;
+        final Map<Long, List<Long>> sensorMap = stationSensorConverter.createPublishableSensorMap(WEATHER_STATION_TYPE);
+        final List<WeatherStationFeature> features =
+            stations.stream()
+                .filter(rws -> rws.getRoadStation().isPublicNow())
+                .map(rws -> convert(sensorMap, rws)).collect(Collectors.toList());
+
+        return new WeatherStationFeatureCollection(lastUpdated, dataLastCheckedTime, features);
     }
 
-    private WeatherStationFeature convert(final Map<Long, List<Long>> sensorMap, final WeatherStation rws) throws NonPublicRoadStationException {
-        final WeatherStationFeature f = new WeatherStationFeature();
+    private WeatherStationFeature convert(final Map<Long, List<Long>> sensorMap, final WeatherStation rws) {
         if (log.isDebugEnabled()) {
             log.debug("Convert: " + rws);
         }
-        f.setId(rws.getRoadStationNaturalId());
 
-        final WeatherStationProperties properties = f.getProperties();
+        final WeatherStationProperties properties = new WeatherStationProperties();
 
         // weather station properties
         properties.setId(rws.getRoadStationNaturalId());
@@ -70,16 +64,17 @@ public final class WeatherStationMetadata2FeatureConverter extends AbstractMetad
 
         if (rws.getRoadStation() != null) {
             final List<Long> sensorList = sensorMap.get(rws.getRoadStationId());
-
             properties.setStationSensors(ObjectUtils.firstNonNull(sensorList, Collections.emptyList()));
         }
 
         // RoadStation properties
         final RoadStation rs = rws.getRoadStation();
-        setRoadStationProperties(properties, rs);
+        if (rs == null) {
+            log.error("Null roadStation: {}", rws);
+        } else {
+            setRoadStationProperties(properties, rs);
+        }
 
-        setCoordinates(f, rs);
-
-        return f;
+        return new WeatherStationFeature(getGeometry(rs), properties, rws.getRoadStationNaturalId());
     }
 }

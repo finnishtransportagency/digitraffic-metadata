@@ -1,6 +1,7 @@
 package fi.livi.digitraffic.tie.converter.feature;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -17,19 +18,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.stereotype.Component;
 
-import fi.livi.digitraffic.tie.converter.exception.NonPublicRoadStationException;
-import fi.livi.digitraffic.tie.helper.DataValidityHelper;
-import fi.livi.digitraffic.tie.helper.ToStringHelper;
 import fi.livi.digitraffic.tie.dao.v1.CameraPresetRepository;
 import fi.livi.digitraffic.tie.dto.v1.NearestRoadStation;
+import fi.livi.digitraffic.tie.helper.DataValidityHelper;
 import fi.livi.digitraffic.tie.metadata.geojson.camera.CameraPresetDto;
 import fi.livi.digitraffic.tie.metadata.geojson.camera.CameraProperties;
 import fi.livi.digitraffic.tie.metadata.geojson.camera.CameraStationFeature;
 import fi.livi.digitraffic.tie.metadata.geojson.camera.CameraStationFeatureCollection;
 import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
-import fi.livi.digitraffic.tie.model.v1.camera.CameraPreset;
 import fi.livi.digitraffic.tie.model.v1.RoadStation;
 import fi.livi.digitraffic.tie.model.v1.WeatherStation;
+import fi.livi.digitraffic.tie.model.v1.camera.CameraPreset;
 
 @ConditionalOnWebApplication
 @Component
@@ -49,37 +48,35 @@ public class CameraPresetMetadata2FeatureConverter extends AbstractMetadataToFea
     }
 
     public CameraStationFeatureCollection convert(final List<CameraPreset> cameraPresets, final ZonedDateTime lastUpdated, final ZonedDateTime dataLastCheckedTime) {
-        final CameraStationFeatureCollection collection = new CameraStationFeatureCollection(lastUpdated, dataLastCheckedTime);
 
         // Cameras mapped with cameraId
         final Map<String, CameraStationFeature> cameraStationMap = new HashMap<>();
         final Map<Long, Long> nearestMap = getNearestMap(cameraPresets);
 
-        for(final CameraPreset cp : cameraPresets) {
-            // CameraPreset contains camera and preset informations and
-            // camera info is duplicated on every preset db line
-            // So we take camera only once
-            CameraStationFeature cameraStationFeature = cameraStationMap.get(cp.getCameraId());
-            if (cameraStationFeature == null) {
-                try {
+        final List<CameraStationFeature> features = new ArrayList<>();
+
+        // CameraPreset contains camera and preset informations and
+        // camera info is duplicated on every preset db line
+        // So we take camera only once
+        cameraPresets.stream()
+            .filter(CameraPreset::isPublishable)
+            .filter(cameraPreset -> cameraPreset.getRoadStation().isPublishable())
+            .forEach(cp -> {
+                CameraStationFeature cameraStationFeature = cameraStationMap.get(cp.getCameraId());
+                if (cameraStationFeature == null) {
                     cameraStationFeature = convert(nearestMap, cp);
                     cameraStationMap.put(cp.getCameraId(), cameraStationFeature);
-                    collection.add(cameraStationFeature);
-                } catch (final NonPublicRoadStationException nprse) {
-                    //Skip non public roadstation
-                    log.warn("Skipping: " + nprse.getMessage());
-                    continue;
+                    features.add(cameraStationFeature);
                 }
-            }
-            cameraStationFeature.getProperties().addPreset(convertPreset(cp));
-        }
+                cameraStationFeature.getProperties().addPreset(convertPreset(cp));
+            });
 
-        return collection;
+        return new CameraStationFeatureCollection(lastUpdated, dataLastCheckedTime, features);
     }
 
     private Map<Long, Long> getNearestMap(final List<CameraPreset> cameraPresets) {
         final Set<Long> wsIdList = cameraPresets.stream()
-            .map(cp -> cp.getNearestWeatherStation())
+            .map(CameraPreset::getNearestWeatherStation)
             .filter(Objects::nonNull)
             .map(WeatherStation::getId)
             .collect(Collectors.toSet());
@@ -104,14 +101,13 @@ public class CameraPresetMetadata2FeatureConverter extends AbstractMetadataToFea
         return dto;
     }
 
-    private CameraStationFeature convert(final Map<Long, Long> nearestMap, final CameraPreset cp) throws NonPublicRoadStationException {
-            final CameraStationFeature f = new CameraStationFeature();
+    private CameraStationFeature convert(final Map<Long, Long> nearestMap, final CameraPreset cp) {
+
             if (log.isDebugEnabled()) {
                 log.debug("Convert: " + cp);
             }
-            f.setId(ToStringHelper.nullSafeToString(cp.getRoadStationNaturalId().toString()));
 
-            final CameraProperties properties = f.getProperties();
+            final CameraProperties properties = new CameraProperties();
 
             // Camera properties
             properties.setId(cp.getId());
@@ -128,8 +124,6 @@ public class CameraPresetMetadata2FeatureConverter extends AbstractMetadataToFea
             final RoadStation rs = cp.getRoadStation();
             setRoadStationProperties(properties, rs);
 
-            setCoordinates(f, rs);
-
-            return f;
+            return new CameraStationFeature(getGeometry(rs), properties);
     }
 }

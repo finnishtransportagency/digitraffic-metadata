@@ -14,6 +14,7 @@ public class ForecastSectionV2Feature {
     @JsonPropertyOrder(value = "1")
     private final String type = "Feature";
 
+    // TODO: Remove this from next version as it is just db id and real id is in properties
     @ApiModelProperty(value = "Forecast section id", required = true, position = 2)
     @JsonPropertyOrder(value = "2")
     private long id;

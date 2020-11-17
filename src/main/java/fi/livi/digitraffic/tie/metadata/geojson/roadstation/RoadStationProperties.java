@@ -13,14 +13,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import fi.livi.digitraffic.tie.metadata.geojson.Point;
+import fi.livi.digitraffic.tie.metadata.geojson.Properties;
 import fi.livi.digitraffic.tie.model.CollectionStatus;
-import fi.livi.digitraffic.tie.model.v1.RoadAddress;
 import fi.livi.digitraffic.tie.model.RoadStationState;
+import fi.livi.digitraffic.tie.model.v1.RoadAddress;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "Properties", description = "Roadstation properties")
-public abstract class RoadStationProperties {
+public abstract class RoadStationProperties extends Properties {
 
     private static final int LONGITUDE_IDX = 0;
     private static final int LATITUDE_IDX = 1;

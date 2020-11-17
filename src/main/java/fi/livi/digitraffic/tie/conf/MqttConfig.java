@@ -39,7 +39,9 @@ public class MqttConfig {
         factory.getConnectionOptions().setUserName(username);
         factory.getConnectionOptions().setPassword(password.toCharArray());
         factory.getConnectionOptions().setMaxInflight(10000);
-        factory.getConnectionOptions().setConnectionTimeout(5);
+        factory.getConnectionOptions().setConnectionTimeout(2);
+        factory.getConnectionOptions().setCleanSession(true);
+        factory.getConnectionOptions().setKeepAliveInterval(5);
 
         return factory;
     }
@@ -58,6 +60,6 @@ public class MqttConfig {
     @MessagingGateway(defaultRequestChannel = "mqttOutboundChannel", defaultRequestTimeout = "2000", defaultReplyTimeout = "2000")
     public interface MqttGateway {
         // Paho does not support concurrency, all calls to this must be synchronized!
-        void sendToMqtt(@Header(MqttHeaders.TOPIC) final String topic, @Payload final String data);
+        void sendToMqtt(@Header(MqttHeaders.TOPIC) final String topic, @Header(MqttHeaders.QOS) final Integer qos, @Payload final String data);
     }
 }

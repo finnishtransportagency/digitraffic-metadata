@@ -2,6 +2,7 @@ package fi.livi.digitraffic.tie.converter.feature;
 
 import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +15,7 @@ import fi.livi.digitraffic.tie.metadata.geojson.forecastsection.ForecastSectionF
 import fi.livi.digitraffic.tie.metadata.geojson.forecastsection.ForecastSectionProperties;
 import fi.livi.digitraffic.tie.model.v1.forecastsection.ForecastSection;
 import fi.livi.digitraffic.tie.model.v1.forecastsection.ForecastSectionCoordinate;
+import fi.livi.digitraffic.tie.model.v1.forecastsection.ForecastSectionCoordinateList;
 
 @Component
 public class ForecastSectionV1ToFeatureConverter extends AbstractMetadataToFeatureConverter {
@@ -24,18 +26,18 @@ public class ForecastSectionV1ToFeatureConverter extends AbstractMetadataToFeatu
 
     public ForecastSectionFeatureCollection convert(List<ForecastSection> forecastSections, final ZonedDateTime lastUpdated, final ZonedDateTime dataLastCheckedTime) {
 
-        final ForecastSectionFeatureCollection forecastSectionFeatures = new ForecastSectionFeatureCollection(lastUpdated, dataLastCheckedTime);
+        final List<ForecastSectionFeature> features =
+            forecastSections.stream()
+                .map(this::convert)
+                .collect(Collectors.toList());
 
-        for (ForecastSection fs : forecastSections) {
-            forecastSectionFeatures.add(convert(fs));
-        }
-        return forecastSectionFeatures;
+        return new ForecastSectionFeatureCollection(lastUpdated, dataLastCheckedTime, features);
     }
 
     private ForecastSectionFeature convert(final ForecastSection fs) {
         final List<ForecastSectionCoordinate> collect = fs.getForecastSectionCoordinateLists().stream()
-            .map(l -> l.getForecastSectionCoordinates())
-            .flatMap(f -> f.stream())
+            .map(ForecastSectionCoordinateList::getForecastSectionCoordinates)
+            .flatMap(Collection::stream)
             .collect(Collectors.toList());
 
         final List<List<Double>> coordinates =

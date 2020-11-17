@@ -45,6 +45,9 @@ public class CameraMetadataControllerRestWebTest extends AbstractRestWebTest {
         CameraPreset cp = generateDummyPreset();
 
         cameraPresetService.save(cp);
+        // Persist to db and clear context to force saved data re-read from db
+        entityManager.flush();
+        entityManager.clear();
     }
 
     @Test

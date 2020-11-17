@@ -6,13 +6,14 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import fi.livi.digitraffic.tie.metadata.geojson.Properties;
 import fi.livi.digitraffic.tie.model.v2.maintenance.MaintenanceTrackingTask;
 import fi.livi.digitraffic.tie.model.v2.maintenance.MaintenanceTrackingWorkMachine;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "MaintenanceTrackingProperties", description = "Maintenance tracking properties")
-public class MaintenanceTrackingProperties {
+public class MaintenanceTrackingProperties extends Properties {
 
     @ApiModelProperty(value = "Id for the tracking", required = true)
     public final long id;

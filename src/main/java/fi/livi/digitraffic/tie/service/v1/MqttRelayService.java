@@ -28,6 +28,8 @@ public class MqttRelayService {
 
     public enum StatisticsType {TMS, WEATHER, MAINTENANCE_TRACKING, STATUS}
 
+    private static final Integer QOS = 0;
+
     @Autowired
     public MqttRelayService(final MqttConfig.MqttGateway mqttGateway) {
 
@@ -44,7 +46,7 @@ public class MqttRelayService {
 
                 if (topicPayloadStatisticsType != null) {
                     try {
-                        mqttGateway.sendToMqtt(topicPayloadStatisticsType.getLeft(), topicPayloadStatisticsType.getMiddle());
+                        mqttGateway.sendToMqtt(topicPayloadStatisticsType.getLeft(), QOS, topicPayloadStatisticsType.getMiddle());
                         if (topicPayloadStatisticsType.getRight() != null) {
                             updateSentMqttStatistics(topicPayloadStatisticsType.getRight(), 1);
                         }

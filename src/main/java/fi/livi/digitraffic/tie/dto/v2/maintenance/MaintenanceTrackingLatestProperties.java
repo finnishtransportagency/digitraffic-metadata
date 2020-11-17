@@ -4,12 +4,13 @@ import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
+import fi.livi.digitraffic.tie.metadata.geojson.Properties;
 import fi.livi.digitraffic.tie.model.v2.maintenance.MaintenanceTrackingTask;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "MaintenanceTrackingLatestProperties", description = "Maintenance tracking properties")
-public class MaintenanceTrackingLatestProperties {
+public class MaintenanceTrackingLatestProperties extends Properties {
 
     @ApiModelProperty(value = "Id for the tracking", required = true)
     private final long id;

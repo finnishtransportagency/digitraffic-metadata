@@ -2,20 +2,26 @@
 <head>
     <title>Test mqtt tms-messages</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js"></script>
+    <!-- https://cdnjs.com/libraries/paho-mqtt/1.1.0
+         https://github.com/eclipse/paho.mqtt.javascript -->
     <script>
         'use strict';
-        const lines = [];
+        let lines = [];
         let messagesLastMinuteCount = 0, client;
-        const host = "tie.digitraffic.fi";
-        const port = 61619;
-        const topic = "tms/#";
+        let host = "tie-test.digitraffic.fi";
+
+        // const port = 61619;
+        const port = 443;
+        let topic = "tms/#";
+
+        window.setInterval(logMessageCount, 60*1000);
 
         function connect() {
-            console.log("Trying to connect to road mqtt..." + host + ":" + port);
+            const clientId = "testclient_" + Date.now();
+            console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
 
-            client = new Paho.MQTT.Client(host, port, 'testclient_' + Date.now());
+            client = new Paho.Client(host, port, clientId);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -30,6 +36,8 @@
 
             const connectionProperties = {
                 onSuccess:onConnect,
+                reconnect: true,
+                cleanSession:false,
                 mqttVersion:4,
                 useSSL:true,
                 userName:"digitraffic",
@@ -37,8 +45,16 @@
             };
 
             client.connect(connectionProperties);
+        }
 
-            window.setInterval(logMessageCount, 60*1000);
+        function disconnect() {
+            try {
+                if (client && client.isConnected) {
+                    client.disconnect();
+                }
+            } catch(err) {
+                console.error(err.message);
+            }
         }
 
         function logMessageCount() {
@@ -55,7 +71,7 @@
         function addMessage(message) {
             const text = JSON.stringify(message);
 
-            if (lines.length > 100) {
+            while (lines.length > 100) {
                 lines.shift();
             }
 
@@ -63,14 +79,40 @@
         }
 
         function updateList() {
-            $(".messages").html(lines.join('<br/>'));
+            $("#messages").html(lines.join('<br/>'));
+        }
+
+        function updateTopic() {
+            host=$("#domain").val();
+            topic=$("#topic").val();
+
+            messagesLastMinuteCount = 0;
+            $("#messages").html('');
+            $("#messagesPerMinute").text(0);
+            disconnect();
+            lines = [];
+            connect();
         }
 
         connect();
     </script>
 </head>
 <body>
-Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):
-<div class="messages" />
+<div>
+    <select id="domain" name="domain">
+        <option value="tie-test.digitraffic.fi">tie-test.digitraffic.fi</option>
+        <option value="tie.digitraffic.fi">tie.digitraffic.fi</option>
+        <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
+        <option value="meri.digitraffic.fi">meri.digitraffic.fi</option>
+    </select>
+    Topic:
+    <input type="text" id="topic" name="topic" value="tms/#">
+    <button onclick="updateTopic()"> Connect/Update </button>
+    <button onclick="disconnect()"> Disconnect </button>
+</div>
+
+Messages (<span id="messagesPerMinute">0</span> messages per minute):
+
+<pre id="messages" style="font-size: small;white-space: pre-wrap;"/>
 </body>
 </html>

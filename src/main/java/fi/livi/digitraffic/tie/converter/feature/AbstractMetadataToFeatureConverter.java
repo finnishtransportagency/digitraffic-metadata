@@ -3,8 +3,6 @@ package fi.livi.digitraffic.tie.converter.feature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import fi.livi.digitraffic.tie.converter.exception.NonPublicRoadStationException;
-import fi.livi.digitraffic.tie.metadata.geojson.Feature;
 import fi.livi.digitraffic.tie.metadata.geojson.Point;
 import fi.livi.digitraffic.tie.metadata.geojson.converter.CoordinateConverter;
 import fi.livi.digitraffic.tie.metadata.geojson.roadstation.RoadStationProperties;
@@ -20,11 +18,7 @@ public class AbstractMetadataToFeatureConverter {
         this.coordinateConverter = coordinateConverter;
     }
 
-    protected static void setRoadStationProperties(final RoadStationProperties properties, final RoadStation roadStation)
-            throws NonPublicRoadStationException {
-        if (!roadStation.isPublicNow()) {
-            throw new NonPublicRoadStationException("Non public RoadStation fetched for api: " + roadStation);
-        }
+    protected static void setRoadStationProperties(final RoadStationProperties properties, final RoadStation roadStation) {
         properties.setNaturalId(roadStation.getNaturalId());
         properties.setCollectionInterval(roadStation.getCollectionInterval());
         properties.setCollectionStatus(roadStation.getCollectionStatus());
@@ -74,12 +68,12 @@ public class AbstractMetadataToFeatureConverter {
         return null;
     }
 
-    protected void setCoordinates(Feature feature, RoadStation rs) {
-        Point etrS89 = getETRS89CoordinatesPoint(rs);
+    protected Point getGeometry(final RoadStation rs) {
+        final Point etrS89 = getETRS89CoordinatesPoint(rs);
         if (etrS89 != null) {
-                feature.setGeometry(
-                        coordinateConverter.convertFromETRS89ToWGS84(etrS89));
+            return CoordinateConverter.convertFromETRS89ToWGS84(etrS89);
         }
+        return null;
     }
 
 }
