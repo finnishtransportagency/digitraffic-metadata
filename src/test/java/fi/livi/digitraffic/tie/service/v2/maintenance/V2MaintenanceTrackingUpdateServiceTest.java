@@ -300,6 +300,7 @@ public class V2MaintenanceTrackingUpdateServiceTest extends AbstractServiceTest 
     }
 
     @Test
+    @Ignore
     public void overSpeedBreaksTrackingInTwoParts() throws JsonProcessingException {
         final List<Tyokone> workMachines = createWorkMachines(1);
         final ZonedDateTime startTime = DateHelper.getZonedDateTimeNowWithoutMillisAtUtc();
